@@ -1,0 +1,31 @@
+DROP TABLE tblQuestion;
+DROP TABLE tblNotice;       
+DROP TABLE tblReviewImage;
+DROP TABLE tblReviewReply;
+DROP TABLE tblClassImage;
+DROP TABLE tblClassReview;
+DROP TABLE tblSignupClass;
+DROP TABLE tblClassOption;
+DROP TABLE tblHostScrap;
+DROP TABLE tblClassRecommend;
+DROP TABLE tblClassScrap;
+DROP TABLE tblClass;
+DROP TABLE tblHost;        
+DROP TABLE tblUser;
+
+drop sequence seqUser;
+drop sequence seqClass;
+drop sequence seqClassReview;
+drop sequence seqNotice;
+drop sequence seqSignUpClass;
+drop sequence seqClassScrap;
+drop sequence seqClassRecommend;
+drop sequence seqQuestion;
+drop sequence seqHostScrap;
+drop sequence seqClassImage;
+drop sequence seqClassOption;
+drop sequence seqReviewImage;
+drop sequence seqReviewReply;
+drop sequence seqHost;
+
+select * from tab; 
