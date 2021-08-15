@@ -1,0 +1,31 @@
+bp/
+.git/
+.idea/
+.settings/
+.build/
+.lib/
+.run/
+lib/
+.metadata/
+.classpath
+/.classpath
+.project
+build/
+Servers/
+classes/
+web/WEB-INF/web.xml
+
+# Eclipse Core      
+.project
+
+# JDT-specific (Eclipse Java Development Tools)     
+.classpath
+
+
+/bin/
+bin/
+.bin/
+
+src.zip
+server/
+src/main/.DS_Store
