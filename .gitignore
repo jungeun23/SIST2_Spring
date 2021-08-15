@@ -21,6 +21,12 @@ web/WEB-INF/web.xml
 # JDT-specific (Eclipse Java Development Tools)     
 .classpath
 
+/target/
+target/
+
+.springBeans
+/.springBeans
+
 
 /bin/
 bin/
