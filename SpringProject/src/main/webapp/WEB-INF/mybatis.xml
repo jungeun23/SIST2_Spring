@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+
+	<!-- Mapper에서 사용하는 자료형에 대한 별칭 만드는 작업 -->
+	
+	<!-- <typeAliases>
+		<typeAlias type="com.test.mybatis.MyBatisDTO" alias="dto"/>
+		HashMap 은 기본적으로 정의 되어 있다
+	</typeAliases> -->
+	
+	
+	
+
+   
+</configuration>
