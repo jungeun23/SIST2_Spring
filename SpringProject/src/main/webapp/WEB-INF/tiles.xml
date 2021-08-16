@@ -7,19 +7,27 @@
 
 	
 	<definition name="index" template="/WEB-INF/views/index.jsp">
-	
 		<put-attribute name="asset_css" value="/inc/asset_css.jsp"></put-attribute>
 		<put-attribute name="asset_javascript" value="/inc/asset_javascript.jsp"></put-attribute>
-		
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp"></put-attribute>
-		
-		
 		<put-attribute name="content" value="/WEB-INF/views/indexcontent.jsp"></put-attribute>
-		
-		
-		
 	</definition>
+	
+	
+	
+	
+	
+	<definition name="member.mypage" template="/WEB-INF/views/layout/customer.jsp">
+		<put-attribute name="asset_css" value="/inc/asset_css.jsp"></put-attribute>
+		<put-attribute name="asset_javascript" value="/inc/asset_javascript.jsp"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/member/mypage.jsp"></put-attribute>
+	</definition>
+	
+	
+	
 	
 	
 
