@@ -4,14 +4,14 @@ CREATE TABLE tbluser (
     nickname   VARCHAR2(50) NOT NULL,
     birth      VARCHAR2(50) NOT NULL,
     gender     VARCHAR2(30) NOT NULL,
-    id         VARCHAR2(100) NOT NULL,
+    id         VARCHAR2(100) unique NOT NULL,
     email      VARCHAR2(200) NOT NULL,
     pw         VARCHAR2(100) NOT NULL,
     tel        VARCHAR2(100) NOT NULL,
     point      NUMBER DEFAULT 0 NOT NULL,
     address    VARCHAR2(200) NOT NULL,
     auth       NUMBER DEFAULT 1 NOT NULL,
-    image      VARCHAR2(300) DEFAULT 'userDefault.png' NOT NULL
+    image      VARCHAR2(300) DEFAULT '/userDefault.png' NOT NULL
 );
 
 CREATE TABLE tblclass (
