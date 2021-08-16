@@ -107,11 +107,11 @@ CREATE TABLE tblreviewreply (
 CREATE TABLE tblhost (
     hostseq   NUMBER NOT NULL,
     name      VARCHAR2(30) NOT NULL,
-    nickname  VARCHAR2(50) NOT NULL,
+    nickname  VARCHAR2(50) unique NOT NULL,
     birth     VARCHAR2(50) NOT NULL,
     gender    VARCHAR2(30) NOT NULL,
     id        VARCHAR2(50) NOT NULL,
-    email     VARCHAR2(100) NOT NULL,
+    email     VARCHAR2(100) unique NOT NULL,
     pw        VARCHAR2(50) NOT NULL,
     tel       VARCHAR2(30) NOT NULL,
     point     NUMBER DEFAULT 0 NOT NULL,
