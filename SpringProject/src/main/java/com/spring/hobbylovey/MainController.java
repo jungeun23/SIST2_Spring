@@ -15,7 +15,6 @@ public class MainController {
 	@RequestMapping(value = "/index.action", method = { RequestMethod.GET })
 	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		
 
 		return "index";
 	}
