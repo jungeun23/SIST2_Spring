@@ -21,7 +21,6 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean> -->
 	
-	
 	<!-- tiles 설정 -->
 	<beans:bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
       <beans:property name="definitions" value="/WEB-INF/tiles.xml"></beans:property>
@@ -31,7 +30,7 @@
       <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"></beans:property>
    </beans:bean>
 	
-	<context:component-scan base-package="com.spring.hobbylovey" />
+	<context:component-scan base-package="com.test.spring" />
 	
 	
 	
