@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/resources/css/style_name.css" />
 </head>
 <body>
 
@@ -17,8 +18,8 @@
 
 					<div class="reg">
 						<p class="mb-0">
-							<a href="#" class="mr-2">È¸¿ø°¡ÀÔ</a><a href="#" class="mr-2">·Î±×ÀÎ</a>
-							<a href="#">°øÁö»çÇ×</a>
+							<a href="#" class="mr-2">íšŒì›ê°€ì…</a><a href="#" class="mr-2">ë¡œê·¸ì¸</a>
+							<a href="#">ê³µì§€ì‚¬í•­</a>
 						</p>
 					</div>
 				</div>
@@ -30,7 +31,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">ÇÏºñ<span>·¯ºñ</span></a>
+			<a class="navbar-brand" href="index.html">í•˜ë¹„<span>ëŸ¬ë¹„</span></a>
 			<div class="order-lg-last btn-group">
 				<div class='container'>
 					<div class='search-box-container'>
@@ -89,10 +90,10 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="index.html"
-						class="nav-link">ÇÇµå</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Å¬·¡½ºµî·Ï</a></li>
+						class="nav-link">í”¼ë“œ</a></li>
+					<li class="nav-item"><a href="about.html" class="nav-link">í´ë˜ìŠ¤ë“±ë¡</a></li>
 					<li class="nav-item dropdown"></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">¸¶ÀÌÆäÀÌÁö</a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">ë§ˆì´í˜ì´ì§€</a></li>
 				</ul>
 			</div>
 		</div>
@@ -110,7 +111,7 @@
 				<div class="col-md-8 ftco-animate d-flex align-items-center">
 					<div class="text w-100 text-center">
 						<h1 class="mb-4">
-							¿øµ¥ÀÌ <span>Å¬·¡½º</span> for Good <span>Moments</span>.
+							ì›ë°ì´ <span>í´ë˜ìŠ¤</span> for Good <span>Moments</span>.
 						</h1>
 					</div>
 				</div>
@@ -128,40 +129,40 @@
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img" style="background-image: url(images/sport.svg);"></div>
-						<h3>½ºÆ÷Ã÷</h3>
+						<h3>ìŠ¤í¬ì¸ </h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img" style="background-image: url(images/music.svg);"></div>
-						<h3>À½¾Ç</h3>
+						<h3>ìŒì•…</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img"
 							style="background-image: url(images/drawing.svg);"></div>
-						<h3>µå·ÎÀ×</h3>
+						<h3>ë“œë¡œì‰</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img"
 							style="background-image: url(images/cooking.svg);"></div>
-						<h3>ÄíÅ·</h3>
+						<h3>ì¿ í‚¹</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img" style="background-image: url(images/play.svg);"></div>
-						<h3>Ã¼Çè</h3>
+						<h3>ì²´í—˜</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
 						<div class="img"
 							style="background-image: url(images/handmade.svg);"></div>
-						<h3>ÇÚµå¸ŞÀÌµå</h3>
+						<h3>í•¸ë“œë©”ì´ë“œ</h3>
 					</div>
 				</div>
 
@@ -523,7 +524,7 @@
 								</p>
 							</div>
 							<h3 class="heading mb-3">
-								<a href="#">The Recipe from a Winemaker¡¯s Restaurent</a>
+								<a href="#">The Recipe from a Winemakerâ€™s Restaurent</a>
 							</h3>
 							<p>A small river named Duden flows by their place and
 								supplies it with the necessary regelialia.</p>
@@ -544,7 +545,7 @@
 								</p>
 							</div>
 							<h3 class="heading mb-3">
-								<a href="#">The Recipe from a Winemaker¡¯s Restaurent</a>
+								<a href="#">The Recipe from a Winemakerâ€™s Restaurent</a>
 							</h3>
 							<p>A small river named Duden flows by their place and
 								supplies it with the necessary regelialia.</p>
@@ -565,7 +566,7 @@
 								</p>
 							</div>
 							<h3 class="heading mb-3">
-								<a href="#">The Recipe from a Winemaker¡¯s Restaurent</a>
+								<a href="#">The Recipe from a Winemakerâ€™s Restaurent</a>
 							</h3>
 							<p>A small river named Duden flows by their place and
 								supplies it with the necessary regelialia.</p>
@@ -586,7 +587,7 @@
 								</p>
 							</div>
 							<h3 class="heading mb-3">
-								<a href="#">The Recipe from a Winemaker¡¯s Restaurent</a>
+								<a href="#">The Recipe from a Winemakerâ€™s Restaurent</a>
 							</h3>
 							<p>A small river named Duden flows by their place and
 								supplies it with the necessary regelialia.</p>
