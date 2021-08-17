@@ -10021,3 +10021,24 @@ textarea.form-control {
       font-weight: bold;
     }
 
+
+    #app > div > div.PageWrapper-sc-1w87j10-0.dqLSTf > div.CustomerInfo__Wrapper-wiqp5v-0.jersza{
+
+      cursor: default;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    font-size: 14px;
+    color: black;
+    word-break: normal;
+    overflow-wrap: break-word;
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+    outline: none;
+    font-family: inherit;
+    width: 100%;
+    padding: 34px 20px 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }

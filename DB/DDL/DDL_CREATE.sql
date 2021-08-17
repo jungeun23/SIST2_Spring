@@ -47,19 +47,19 @@ CREATE TABLE tblnotice (
 CREATE TABLE tblsignupclass (
     signupseq    NUMBER NOT NULL,
     regdate      DATE DEFAULT sysdate NOT NULL,
-    scheduleseq  NUMBER NOT NULL,
-    memberseq    NUMBER NOT NULL
+    classOptionSeq NUMBER NOT NULL,
+    userseq    NUMBER NOT NULL
 );
 
 CREATE TABLE tblclassscrap (
     classscrapseq  NUMBER NOT NULL,
-    memberseq      NUMBER NOT NULL,
+    userseq      NUMBER NOT NULL,
     classseq       NUMBER NOT NULL
 );
 
 CREATE TABLE tblclassrecommend (
     recommendseq  NUMBER NOT NULL,
-    memberseq     NUMBER NOT NULL,
+    userseq     NUMBER NOT NULL,
     classseq      NUMBER NOT NULL
 );
 
@@ -72,7 +72,7 @@ CREATE TABLE tblquestion (
 
 CREATE TABLE tblhostscrap (
     hostscrapseq  NUMBER NOT NULL,
-    memberseq     NUMBER NOT NULL,
+    userseq     NUMBER NOT NULL,
     hostseq       NUMBER NOT NULL
 );
 
@@ -120,7 +120,7 @@ CREATE TABLE tblhost (
     image     VARCHAR2(200) DEFAULT '/hostDefault.png' NOT NULL
 );
 
-ALTER TABLE tbluser ADD CONSTRAINT pk_tbluser PRIMARY KEY ( memberseq );
+ALTER TABLE tbluser ADD CONSTRAINT pk_tbluser PRIMARY KEY ( userseq );
 
 ALTER TABLE tblclass ADD CONSTRAINT pk_tblclass PRIMARY KEY ( classseq );
 
@@ -157,32 +157,32 @@ ALTER TABLE tblclassreview
         REFERENCES tblsignupclass ( signupseq );
 
 ALTER TABLE tblsignupclass
-    ADD CONSTRAINT fk_classoption_signupclass FOREIGN KEY ( scheduleseq )
+    ADD CONSTRAINT fk_classoption_signupclass FOREIGN KEY ( classoptionseq )
         REFERENCES tblclassoption ( classoptionseq );
 
 ALTER TABLE tblsignupclass
-    ADD CONSTRAINT fk_user_signupclass FOREIGN KEY ( memberseq )
-        REFERENCES tbluser ( memberseq );
+    ADD CONSTRAINT fk_user_signupclass FOREIGN KEY ( userseq )
+        REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblclassscrap
-    ADD CONSTRAINT fk_user_classscrap FOREIGN KEY ( memberseq )
-        REFERENCES tbluser ( memberseq );
+    ADD CONSTRAINT fk_user_classscrap FOREIGN KEY ( userseq )
+        REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblclassscrap
     ADD CONSTRAINT fk_class_classscrap FOREIGN KEY ( classseq )
         REFERENCES tblclass ( classseq );
 
 ALTER TABLE tblclassrecommend
-    ADD CONSTRAINT fk_user_classrecommend FOREIGN KEY ( memberseq )
-        REFERENCES tbluser ( memberseq );
+    ADD CONSTRAINT fk_user_classrecommend FOREIGN KEY ( userseq )
+        REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblclassrecommend
     ADD CONSTRAINT fk_class_classrecommend FOREIGN KEY ( classseq )
         REFERENCES tblclass ( classseq );
 
 ALTER TABLE tblhostscrap
-    ADD CONSTRAINT fk_user_hostscrap FOREIGN KEY ( memberseq )
-        REFERENCES tbluser ( memberseq );
+    ADD CONSTRAINT fk_user_hostscrap FOREIGN KEY ( userseq )
+        REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblhostscrap
     ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY ( hostseq )
