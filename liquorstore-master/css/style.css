@@ -10110,12 +10110,13 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
 
 .ftco-navbar-light .navbar-toggler {
   border: none;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
   cursor: pointer;
   padding-right: 0;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: .1em;
+  font-weight: bold;
 }
 
 .ftco-navbar-light .navbar-toggler:hover, .ftco-navbar-light .navbar-toggler:focus {
@@ -12549,9 +12550,7 @@ textarea.form-control {
 }
 
 #login_main {
-  width: 1110px;
   padding: 0px 15px;
-  margin: 0 auto;
   margin-top: 40px;
   display: flex;
   align-items: center;
@@ -12559,7 +12558,7 @@ textarea.form-control {
   min-height: 700px;
 }
 
-#login_title > h3{
+#login_title>h3 {
   color: #444;
   font-weight: bold;
 }
@@ -12597,31 +12596,116 @@ textarea.form-control {
   clear: both;
 }
 
-#login_submit{
+#login_submit {
   width: 100%;
   height: 56px;
   padding: 16px;
   margin-top: 40px;
-  background-color: rgb(0, 117, 239) !important;
+  background-color: #F28316 !important;
   border-radius: 10px;
   font-size: 18px;
   border: 0px !important;
-  
-
 }
 
-#social_login_icon{
+#social_login_icon {
   width: 250px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-#social_login_icon > img{
+#social_login_icon>img {
   width: 48px;
   height: 48px;
   border-radius: 10px;
-
 }
 
+#signup_main {
+  padding: 0px 15px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 700px;
 }
+
+#signup_title>h3 {
+  color: #444;
+  font-weight: bold;
+}
+
+#signup_form {
+  padding: 28px 24px;
+  width: 360px;
+}
+
+#signup_form .signup_box {
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+#signup_form .form-control {
+  background-color: rgb(250, 250, 250) !important;
+  border: 1px solid rgb(250, 250, 250);
+  font-size: 15px;
+}
+
+#signup_form .form-control:focus {
+  border: 1px solid rgb(0, 117, 239);
+}
+
+
+
+#signup_submit {
+  width: 100%;
+  height: 56px;
+  padding: 16px;
+  margin-top: 40px;
+  background-color: #F28316 !important;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 0px !important;
+}
+
+#signup_main .input_subject{
+  font-weight: bold;
+}
+
+#signup_main .birth_box{
+  display: flex;
+}
+
+#signup_main #birth{
+  width: 45%;
+}
+
+#signup_main #ssn{
+  width: 10%;
+}
+
+#signup_main .text_span{
+  margin: 0 10px;
+  align-items: center;
+  font-weight:bold;
+  font-size: 20px;
+}
+
+#signup_main #email1{
+  width: 45%;
+}
+
+#signup_main #email2{
+  width: 45%;
+}
+
+#signup_main .email_box{
+  display: flex;
+  position: relative;
+}
+
+#signup_main #email_sel{
+  position: absolute;
+  right: -120px;
+  top: 12px;
+}
+

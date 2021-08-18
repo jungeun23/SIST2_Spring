@@ -30,7 +30,7 @@ CREATE TABLE tblclass (
 CREATE TABLE tblclassreview (
     classreviewseq  NUMBER NOT NULL,
     signupseq       NUMBER NOT NULL,
-    content         VARCHAR2(1000) NOT NULL,
+    content         VARCHAR2(3000) NOT NULL,
     regdate         DATE DEFAULT sysdate NOT NULL,
     score           NUMBER DEFAULT 0 NOT NULL,
     recommend       NUMBER DEFAULT 0 NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE tblclassreview (
 CREATE TABLE tblnotice (
     noticeseq  NUMBER NOT NULL,
     title      VARCHAR2(300) NOT NULL,
-    content    VARCHAR2(1000) NOT NULL,
+    content    VARCHAR2(4000) NOT NULL,
     regdate    DATE DEFAULT sysdate NOT NULL,
     category   VARCHAR2(100) NOT NULL
 );
@@ -66,7 +66,7 @@ CREATE TABLE tblclassrecommend (
 CREATE TABLE tblquestion (
     questionseq  NUMBER NOT NULL,
     title        VARCHAR2(300) NOT NULL,
-    content      VARCHAR2(1000) NOT NULL,
+    content      VARCHAR2(4000) NOT NULL,
     category     VARCHAR2(100) NOT NULL
 );
 
@@ -98,7 +98,7 @@ CREATE TABLE tblreviewimage (
 
 CREATE TABLE tblreviewreply (
     reviewreplyseq  NUMBER NOT NULL,
-    content         VARCHAR2(1000) NOT NULL,
+    content         VARCHAR2(2000) NOT NULL,
     regdate         DATE NOT NULL,
     classreviewseq  NUMBER NOT NULL
 );
@@ -184,8 +184,8 @@ ALTER TABLE tblhostscrap
         REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblhostscrap
-    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY ( hostseq )
-        REFERENCES tblhost ( hostseq );
+    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY (hostseq)
+        REFERENCES tblhost (hostseq);
 
 ALTER TABLE tblclassimage
     ADD CONSTRAINT fk_class_classimage FOREIGN KEY ( classseq )
