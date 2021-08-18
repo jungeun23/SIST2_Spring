@@ -22,7 +22,6 @@ CREATE TABLE tblclass (
     categorybig    VARCHAR2(100) NOT NULL,
     categorysmall  VARCHAR2(100) NOT NULL,
     location       VARCHAR2(200) NOT NULL,
-    personnel      NUMBER NOT NULL,
     latitude       NUMBER NOT NULL,
     longitude      NUMBER NOT NULL
 );
@@ -87,6 +86,7 @@ CREATE TABLE tblclassoption (
     classdate       DATE NOT NULL,
     classoption     VARCHAR2(200) NOT NULL,
     price           NUMBER NOT NULL,
+    personnel      NUMBER NOT NULL,
     classseq        NUMBER NOT NULL
 );
 
