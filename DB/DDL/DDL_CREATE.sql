@@ -100,7 +100,6 @@ CREATE TABLE tblreviewreply (
     reviewreplyseq  NUMBER NOT NULL,
     content         VARCHAR2(1000) NOT NULL,
     regdate         DATE NOT NULL,
-    hostseq         NUMBER NOT NULL,
     classreviewseq  NUMBER NOT NULL
 );
 
@@ -200,9 +199,6 @@ ALTER TABLE tblreviewimage
     ADD CONSTRAINT fk_classreview_reviewimage FOREIGN KEY ( classreviewseq )
         REFERENCES tblclassreview ( classreviewseq );
 
-ALTER TABLE tblreviewreply
-    ADD CONSTRAINT fk_host_reviewreply FOREIGN KEY ( hostseq )
-        REFERENCES tblhost ( hostseq );
 
 ALTER TABLE tblreviewreply
     ADD CONSTRAINT fk_classreview_reviewreply FOREIGN KEY ( classreviewseq )
