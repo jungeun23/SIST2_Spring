@@ -18,7 +18,7 @@ CREATE TABLE tblclass (
     classseq       NUMBER NOT NULL,
     hostseq        NUMBER NOT NULL,
     title          VARCHAR2(200) NOT NULL,
-    content        VARCHAR2(2000) NOT NULL,
+    content        VARCHAR2(4000) NOT NULL,
     categorybig    VARCHAR2(100) NOT NULL,
     categorysmall  VARCHAR2(100) NOT NULL,
     location       VARCHAR2(200) NOT NULL,
@@ -184,8 +184,8 @@ ALTER TABLE tblhostscrap
         REFERENCES tbluser ( userseq );
 
 ALTER TABLE tblhostscrap
-    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY ( hostseq )
-        REFERENCES tblhost ( hostseq );
+    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY (hostseq)
+        REFERENCES tblhost (hostseq);
 
 ALTER TABLE tblclassimage
     ADD CONSTRAINT fk_class_classimage FOREIGN KEY ( classseq )
