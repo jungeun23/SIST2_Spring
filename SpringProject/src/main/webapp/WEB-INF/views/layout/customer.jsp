@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <tiles:insertAttribute name="asset_css"></tiles:insertAttribute>
-<title>Insert title here</title>
+<title>하비러비</title>
 </head>
 <body>
 
