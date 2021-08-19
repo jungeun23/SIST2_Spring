@@ -20,6 +20,17 @@
 	 	<property name="password" value="java1234"></property>
 	 </bean>
 	 
+	 <!-- log4j -->
+	 <bean id="log4j" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+      <constructor-arg ref="datasource"></constructor-arg>
+      <property name="logFormatter">
+         <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+            <property name="loggingType" value="MULTI_LINE"></property>
+            <property name="sqlPrefix" value="[SQL]"></property>
+         </bean>
+      </property>
+   	</bean>
+	 
 	 <!-- MyBatis 설정 관렬 객체 -->
 	 <bean id="sessionfactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	 	<property name="dataSource" ref="datasource"></property>
