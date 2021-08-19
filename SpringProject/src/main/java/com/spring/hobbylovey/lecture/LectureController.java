@@ -19,4 +19,20 @@ public class LectureController {
 		return "class.list";
 	}
 	
+	@RequestMapping(value = "/class/detail.action", method = { RequestMethod.GET })
+	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.detail";
+	}
+	
+	@RequestMapping(value = "/class/option.action", method = { RequestMethod.GET })
+	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.option";
+	}
+	
 }
