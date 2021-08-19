@@ -8666,14 +8666,15 @@ h1, h2, h3, h4, h5,
     .product .text .new {
       background: #01d28e; }
     .product .text h2 {
-      font-size: 22px;
+      font-size: 18px;
       text-transform: capitalize;
-      font-weight: 300; }
+      /* font-weight: 300; */
+      font-weight: bold; }
     .product .text .category {
       font-style: italic;
       color: #b7472a; }
     .product .text .price {
-      font-style: italic;
+     /*  font-style: italic; */
       color: #000000; }
       .product .text .price.price-sale {
         color: #cccccc;
@@ -9429,7 +9430,7 @@ textarea.form-control {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #b7472a; }
+    background: #F28316; }
     .testimony-wrap .icon span {
       color: #fff; }
   .testimony-wrap .user-img {
@@ -9620,7 +9621,7 @@ textarea.form-control {
       border-radius: 50%;
       border: 1px solid #e6e6e6; }
     .block-27 ul li.active a, .block-27 ul li.active span {
-      background: #b7472a;
+      background: #F28316;
       color: #fff;
       border: 1px solid transparent; }
 
@@ -10020,4 +10021,13 @@ textarea.form-control {
       color: #555;
       font-weight: bold;
     }
-
+	
+	.list-star {
+		width: 14px;
+		height: 14px;
+		
+	}
+	
+	.list-rate {
+		font-size: 13.5px;
+	}
