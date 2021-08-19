@@ -12709,3 +12709,7 @@ textarea.form-control {
   top: 12px;
 }
 
+#signup_main .warning_messege{
+  color: red;
+  font-size: 13px;
+}
