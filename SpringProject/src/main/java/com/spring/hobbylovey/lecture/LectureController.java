@@ -16,7 +16,7 @@ public class LectureController {
 
 		
 
-		return "class/list";
+		return "class.list";
 	}
 	
 }
