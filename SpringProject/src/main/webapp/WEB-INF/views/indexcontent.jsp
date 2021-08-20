@@ -82,7 +82,7 @@
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<span class="subheading">Our Delightful offerings</span>
-					<h2>Tastefully Yours</h2>
+					<h2>인기 클래스</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -92,25 +92,20 @@
 							style="background-image: url('resources/images/prod-1.jpg');">
 							<div class="desc">
 								<p class="meta-prod d-flex">
-									<a href="#"
-										class="d-flex align-items-center justify-content-center"><span
-										class="flaticon-shopping-bag"></span></a> <a href="#"
-										class="d-flex align-items-center justify-content-center"><span
-										class="flaticon-heart"></span></a> <a href="#"
-										class="d-flex align-items-center justify-content-center"><span
-										class="flaticon-visibility"></span></a>
+									<a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a>
+									<a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a>
 								</p>
 							</div>
 						</div>
 						<div class="text text-center">
-							<span class="sale">Sale</span> <span class="category">Brandy</span>
-							<h2>Bacardi 151</h2>
-							<p class="mb-0">
-								<span class="price price-sale">$69.00</span> <span class="price">$49.00</span>
-							</p>
+							<span class="sale">신규</span>
+							<span class="list-rate"><img class="list-star" src="resources/images/star.png"> 4.0</span>
+							<h2>[1:1] 댄스 정복하기(예약 가능)</h2>
+							<span class="price">50,000원</span> <span class="price price-sale">80,000원</span>
 						</div>
-					</div>
+					</div>	
 				</div>
+				
 				<div class="col-md-3 d-flex">
 					<div class="product ftco-animate">
 						<div class="img d-flex align-items-center justify-content-center"
@@ -276,8 +271,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
-					<a href="product.action" class="btn btn-primary d-block">View
-						All Products <span class="fa fa-long-arrow-right"></span>
+					<a href="product.action" class="btn btn-primary d-block">전체 보기 <span class="fa fa-long-arrow-right"></span>
 					</a>
 				</div>
 			</div>
@@ -285,14 +279,14 @@
 	</section>
 
 	<section class="ftco-section testimony-section img"
-		style="background-image: url('resources/images/bg_4.jpg');">
+		style="background-image: url('resources/images/sample1.jpg');">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row justify-content-center mb-5">
 				<div
 					class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-					<span class="subheading">Testimonial</span>
-					<h2 class="mb-3">Happy Clients</h2>
+					<span class="subheading">5분의 랜선 클래스 경험을 소개합니다.</span>
+					<h2 class="mb-3">이 달의 우수 후기</h2>
 				</div>
 			</div>
 			<div class="row ftco-animate">
@@ -305,15 +299,14 @@
 									<span class="fa fa-quote-left">
 								</div>
 								<div class="text">
-									<p class="mb-4">Far far away, behind the word mountains,
-										far from the countries Vokalia and Consonantia, there live the
-										blind texts.</p>
+									<p class="mb-4">선생님이 안전하고 재밌게 잘 가르쳐주셨어요
+역시 혼자 못하겠더라구요 초보자에게 수업은 필수입니다.</p>
 									<div class="d-flex align-items-center">
 										<div class="user-img"
 											style="background-image: url('resources/images/person_1.jpg')"></div>
 										<div class="pl-3">
-											<p class="name">Roger Scott</p>
-											<span class="position">Marketing Manager</span>
+											<p class="name">심심한너구리</p>
+											<span class="position">최상급 프랑스 향료로 나만의 향수 만들기 (예약 가능)</span>
 										</div>
 									</div>
 								</div>
@@ -415,8 +408,8 @@
 		<div class="container">
 			<div class="row justify-content-center mb-5">
 				<div class="col-md-7 heading-section text-center ftco-animate">
-					<span class="subheading">Blog</span>
-					<h2>Recent Blog</h2>
+					<span class="subheading">Feed</span>
+					<h2>최신 피드</h2>
 				</div>
 			</div>
 			<div class="row d-flex">

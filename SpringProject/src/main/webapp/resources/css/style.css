@@ -8668,14 +8668,14 @@ h1, h2, h3, h4, h5,
     .product .text .new {
       background: #01d28e; }
     .product .text h2 {
-      font-size: 22px;
+      font-size: 18px;
       text-transform: capitalize;
-      font-weight: 300; }
+      font-weight: 600; }
     .product .text .category {
       font-style: italic;
       color: #b7472a; }
     .product .text .price {
-      font-style: italic;
+      /* font-style: italic; */
       color: #000000; }
       .product .text .price.price-sale {
         color: #cccccc;
@@ -8690,7 +8690,9 @@ h1, h2, h3, h4, h5,
       opacity: 1; }
 
 .product-select {
-  font-size: 18px; }
+  font-size: 21px;
+  font-weight: 900;
+   }
 
 .bootstrap-select .bs-ok-default:after {
   color: #b7472a;
@@ -9431,7 +9433,7 @@ textarea.form-control {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #b7472a; }
+    background: #F28316; }
     .testimony-wrap .icon span {
       color: #fff; }
   .testimony-wrap .user-img {
@@ -9622,7 +9624,7 @@ textarea.form-control {
       border-radius: 50%;
       border: 1px solid #e6e6e6; }
     .block-27 ul li.active a, .block-27 ul li.active span {
-      background: #b7472a;
+      background: #F28316;
       color: #fff;
       border: 1px solid transparent; }
 
@@ -10025,8 +10027,8 @@ textarea.form-control {
 
 
 
-/* hobbylovey - ¸¶ÀÌÆäÀÌÁö */
-/* °í°´Á¤º¸ */
+/* hobbylovey - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 #customer_info {
   display: flex;
   flex-flow: column nowrap;
@@ -10146,7 +10148,7 @@ textarea.form-control {
 }
 
 
-/* ¸¶ÀÌÆäÀÌÁö - hr */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - hr */
 .tQdWD {
   width: 100%;
   height: 10px;
@@ -10155,7 +10157,7 @@ textarea.form-control {
 }
 
 
-/* ¸¶ÀÌÆäÀÌÁö - ÇÏ´Ü¸Ş´º */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½Ï´Ü¸Ş´ï¿½ */
 .bgIsVr {
   display: flex;
   width: 100%;
@@ -10288,4 +10290,56 @@ textarea.form-control {
 .classbox-text {
   margin-left: 20px;
 }
+
+
+
+/* í´ë˜ìŠ¤ ë¦¬ìŠ¤íŠ¸, ìƒì„¸, ì˜µì…˜ */
+
+	.productlist-categorybig {
+		font-size: 25px;
+		font-weight: 1000;
+		margin-bottom: 15px;
+	}
+	.productlist-categorybig:hover {
+		cursor: pointer;
+	}
+	
+	.productlist-categorysmall span{
+		position: inline-block;
+		margin-right: 12px;	
+		
+	}
+	.productlist-categorysmall span:hover {
+		cursor: pointer;
+	}
+	.productlist-categorysmall {
+		margin-bottom: 50px;
+	}
+	
+	.productlist-active {
+		color: #F28316;
+		font-weight: bold;
+	}
+	#productlist-arrow {
+		transform: rotate(90deg);
+	}
+	
+	.productlist-categories {
+		border: 1px solid red;
+		margin-top: 172px;
+		height: 800px;
+	}
+	
+	
+	.list-star {
+		width: 14px;
+		height: 14px;
+		
+	}
+	
+	.list-rate {
+		font-size: 13.5px;
+	}
+
+
 
