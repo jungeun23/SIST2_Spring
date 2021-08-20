@@ -9,8 +9,10 @@
 <!-- test.xml -->
 
 <!-- 
+
 	Mapper 파일
 	- SQL을 작성하는 파일
+
  -->
 
 <mapper namespace="test"> <!-- 파일명을 보편적으로 사용 -->
