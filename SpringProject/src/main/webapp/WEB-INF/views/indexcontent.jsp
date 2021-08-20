@@ -271,8 +271,7 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-4">
-					<a href="product.action" class="btn btn-primary d-block">View
-						All Products <span class="fa fa-long-arrow-right"></span>
+					<a href="product.action" class="btn btn-primary d-block">전체 보기 <span class="fa fa-long-arrow-right"></span>
 					</a>
 				</div>
 			</div>

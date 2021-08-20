@@ -8689,7 +8689,9 @@ h1, h2, h3, h4, h5,
       opacity: 1; }
 
 .product-select {
-  font-size: 18px; }
+  font-size: 21px;
+  font-weight: 800;
+   }
 
 .bootstrap-select .bs-ok-default:after {
   color: #b7472a;
@@ -10031,3 +10033,39 @@ textarea.form-control {
 	.list-rate {
 		font-size: 13.5px;
 	}
+
+	.productlist-categorybig {
+		font-size: 25px;
+		font-weight: 1000;
+		margin-bottom: 15px;
+	}
+	.productlist-categorybig:hover {
+		cursor: pointer;
+	}
+	
+	.productlist-categorysmall span{
+		position: inline-block;
+		margin-right: 12px;	
+		
+	}
+	.productlist-categorysmall span:hover {
+		cursor: pointer;
+	}
+	.productlist-categorysmall {
+		margin-bottom: 50px;
+	}
+	
+	.productlist-active {
+		color: #F28316;
+		font-weight: bold;
+	}
+	#productlist-arrow {
+		transform: rotate(90deg);
+	}
+	
+	.productlist-categories {
+		border: 1px solid red;
+		margin-top: 172px;
+		height: 800px;
+	}
+	
