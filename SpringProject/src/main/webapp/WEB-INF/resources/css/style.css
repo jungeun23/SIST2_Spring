@@ -10312,3 +10312,51 @@ textarea.form-control {
 .classbox-text {
   margin-left: 20px;
 }
+
+
+
+
+/* 클래스 목록, 상세, 옵션 */
+.productlist-categorybig {
+	font-size: 25px;
+	font-weight: 1000;
+	margin-bottom: 15px;
+}
+.productlist-categorybig:hover {
+	cursor: pointer;
+}
+
+.productlist-categorysmall span{
+	position: inline-block;
+	margin-right: 12px;	
+	
+}
+.productlist-categorysmall span:hover {
+	cursor: pointer;
+}
+.productlist-categorysmall {
+	margin-bottom: 50px;
+}
+
+.productlist-active {
+	color: #F28316;
+	font-weight: bold;
+}
+#productlist-arrow {
+	transform: rotate(90deg);
+}
+
+.productlist-categories {
+	border: 1px solid red;
+	margin-top: 172px;
+	height: 800px;
+}
+	
+
+
+
+
+
+
+
+
