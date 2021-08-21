@@ -10342,4 +10342,252 @@ textarea.form-control {
 	}
 
 
+/* 마이페이지 후기 리스트 */
+.cardReview_wrapper {
+	padding: 30px 0px;
+}
+
+.cardReview_header {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.cardReview_profileImageWrapper {
+	flex: 0 0 auto;
+	margin-right: 14px;
+	width: 48px;
+	height: 48px;
+	border-radius: 24px;
+	overflow: hidden;
+}
+
+.image_wrapper {
+	min-height: 1px;
+}
+
+.image_styleImageLoader {
+	display: none !important;
+	vertical-align: middle;
+}
+
+.fade_wrapper {
+	width: auto;
+	height: auto;
+	transition: opacity 200ms ease-in-out 0s;
+	min-width: 0px;
+	min-height: 1px;
+}
+
+.ratio {
+	display: block;
+}
+
+.ratio-ratio {
+	height: 0px;
+	position: relative;
+	width: 100%;
+	padding-top: 100%;
+}
+
+.ratio-content {
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+
+.image_styledImage {
+	display: initial;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	border-style: none;
+	vertical-align: middle;
+}
+
+.cardReview_metaData {
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+	margin-right: auto;
+}
+
+.cardReview_title {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 12px;
+	margin-bottom: 10px;
+}
+
+.cardReview_row {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.readOnly_wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.readOnly_wrapper > img {
+	margin-right: 1px;
+}
+
+.cardReview_created {
+	margin-left: 6px;
+	line-height: 10px;
+	color: rgb(155, 155, 155);
+	font-size: 10px;
+}
+
+.cardReview_body {
+	margin-bottom: 20px;
+	white-space: pre-wrap;
+	font-size: 12px;
+	line-height: 22px;
+}
+
+.cardReview_purchaseInfo {
+	color: rgb(155, 155, 155);
+	display: inline-block;
+}
+
+.cardReview_purchaseInfo > div {
+	margin-bottom: 10px;
+	line-height: 10px;
+	font-size: 10px;
+}
+
+.cardReview_productTitle {
+	margin-bottom: 10px;
+	line-height: 10px;
+	font-size: 10px;
+	cursor: pointer;
+	color: inherit;
+}
+
+.cardReview_likeButtonWrapper {
+	height: 24px;
+	text-align: right;
+	margin-left: 100px;
+}
+
+.cardReview_likeButton {
+	width: auto;
+	height: auto;
+	line-height: 10px;
+	padding: 0px;
+	background-color: transparent;
+	text-align: center;
+	border-radius: 5px;
+	color: rgb(85, 85, 85);
+	font-size: 10px;
+	border-style: none;
+	margin: 0;
+	overflow: visible;
+	text-transform: none;
+	-webkit-appearance: button;
+	touch-action: manipulation;
+}
+
+.cardReview_likeButton > * {
+	vertical-align: bottom;
+}
+
+.cardReview_likeIcon {
+	margin-left: 2px;
+	vertical-align: bottom;
+}
+
+.cardReview_imageWrapper-f2ssd2-13 {
+	display: flex;
+	margin-top: 22px;
+	overflow: auto;
+}
+
+.image_wraper-v97gyx-0 {
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	margin-right: 10px;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	min-height: 1px;
+}
+
+.image_styledImageLoader_v97-gyx-2 {
+	display: none !important;
+	border-style: none;
+	vertical-align: middle;
+	width: 100px;
+}
+
+.fade_wrapper-sc-1s0ipfq-0 {
+	opacity: 1;
+	display: block;
+	width: auto;
+	height: auto;
+	transition: opacity 200ms ease-in-out 0s;
+	min-width: 0px;
+	min-height: 1px;
+}
+
+.image_styledImage-v97gyx-1 {
+	display: initial;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	border-style: none;
+	vertical-align: middle;
+}
+
+.cardReview_replyWrapper {
+	margin-top: 22px;
+}
+
+.replyEntity_wrapper {
+	margin-bottom: 0px;
+	width: 100%;
+	line-height: 22px;
+	border-radius: 5px;
+	padding: 20px;
+	background-color: rgb(249, 249, 249);
+	font-size: 12px;
+}
+
+.replyEntity_authorWrapper {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.replyEntity_imageWrapper {
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	margin-right: 14px;
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+	overflow: hidden;
+}
+
+.replyEntity_name {
+	margin-bottom: 10px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.replyEntity_created {
+	line-height: 10px;
+	font-size: 10px;
+	color: rgb(155, 155, 155);
+}
+
+.replyEntity_body-sc-2hf8ms-5 
 

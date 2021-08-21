@@ -29,5 +29,19 @@ public class MypageController {
 		return "member.mypage";
 		
 	}
+	
+	@RequestMapping(value = "/mypageReview.action", method = { RequestMethod.GET })
+	public String mypageReview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "member.mypageReview";
+
+	}
+	
+	@RequestMapping(value = "/mypageFeed.action", method = { RequestMethod.GET })
+	public String mypageFeed(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "member.mypageFeed";
+
+	}
 
 }
