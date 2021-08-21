@@ -91,16 +91,16 @@ CREATE TABLE tblClassOption (
 );
 
 CREATE TABLE tblReviewImage (
-    reviewimageseq  NUMBER NOT NULL,
-    reviewimage     VARCHAR2(500) NOT NULL,
-    classreviewseq  NUMBER NOT NULL
+    reviewImageSeq  NUMBER NOT NULL,
+    reviewImage     VARCHAR2(500) NOT NULL,
+    classReviewSeq  NUMBER NOT NULL
 );
 
-CREATE TABLE tblreviewreply (
-    reviewreplyseq  NUMBER NOT NULL,
+CREATE TABLE tblReviewReply (
+    reviewReplySeq  NUMBER NOT NULL,
     content         VARCHAR2(2000) NOT NULL,
     regdate         DATE NOT NULL,
-    classreviewseq  NUMBER NOT NULL
+    classReviewSeq  NUMBER NOT NULL
 );
 
 CREATE TABLE tblhost (
@@ -148,61 +148,61 @@ ALTER TABLE tblreviewreply ADD CONSTRAINT pk_tblreviewreply PRIMARY KEY ( review
 ALTER TABLE tblhost ADD CONSTRAINT pk_tblhost PRIMARY KEY ( hostseq );
 
 ALTER TABLE tblclass
-    ADD CONSTRAINT fk_host_class FOREIGN KEY ( hostseq )
-        REFERENCES tblhost ( hostseq );
+    ADD CONSTRAINT fk_host_class FOREIGN KEY ( hostSeq )
+        REFERENCES tblHost ( hostSeq );
 
-ALTER TABLE tblclassreview
-    ADD CONSTRAINT fk_signupclass_classreview FOREIGN KEY ( signupseq )
-        REFERENCES tblsignupclass ( signupseq );
+ALTER TABLE tblClassReview
+    ADD CONSTRAINT fk_signupClass_classReview FOREIGN KEY ( signupSeq )
+        REFERENCES tblsignupClass ( signupSeq );
 
-ALTER TABLE tblsignupclass
-    ADD CONSTRAINT fk_classoption_signupclass FOREIGN KEY ( classoptionseq )
-        REFERENCES tblclassoption ( classoptionseq );
+ALTER TABLE tblSignupClass
+    ADD CONSTRAINT fk_classOption_signupClass FOREIGN KEY ( classOptionSeq )
+        REFERENCES tblClassOption ( classOptionSeq );
 
-ALTER TABLE tblsignupclass
-    ADD CONSTRAINT fk_user_signupclass FOREIGN KEY ( userseq )
-        REFERENCES tbluser ( userseq );
+ALTER TABLE tblSignupClass
+    ADD CONSTRAINT fk_user_signupClass FOREIGN KEY ( userSeq )
+        REFERENCES tblUser ( userSeq );
 
-ALTER TABLE tblclassscrap
-    ADD CONSTRAINT fk_user_classscrap FOREIGN KEY ( userseq )
-        REFERENCES tbluser ( userseq );
+ALTER TABLE tblSlassScrap
+    ADD CONSTRAINT fk_user_classScrap FOREIGN KEY ( userSeq )
+        REFERENCES tblUser ( userSeq );
 
-ALTER TABLE tblclassscrap
-    ADD CONSTRAINT fk_class_classscrap FOREIGN KEY ( classseq )
-        REFERENCES tblclass ( classseq );
+ALTER TABLE tblclassScrap
+    ADD CONSTRAINT fk_class_classScrap FOREIGN KEY ( classSeq )
+        REFERENCES tblClass ( classSeq );
 
-ALTER TABLE tblclassrecommend
-    ADD CONSTRAINT fk_user_classrecommend FOREIGN KEY ( userseq )
-        REFERENCES tbluser ( userseq );
+ALTER TABLE tblClassRecommend
+    ADD CONSTRAINT fk_user_classRecommend FOREIGN KEY ( userSeq )
+        REFERENCES tblUser ( userSeq );
 
-ALTER TABLE tblclassrecommend
-    ADD CONSTRAINT fk_class_classrecommend FOREIGN KEY ( classseq )
-        REFERENCES tblclass ( classseq );
+ALTER TABLE tblClassRecommend
+    ADD CONSTRAINT fk_class_classRecommend FOREIGN KEY ( classSeq )
+        REFERENCES tblClass ( classSeq );
 
-ALTER TABLE tblhostscrap
-    ADD CONSTRAINT fk_user_hostscrap FOREIGN KEY ( userseq )
-        REFERENCES tbluser ( userseq );
+ALTER TABLE tblHostScrap
+    ADD CONSTRAINT fk_user_hostScrap FOREIGN KEY ( userSeq )
+        REFERENCES tblUser ( userSeq );
 
-ALTER TABLE tblhostscrap
-    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY (hostseq)
-        REFERENCES tblhost (hostseq);
+ALTER TABLE tblHostScrap
+    ADD CONSTRAINT fk_host_hostscrap FOREIGN KEY (hostSeq)
+        REFERENCES tblHost (hostSeq);
 
-ALTER TABLE tblclassimage
-    ADD CONSTRAINT fk_class_classimage FOREIGN KEY ( classseq )
-        REFERENCES tblclass ( classseq );
+ALTER TABLE tblClassImage
+    ADD CONSTRAINT fk_class_classimage FOREIGN KEY ( classSeq )
+        REFERENCES tblClass ( classSeq );
 
-ALTER TABLE tblclassoption
-    ADD CONSTRAINT fk_class_classoption FOREIGN KEY ( classseq )
-        REFERENCES tblclass ( classseq );
+ALTER TABLE tblClassOption
+    ADD CONSTRAINT fk_class_classoption FOREIGN KEY ( classSeq )
+        REFERENCES tblClass ( classSeq );
 
-ALTER TABLE tblreviewimage
-    ADD CONSTRAINT fk_classreview_reviewimage FOREIGN KEY ( classreviewseq )
-        REFERENCES tblclassreview ( classreviewseq );
+ALTER TABLE tblReviewImage
+    ADD CONSTRAINT fk_classreview_reviewimage FOREIGN KEY ( classReviewSeq )
+        REFERENCES tblClassReview ( classReviewSeq );
 
 
-ALTER TABLE tblreviewreply
-    ADD CONSTRAINT fk_classreview_reviewreply FOREIGN KEY ( classreviewseq )
-        REFERENCES tblclassreview ( classreviewseq );
+ALTER TABLE tblReviewReply
+    ADD CONSTRAINT fk_classreview_reviewreply FOREIGN KEY ( classReviewSeq )
+        REFERENCES tblClassReview ( classReviewSeq );
 
 
 create sequence seqUser;

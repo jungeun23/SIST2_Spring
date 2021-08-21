@@ -16,7 +16,11 @@
 	</typeAliases> -->
 	
 	
+	<typeAliases>
 	
+		<typeAlias type="com.spring.hobbylovey.mypage.MypageDTO" alias="mypageDTO"/>
+	
+	</typeAliases>
 
    
 </configuration>

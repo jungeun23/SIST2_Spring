@@ -86,7 +86,7 @@
 						class="nav-link">피드</a></li>
 					<li class="nav-item"><a href="about.action" class="nav-link">클래스등록</a></li>
 					<li class="nav-item dropdown"></li>
-					<li class="nav-item"><a href="blog.action" class="nav-link">마이페이지</a></li>
+					<li class="nav-item"><a href="/hobbylovey/mypage.action" class="nav-link">마이페이지</a></li>
 				</ul>
 			</div>
 		</div>
