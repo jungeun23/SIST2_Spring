@@ -10589,5 +10589,265 @@ textarea.form-control {
 	color: rgb(155, 155, 155);
 }
 
-.replyEntity_body-sc-2hf8ms-5 
+.PageWrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: flex-start;
+	margin: 0px auto;
+	max-width: 808px;
+	width: 100%;
+	padding: 0px 20px;
+	min-height: 1px;
+}
 
+.Fade_Wrapper {
+	opacity: 1;
+	display: block;
+	width: auto;
+	height: auto;
+	transition: opacity 200mx ease-in-out 0s;
+	min-width: 0px;
+	min-height: 1px;
+}
+
+.Filter_Wrapper {
+	position: relative;
+}
+
+.CardGroupProduct_Wrapper {
+	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	min-height: 1px;
+	padding-bottom: 18px;
+}
+
+.CardGroupProduct_Content {
+	display: flex;
+	flex-flow: row wrap;
+	min-height: 1px;
+}
+
+.CardGroupProduct_Content > * {
+	margin-right: 15px;
+	margin-bottom: 30px;
+	width: calc(25% - 11.25px) !important;
+}
+
+.pureness_Wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: white;
+	min-height: 1px;
+}
+
+.withLink_StyledLink {
+	min-height: 1px;
+	color: inherit;
+	text-decoration: none;
+}
+
+.pureness_InfoWrapper {
+	overflow: hidden;
+}
+
+.pureness_ImageWrapper {
+	position: relative;
+	-webkit-box-flex: 0;
+	flex: 0 0 auto;
+	min-height: 1px;
+	border-radius: 5px;
+	background-color: rgb(250, 250, 250);
+}
+
+.pureness_Catchphrase {
+	margin-top: 14px;
+	font-size: 12px;
+	height: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 14px;
+	color: rgb(155, 155, 155);
+}
+
+.pureness_Title {
+	margin-top: 10px;
+	height: auto;
+	max-height: 40px;
+	line-height: 20px;
+	font-size: 14px;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.pureness_PriceWrapper {
+	margin-top: 14px;
+	line-height: 14px;
+	height: 14px;
+}
+
+.pureness_RatingBadgeWrapper {
+	margin-top: 14px;
+	display: flex;
+}
+
+.pureness_TopImageBadgeWrapper {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	padding: 10px;
+	z-index: 1;
+}
+
+.pureness_BottomImageBadgeWrapper {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1;
+	padding: 15px;
+}
+
+.pureness_Location {
+	margin: 2px 0px 0px 2px;
+	height: 10px;
+	color: white;
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 10px;
+	text-shadow: rgb(0 0 0 / 30%) 0px 0px 10px;
+}
+
+.ButtonWish_StyledButton {
+	width: 24px;
+	height: 24px;
+	line-height: normal;
+	padding: 0px;
+	background-color: transparent;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 14px;
+	outline: none;
+	border-style: none;
+	vertical-align: middle;
+}
+
+.Image_StyledImageLoader {
+	display: none !important;
+	border-style: none;
+	vertical-align: middle;
+	width: 192px;
+}
+
+.Ratio {
+	display: block;
+}
+
+.Ratio-ratio {
+	height: 0px;
+	position: relative;
+	width: 100%;
+	padding-top: 100%;
+}
+
+.Ratio-content {
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+
+.pureness_BottomImageBadgeWrapper {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1;
+	padding: 15px;
+}
+
+.pureness_SaleStatusBadge {
+	width: 57px;
+	height: 27px;
+	border-radius: 5px;
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	display: none;
+}
+
+.pureness_Catchphrase {
+	margin-top: 14px;
+	font-size: 12px;
+	height: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 14px;
+	color: rgb(155, 155, 155);
+}
+
+.pureness_Title {
+	margin-top: 10px;
+	height: auto;
+	max-height: 40px;
+	line-height: 20px;
+	font-size: 14px;
+	word-break: keep-all;
+	overflow-wrap: break-word;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	color: black;
+}
+
+.pureness_PriceWrapper {
+	margin-top: 14px;
+	line-height: 14px;
+	height: 14px;
+}
+
+.pureness_Price {
+	font-size: 14px;
+	font-weight: 900;
+	color: black;
+}
+
+.pureness_FakePrice {
+	margin-left: 4px;
+	color: rgb(187, 187, 187);
+	font-size: 12px;
+	text-decoration: line-through;
+}
+
+.pureness_RatingBadgeWrapper {
+	margin-top: 14px;
+	display: flex;
+}
+
+.pureness_Rating {
+	font-size: 11px;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	color: rgb(187, 187, 187);
+}
+
+.reviewList {
+	padding-left: 250px;
+}

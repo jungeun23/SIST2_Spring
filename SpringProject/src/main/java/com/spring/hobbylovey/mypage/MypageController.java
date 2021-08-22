@@ -37,5 +37,12 @@ public class MypageController {
 		return "member.mypageFeed";
 
 	}
+	
+	@RequestMapping(value = "/mypageCourseDetail.action", method = { RequestMethod.GET })
+	public String mypageCourseDetail(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "member.mypageCourseDetail";
+
+	}
 
 }
