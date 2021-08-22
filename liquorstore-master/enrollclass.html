@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>하비러비</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+	<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<script src="ckeditor/ckeditor.js"></script>
+  <script src="/ckeditor/config.js"></script>
+
+	<style>
+		#classEnroll{
+			width: 1100px;
+			margin: 0 auto;
+			display: block;
+		}
+
+		#classEnroll th{
+			width: 150px;
+		}
+
+		#classEnroll #category_box{
+			display: flex;
+		}
+
+		#classEnroll #bCategory,#classEnroll #sCategory{
+			width: 200px;
+			margin-right: 30px;
+		}
+
+		#classEnroll #schedule_box{
+			display: flex;
+		}
+
+		#classEnroll #schedule_box input{
+			width: 250px;
+			margin-right: 30px;
+		}
+
+		#classEnroll input[name=price]{
+			width: 200px;
+			text-align: right;
+		}
+
+		input[type="number"]::-webkit-outer-spin-button,
+		input[type="number"]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+		}
+
+		#classEnroll #location{
+			width: 300px;
+			margin-right: 30px;
+		}
+
+		
+
+
+	</style>
+
+  </head>
+  <body>
+
+  	<div class="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 d-flex align-items-center">
+						
+					</div>
+					<div class="col-md-6 d-flex justify-content-md-end">
+						
+		        <div class="reg">
+		        	<p class="mb-0"><a href="#" class="mr-2">회원가입</a><a href="#" class="mr-2">로그인</a> <a href="#">공지사항</a></p>
+		        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">하비<span>러비</span></a>
+	      <div class="order-lg-last btn-group">
+			<div class='container'>
+				<div class='search-box-container'>
+				  <button class='submit'>
+					<i class='fa fa-search'></i>
+				  </button>
+				  <input class='search-box'>
+				</div>
+				<h3 class='response'></h3>
+			  </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+				    <div class="dropdown-item d-flex align-items-start" href="#">
+				    	<div class="img" style="background-image: url(images/prod-1.jpg);"></div>
+				    	<div class="text pl-3">
+				    		<h4>1</h4>
+				    		<p class="mb-0"><a href="#" class="price">1</a><span class="quantity ml-3">1</span></p>
+				    	</div>
+				    </div>
+				    <div class="dropdown-item d-flex align-items-start" href="#">
+				    	<div class="img" style="background-image: url(images/prod-2.jpg);"></div>
+				    	<div class="text pl-3">
+				    		<h4>1</h4>
+				    		<p class="mb-0"><a href="#" class="price">1</a><span class="quantity ml-3">1</span></p>
+				    	</div>
+				    </div>
+				    <div class="dropdown-item d-flex align-items-start" href="#">
+				    	<div class="img" style="background-image: url(images/prod-3.jpg);"></div>
+				    	<div class="text pl-3">
+				    		<h4>1</h4>
+				    		<p class="mb-0"><a href="#" class="price">1</a><span class="quantity ml-3">1</span></p>
+				    	</div>
+				    </div>
+				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
+				    	View All
+				    	<span class="ion-ios-arrow-round-forward"></span>
+				    </a>
+				  </div>
+        </div>
+
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="index.html" class="nav-link">피드</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">클래스등록</a></li>
+	          <li class="nav-item dropdown"></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link">마이페이지</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    <br>
+	<main id="classEnroll">
+		<form action="#!" method="POST">
+		<table class="table">
+
+			<tr>
+				<th>제목</th>
+				<td><input style="width: 680px;" name="title" type="text" class="form-control" autocomplete="off" required></td>
+			</tr>
+			<tr>
+				<th>카테고리</th>
+				<td id="category_box">
+					<select name="categoryBig" id="bCategory" class="form-control" required>
+						<option value="스포츠">스포츠</option>
+						<option value="음악">음악</option>
+						<option value="드로잉">드로잉</option>
+						<option value="쿠킹">쿠킹</option>
+						<option value="체험">체험</option>
+						<option value="핸드메이드">핸드메이드</option>
+					</select>
+
+					<select name="categorySmall" id="sCategory" class="form-control" required>
+
+					</select>
+
+				</td>
+				
+			</tr>
+			<tr>
+				<th>일정</th>
+				<td id="schedule_box"><input name="classDate" type="date" class="form-control" id="date" required><input type="time" class="form-control" id="time" required></td>
+			</tr>
+
+			<tr>
+				<th>옵션</th>
+				<td id="option_box" style="display: flex;"><input name="classOption" type="text" class="form-control" id="classOption" required style="width: 400px; margin-right: 40px;"><input type="text" name="personnel" class="form-control" id="personnel" required style="text-align: right; width: 100px;" placeholder="모집인원"><span style="margin-top: 10px; margin-left: 10px; font-size: 20px; font-weight: bold;">명</span></td>
+			</tr>
+			<tr>
+				<th>지역</th>
+				<td style="position: relative; display: flex;"><input id="location" type="text" class="form-control" readonly>
+				<input type="text" id="location_detail" class="form-control" placeholder="상세주소" style="width: 350px;" required></td>
+				
+			</tr>
+			<tr>
+				<th>가격</th>
+				<td style="display: flex;"><input name="price" type="number" class="form-control" maxlength="9" required ><span style="margin-top: 10px; margin-left: 10px; font-size: 20px; font-weight: bold;">원</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<textarea cols="80" id="editor1" name="content" rows="40" data-sample-short required> </textarea>
+				</td>
+			</tr>
+
+
+			<input type="hidden" name="classDate">
+
+			<input type="hidden" name="latitude" id="latitude">
+			<input type="hidden" name="longitude" id="longitude">
+			<input type="hidden" name="location">
+		</table>
+		<div style="float: right; padding-right: 50px;">
+		<input type="button" value="작성하기" class="btn btn-success" id="enroll_submit">
+		<input type="button" value="취소" class="btn btn-secondary" onclick="history.back()">
+		
+	</div>
+	</form>
+	</main>
+	
+	<div style="margin-top: 200px;"></div>
+    
+
+    <footer class="ftco-footer">
+      <div class="container-fluid px-0 py-5 bg-black">
+      	<div class="container">
+      		<div class="row">
+	          <div class="col-md-12">
+		
+	            <p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	          </div>
+	        </div>
+      	</div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  
+  <script>
+	  $('#email_sel').change(function() {
+			$("#email_sel option:selected").each(function() {
+				if ($(this).val() == '1') {
+					//직접입력일 경우
+					$("#email2").val('');
+					//값 초기화 
+				} else {
+					//직접입력이 아닐경우
+					$("#email2").val($(this).text());
+					//선택값 입력 
+				}
+			});
+		});
+
+		$('#email2').keyup(function(){
+
+			if($("#email_sel option:selected").val()!= $(this).val()){
+				
+				$("#email_sel option").each(function(){
+					$(this).attr("selected",false);
+					if($(this).val() == "1"){
+
+						$(this).attr("selected",true);
+					}
+
+				})
+			}
+
+		});
+
+
+		$('#signup_submit').click(function(){
+
+			$('#email').val($('#email1').val()+'@'+$('#email2').val());
+		});
+
+		$('#auth_1').click(function(){
+
+			$('#authRadio_1').attr('checked',true);
+			$('#authRadio_2').attr('checked',false);
+			
+			$('#auth_2').removeClass('chose');
+			$(this).addClass('chose');
+		});
+
+		$('#auth_2').click(function(){
+
+			$('#authRadio_1').attr('checked',false);
+			$('#authRadio_2').attr('checked',true);
+			$('#auth_1').removeClass('chose');
+			$(this).addClass('chose');
+		});
+
+		$('#auth_'+$('input[id*=authRadio]:checked').val()).click();
+		let year = new Date().getFullYear(); // 년도
+		let month = new Date().getMonth() + 1+"";  // 월
+		if(month.length==1){
+			month='0'+month;
+		}
+		let date = new Date().getDate();  // 날짜
+		$('#date').attr('min',year+'-'+month+'-'+date);
+
+
+		let sport =['댄스','클라이밍','수영','구기스포츠','사격','스키','기타 스포츠'];
+		let music =['보컬','피아노','작사·작곡','프로듀싱','기타 악기']
+		let drawing = ['소묘','수채화','펜화','캘리그라피','동양화','서양화','일러스트','기타 드로잉']
+		let play=['체험'];
+		let cooking =['베이킹','요리','디저트','음료','바리스타','기타 쿠킹'];
+		let handmade=['캔들·디퓨저','향수','비누','액세서리','도자기','목공','기타 공예'];
+
+		let category=[];
+		if($('#bCategory option:selected').val()=='스포츠')	{
+				category=sport;
+			}else if($('#bCategory option:selected').val()=='음악'){
+				category=music;
+			}else if($('#bCategory option:selected').val()=='드로잉'){
+				category=drawing;
+			}else if($('#bCategory option:selected').val()=='쿠킹'){
+				category=cooking;
+			}else if($('#bCategory option:selected').val()=='체험'){
+				category=play;
+			}else if($('#bCategory option:selected').val()=='핸드메이드'){
+				category=handmade;
+			}
+
+			var str="";
+			category.forEach(function(item,index){
+				str+='<option value="'+item+'">'+item+'</option>';
+			});
+
+			$('#sCategory').html(str);
+
+		category=[];
+		$('#bCategory').change(function(){
+
+			if($('#bCategory option:selected').val()=='스포츠')	{
+				category=sport;
+			}else if($('#bCategory option:selected').val()=='음악'){
+				category=music;
+			}else if($('#bCategory option:selected').val()=='드로잉'){
+				category=drawing;
+			}else if($('#bCategory option:selected').val()=='쿠킹'){
+				category=cooking;
+			}else if($('#bCategory option:selected').val()=='체험'){
+				category=play;
+			}else if($('#bCategory option:selected').val()=='핸드메이드'){
+				category=handmade;
+			}
+
+			var str="";
+			category.forEach(function(item,index){
+				str+='<option value="'+item+'">'+item+'</option>';
+			});
+
+			$('#sCategory').html(str);
+
+		});
+
+		$('#location').click(function(){
+
+			window.open('map.html','map','top=10, left=10, width=1100, height=620, status=no, menubar=no, toolbar=no, resizable=no');
+
+		});
+
+		$('#enroll_submit').click(function(){
+
+			if($('input[name=title]').val()=="" || $('input[name=title]').val()==null){
+				$('input[name=title]').focus();
+			}else if($('#bCategory').val()=="" || $('#bCategory').val()==null){
+				$('#bCategory').focus();
+			}else if($('#sCategory').val()=="" || $('#sCategory').val()==null){
+				$('#sCategory').focus();
+			}else if($('#date').val()=="" || $('#date').val()==null){
+				$('#date').focus();
+			}else if($('#time').val()=="" || $('#time').val()==null){
+				$('#time').focus();
+			}else if($('#classOption').val()=="" || $('#classOption').val()==null){
+				$('#classOption').focus();
+			}else if($('#personnel').val()=="" || $('#personnel').val()==null){
+				$('#personnel').focus();
+			}else if($('#location').val()=="" || $('#location').val()==null){
+				$('#location').focus();
+			}else if($('#location_detail').val()=="" || $('#location_detail').val()==null){
+				$('#location_detail').focus();
+			}else if($('input[name=price]').val()=="" || $('input[name=price]').val()==null){
+				$('input[name=price]').focus();
+			}else if($('#editor1').val()=="" || $('#editor1').val()==null){
+				$('#editor1').focus();
+			}else{
+				this.form.submit();
+			}
+		
+		});
+
+  </script>
+  
+  
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+  <script>
+    CKEDITOR.addCss('.cke_editable { font-size: 15px; padding: 2em; }');
+
+    CKEDITOR.replace('editor1');
+  </script>
+    
+  
+  </body>
+</html>
