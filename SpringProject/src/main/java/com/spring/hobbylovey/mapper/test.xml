@@ -27,21 +27,6 @@
 		select * from tblMemo order by seq desc
 	</select> -->
 	
-	<select id="signupClassList" parameterType="String" resultType="MypageDTO">
-	
-		select sc.regdate, u.*, co.classOption, co.price, c.title, h.name from tblSignupClass sc
-			inner join tblUser u
-				on sc.userSeq = u.userSeq
-			inner join tblClassOption co
-				on sc.classOptionSeq = co.classOptionSeq
-			inner join tblClass c
-				on co.classSeq = c.classSeq
-			inner join tblHost h
-				on c.hostSeq = h.hostSeq
-		where u.id = #{id} order by regdate desc
-									
-	
-	</select>
 	
 	
 	

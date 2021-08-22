@@ -20,12 +20,6 @@ public class MypageController {
 	@RequestMapping(value = "/mypage.action", method = { RequestMethod.GET })
 	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {
 
-		id = "REChAJ881";
-		
-		List<MypageDTO> signupClassList = dao.signupClassList(id);
-		
-		req.setAttribute("signupClassList", signupClassList);
-		
 		return "member.mypage";
 		
 	}
