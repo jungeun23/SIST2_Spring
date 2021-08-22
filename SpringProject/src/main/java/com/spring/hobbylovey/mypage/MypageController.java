@@ -37,5 +37,19 @@ public class MypageController {
 		return "member.mypageFeed";
 
 	}
+	
+	@RequestMapping(value = "/mypageCourseDetail.action", method = { RequestMethod.GET })
+	public String mypageCourseDetail(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "member.mypageCourseDetail";
+
+	}
+	
+	@RequestMapping(value = "/mypageOrder.action", method = { RequestMethod.GET })
+	public String mypageOrder(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		return "member.mypageOrder";
+		
+	}
 
 }

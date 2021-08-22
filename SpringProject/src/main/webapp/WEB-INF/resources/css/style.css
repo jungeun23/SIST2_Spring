@@ -10587,3 +10587,48 @@ textarea.form-control {
 .replyEntity_body-sc-2hf8ms-5 {
 	white-space: pre-wrap;
 }
+
+.SocialFeedPage_Wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 768px;
+	margin: 0px auto;
+}
+
+.SocialFeedPage_Header {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 20px;
+	border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.SocialFeedPage_Title {
+	color: rgb(51, 61, 75);
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.PageWrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	align-content: flex-start;
+	margin: 0px auto;
+	max-width: 808px;
+	width: 100%;
+	padding: 0px 20px;
+	min-height: 1px;
+}
+
+.Fade_Wrapper {
+	opacity: 1;
+	display: block;
+	width: auto;
+	height: auto;
+	transition: opacity 200mx ease-in-out 0s;
+	min-width: 0px;
+	min-height: 1px;
+}

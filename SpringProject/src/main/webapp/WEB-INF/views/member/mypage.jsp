@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <section class="hero-wrap hero-wrap-2"
-	style="background-image: url('../resources/images/sample4.jpg');"
+	style="background-image: url('resources/images/sample4.jpg');"
 	data-stellar-background-ratio="0.5">
 	<div class="overlay"></div>
 	<div class="container">
@@ -67,6 +67,7 @@
                       <a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">나의 문의글<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>1</a></div>
                       <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageReview.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">후기<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                       <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageFeed.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">피드<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
+                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageCourseDetail.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">수강내역<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                     </div>
                   </div>
                 </div>
