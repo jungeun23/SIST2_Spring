@@ -44,5 +44,12 @@ public class MypageController {
 		return "member.mypageCourseDetail";
 
 	}
+	
+	@RequestMapping(value = "/mypageOrder.action", method = { RequestMethod.GET })
+	public String mypageOrder(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		return "member.mypageOrder";
+		
+	}
 
 }
