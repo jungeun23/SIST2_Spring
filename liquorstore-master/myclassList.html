@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>하비러비</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .class_manage_title {
+        font-size: 20px;
+        color: rgb(119, 119, 119);
+        font-weight: bold;
+      }
+
+      .class_manage_box {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .class_menu {
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+
+      .class_menu > a {
+        color: rgb(119, 119, 119);
+      }
+      #myclass_content {
+        width: 85%;
+        padding: 40px 30px 40px;
+        background-color: #f5f4f0;
+        min-height: 100vh;
+        min-width: 1200px;
+      }
+
+      #side_nav {
+        width: 262px;
+        height: 95vh;
+        padding-top: 30px;
+        padding-left: 30px;
+        position: fixed;
+      }
+      .myclass_header {
+        background-color: #f5983b;
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
+
+      #host_manage_page {
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: bold;
+      }
+
+      .myclass_logout {
+        color: rgb(119, 119, 119);
+      }
+
+      .myclass_info_box {
+        width: 300px;
+        height: 400px;
+        border: 1px solid #aaa;
+        border-radius: 15px;
+        margin: 5px 15px;
+        float: left;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .myclass_info_image {
+        height: 180px;
+        border-bottom: 1px solid #aaa;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+
+      .myclass_info_text {
+        height: 170px;
+        padding: 15px;
+        position: relative;
+      }
+
+      .myclass_button_box {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        border-top: 1px solid #aaa;
+      }
+      .myclass_edit_button{
+        margin-right: 10px;
+      }
+
+      .myclassList_classTitle{
+        font-size: 20px;
+        color: rgb(33, 33, 33);
+        font-weight: bold;
+      }
+      .myclassList_classCategory{
+      }
+
+      .myclassList_classLocation{
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .myclassList_classCategory, .myclassList_classLocation{
+        color: rgb(33, 33, 33);
+        font-weight: bold;
+        font-size: 13px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark ftco_navbar myclass_header"
+      id="ftco-navbar"
+    >
+      <div style="width: 100%">
+        <a class="navbar-brand" href="index.html" style="color: green"
+          >하비<span style="color: #b7472a">러비</span></a
+        >
+        <a href="#!" id="host_manage_page"><span>호스트 관리 페이지</span></a>
+      </div>
+    </nav>
+
+    <div style="display: flex">
+      <nav id="side_nav">
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">클래스 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">클래스 만들기</a>
+            </div>
+            <div class="class_menu">
+              <a href="">내 클래스</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">대원 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">후기 관리</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">지원 센터</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">공지사항</a>
+            </div>
+            <div class="class_menu">
+              <a href="">자주 묻는 질문</a>
+            </div>
+          </div>
+        </div>
+        <a href="#!" class="myclass_logout"><span>로그아웃</span></a>
+      </nav>
+      <div style="margin-left: 292px"></div>
+
+      <div id="myclass_content">
+        <h3 class="class_manage_title">내 클래스</h3>
+        <div
+          style="
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+          "
+        >
+          
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            <div class="myclass_info_box" onclick="location.href='/'">
+              <div
+                class="myclass_info_image"
+                style="background-image: url(/images/image_1.jpg)"
+              ></div>
+              <div class="myclass_info_text">
+
+                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
+                  
+                </div> 
+                <div class="myclassList_classCategory">스포츠:댄스</div>
+
+                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
+                
+              </div>
+              <div class="myclass_button_box">
+                <a href="#!">옵션추가</a>
+
+                <div>
+                  <a href="#!" class="myclass_edit_button">수정</a>
+                  <a href="#!">아아아</a>
+                </div>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#F96D00"
+        />
+      </svg>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
