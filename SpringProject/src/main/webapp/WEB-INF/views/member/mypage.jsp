@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <section class="hero-wrap hero-wrap-2"
-	style="background-image: url('../resources/images/sample4.jpg');"
+	style="background-image: url('resources/images/sample4.jpg');"
 	data-stellar-background-ratio="0.5">
 	<div class="overlay"></div>
 	<div class="container">
@@ -65,8 +65,9 @@
                       <div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">스크랩<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                     <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp">
                       <a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">나의 문의글<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>1</a></div>
-                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">후기<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
-                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">피드<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
+                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageReview.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">후기<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
+                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageFeed.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">피드<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
+                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageCourseDetail.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">수강내역<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                     </div>
                   </div>
                 </div>
@@ -88,6 +89,7 @@
 
                       <div class="classList">
                         <table class="table table-bordered table-mypage">
+                        
                           <tr>
                             <th>신청일자</th>
                             <th>클래스</th>
@@ -95,9 +97,10 @@
                             <th>결제금액</th>
                             <th>상태</th> <!-- 클래스 수강 완료 > 리뷰작성 버튼 활성화 / 리뷰작성 > 리뷰작성완료 텍스트 띄우기 -->
                           </tr>
+                          
                           <tr>
                             <td>
-                              <span>2021-08-29</span>
+                              <span>2021-08-21</span>
                               <br>
                               <a href="#!">상세보기</a>
                             </td>
@@ -106,8 +109,8 @@
                                 <a href="#!"><img src="/hobbylovey/resources/images/sample4.jpg" alt="KPOP댄스 정복하기"></a>
                                 <div class="classbox-text">
                                   <a href="#!">
-                                    <span class="classbox-host">호스트명</span>
-                                    <span class="classbox-class">KPOP댄스 정복하기</span>
+                                    <span class="classbox-host">호스트 이름</span>
+                                    <span class="classbox-class">KPOP 댄스 정복하기</span>
                                     <span class="classbox-option">옵션명</span>
                                   </a>
                                 </div>
@@ -115,14 +118,13 @@
                               </div>
                             </td>
                             <td>1</td>
-                            <td>50,000</td>
+                            <td>30,000</td>
                             <td>
                               <strong>결제완료</strong>
                               <br>
                               <button type="button" class="btn btn-dark">리뷰작성</button>
                             </td>
                           </tr>
-
                         </table>
                           
 
