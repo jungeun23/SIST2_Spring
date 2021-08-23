@@ -51,5 +51,19 @@ public class MypageController {
 		return "member.mypageOrder";
 		
 	}
+	
+	@RequestMapping(value = "/mypageModify.action", method = { RequestMethod.GET })
+	public String mypageModify(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		return "member.mypageModify";
+		
+	}
+	
+	@RequestMapping(value = "/mypageWish.action", method = { RequestMethod.GET })
+	public String mypageWish(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		return "member.mypageWish";
+		
+	}
 
 }

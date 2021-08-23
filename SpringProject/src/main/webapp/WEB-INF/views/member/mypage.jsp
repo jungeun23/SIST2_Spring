@@ -14,8 +14,7 @@
 					
 					<!-- 페이지에 맞게 수정 필요  -->
 					<span class="mr-2"><a href="index.html">Home <i       
-							class="fa fa-chevron-right"></i></a></span> <span>마이페이지 <i
-						class="fa fa-chevron-right"></i></span>
+							class="fa fa-chevron-right"></i></a></span> <span>마이페이지 </span>
 				</p>
 				<h2 class="mb-0 bread">마이페이지</h2>
 			</div>
