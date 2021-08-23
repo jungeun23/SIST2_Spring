@@ -65,5 +65,12 @@ public class MypageController {
 		return "member.mypageWish";
 		
 	}
+	
+	@RequestMapping(value = "/mypagePassword.action", method = { RequestMethod.GET })
+	public String mypagePassword(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		return "member.mypagePassword";
+		
+	}
 
 }
