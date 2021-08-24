@@ -13,14 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AdminController {
 	
 	@Autowired
-	private AdminDAO dao;
+	public AdminDAO dao;
 	
-	@RequestMapping(value = "admin/member.action", method = { RequestMethod.GET })
-	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {
+	// 회원관리하기
+	@RequestMapping(value = "/admin/member.action", method = { RequestMethod.GET })
+	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		return "admin.member";
-		
 	}
-	
-	
 }
