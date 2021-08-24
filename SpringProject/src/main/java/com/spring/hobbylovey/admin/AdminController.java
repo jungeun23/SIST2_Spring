@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AdminController {
 	
-	@Autowired
-	private AdminDAO dao;
+	 //@Autowired 
+	 //private AdminDAO dao; 
 	
 	@RequestMapping(value = "admin/member.action", method = { RequestMethod.GET })
 	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {

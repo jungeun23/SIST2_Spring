@@ -13,7 +13,7 @@
 				<p class="breadcrumbs mb-0">
 
 					<!-- 페이지에 맞게 수정 필요  -->
-					<span class="mr-2"><a href="index.html">홈 <i
+					<span class="mr-2"><a href="/hobbylovey/index.action">홈 <i
 							class="fa fa-chevron-right"></i></a></span> <span>클래스 <i
 						class="fa fa-chevron-right"></i></span>
 				</p>
