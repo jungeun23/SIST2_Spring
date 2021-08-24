@@ -135,6 +135,9 @@
 				<td>
 					<div id="container3" style="width: 500px; margin-top : 50px;"></div>
 				</td>
+				<td>
+					<div id="container4" style="width: 500px; margin-right: 50px;"></div>
+				</td>
 			</tr>
 		</table>
 	</div>
@@ -386,6 +389,52 @@
 					21000, 20000, 19000, 18000, 18000, 17000, 16000, 15537, 14162, 12787,
 					12600, 11400, 5500, 4512, 4502, 4502, 4500, 4500
 				]
+			}]
+		});
+	</script>
+
+	<!-- 차트4 -->
+	<script type="text/javascript">
+		Highcharts.chart('container4', {
+			chart: {
+				plotBackgroundColor: null,
+				plotBorderWidth: null,
+				plotShadow: false,
+				type: 'pie'
+			},
+			title: {
+				text: '회원 성별 비율'
+			},
+			tooltip: {
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			accessibility: {
+				point: {
+					valueSuffix: '%'
+				}
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					dataLabels: {
+						enabled: true,
+						format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+					}
+				}
+			},
+			series: [{
+				name: 'Brands',
+				colorByPoint: true,
+				data: [{
+					name: '남성',
+					y: 61.41,
+					sliced: true,
+					selected: true
+				}, {
+					name: '여성',
+					y: 11.84
+				}]
 			}]
 		});
 	</script>

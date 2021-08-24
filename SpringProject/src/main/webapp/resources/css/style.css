@@ -1331,7 +1331,7 @@ pre {
   .table th,
   .table td {
     padding: 0.75rem;
-    vertical-align: top;
+    /* vertical-align: top; */
     border-top: 1px solid #dee2e6; }
   .table thead th {
     vertical-align: bottom;
@@ -8938,11 +8938,11 @@ h1, h2, h3, h4, h5,
   .table tbody tr {
     margin-bottom: 10px; }
   .table tbody th, .table tbody td {
-    border: none;
+    /* border: none;
     padding: 30px;
     background: #fff;
     border-bottom: 4px solid #f8f9fd;
-    vertical-align: middle; }
+    vertical-align: middle; */ }
   .table tbody td.quantity {
     width: 10%; }
   .table tbody td .img {
@@ -11892,6 +11892,180 @@ text-align: center;
     transform: translateY(-2px) scale(1, 0);
 }
 
+
+
+
+
+/* 마이페이지 - 개인정보 수정 */
+.input-short { width: 300px; }
+.table-infoModify {margin-bottom: 30px; font-size: 16px;}
+.table-infoModify .form-control { font-size: 16px; }
+#customer_info .table-infoModify tbody th { background-color: #f8f8f8; width: 200px; vertical-align: middle; height: 52px;}
+#customer_info .table-infoModify tbody td { vertical-align: middle; }
+.table-infoModify .input-email, .table-infoModify .input-tel { display: flex; }
+.table-infoModify .input-email > *, .table-infoModify .input-tel > * {margin: 0 5px;}
+.table-infoModify .input-email > #email1, .table-infoModify .input-tel > #tel1 {margin: 0px;}
+.table-infoModify .input-tel #tel1 { width: 100px; }
+.modify-btns { display: flex; justify-content: center;}
+.modify-btns > button { width: 160px; height: 40px; }
+
+
+/* 마이페이지 - 클래스 스크랩 */
+.wishlist-box {
+  display: flex;
+  flex-flow: row wrap;
+}
+.wishlist-box > * {
+  margin-right: 15px;
+  -webkit-box-flex: 0;
+  flex: 0 1 calc(25% - 11.25px);
+  width: calc(25% - 11.25px);
+  max-width: 250px;
+  margin-bottom: 60px;
+}
+.wish-item {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  background-color: white;
+  min-height: 1px;
+}
+.wish-item > a {
+  min-height: 1px;
+}
+.wish-img {
+  position: relative;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  min-height: 1px;
+  border-radius: 5px;
+  background-color: rgb(250, 250, 250);
+}
+.wish-badge {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 1;
+}
+.wish-location {
+  margin: 2px 0px 0px 2px;
+  height: 10px;
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 10px;
+  text-shadow: rgb(0 0 0 / 30%) 0px 0px 10px;
+}
+.wish-button {
+  width: 24px;
+  height: 24px;
+  line-height: normal;
+  padding: 0px;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+.gDuKGF {
+  min-height: 1px;
+}
+.bUFcfh {
+  display: none !important;
+}
+.koasSX {
+  width: auto;
+  height: auto;
+  transition: opacity 200ms ease-in-out 0s;
+  display: none;
+  opacity: 0;
+  min-width: 0px;
+  min-height: 1px;
+}
+.wish-imgStyle {
+  display: initial;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+.wish-bottomBadge {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 1;
+  padding: 15px;
+}
+.wish-statusBadge {
+  width: 57px;
+  height: 27px;
+  border-radius: 5px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  display: none;
+}
+.wish-catchphrase {
+  margin-top: 14px;
+  font-size: 12px;
+  height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 14px;
+  color: rgb(155, 155, 155);
+}
+.wish-title {
+  margin-top: 10px;
+  height: auto;
+  max-height: 40px;
+  line-height: 20px;
+  font-size: 14px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.wish-priceBox {
+  margin-top: 14px;
+  line-height: 14px;
+  height: 14px;
+}
+.wish-price {
+  font-size: 14px;
+  font-weight: 900;
+}
+.wish-fakePrice  {
+  margin-left: 4px;
+  color: rgb(187, 187, 187);
+  font-size: 12px;
+  text-decoration: line-through;
+}
+.wish-ratingBox {
+  margin-top: 14px;
+  display: flex;
+}
+.wish-rating {
+  font-size: 11px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(187, 187, 187);
+}
+.wish-rating > img {
+  margin-right: 2px;
+}
 
 
 

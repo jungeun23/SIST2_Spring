@@ -37,123 +37,125 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
     <style>
-		.class_manage_title{
-			font-size: 20px;
-			color: rgb(119, 119, 119);
-			font-weight: bold;
-		}
+      .class_manage_title {
+        font-size: 20px;
+        color: rgb(119, 119, 119);
+        font-weight: bold;
+      }
 
-		.class_manage_box{
-			margin-bottom: 30px;
-			border-bottom: 1px solid #eee;
-		}
+      .class_manage_box {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+      }
 
-		.class_menu{
-			padding-left: 30px;
-			margin-bottom: 10px;
-		}
+      .class_menu {
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
 
-		.class_menu > a{
-			
-			color: rgb(119, 119, 119);
-			
-		}
+      .class_menu > a {
+        color: rgb(119, 119, 119);
+      }
+      #myclass_content {
+        width: 85%;
+        padding: 40px 30px 40px;
+        background-color: #f5f4f0;
+        min-height: 100vh;
+        min-width: 1200px;
+      }
 
+      #side_nav {
+        width: 262px;
+        height: 95vh;
+        padding-top: 30px;
+        padding-left: 30px;
+        position: fixed;
+      }
+      .myclass_header {
+        background-color: #f5983b;
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
 
-	</style>
+      #host_manage_page {
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: bold;
+      }
+
+      .myclass_logout {
+        color: rgb(119, 119, 119);
+      }
+    </style>
   </head>
-  <body style="overflow: hidden;">
+  <body>
     <nav
-      class="navbar navbar-expand-lg navbar-dark ftco_navbar"
+      class="navbar navbar-expand-lg navbar-dark ftco_navbar myclass_header"
       id="ftco-navbar"
-      style="background-color: #f5983b;"
     >
       <div style="width: 100%">
         <a class="navbar-brand" href="index.html" style="color: green"
           >하비<span style="color: #b7472a">러비</span></a
         >
-        <span style="color: rgba(255, 255, 255, 0.6); font-weight: bold"
-          >호스트 관리 페이지</span
-        >
+        <a href="#!" id="host_manage_page"><span>호스트 관리 페이지</span></a>
       </div>
     </nav>
 
-	<div style="display: flex; width: 100%;">
-	<nav id="side_nav" style="width: 15%; height: 95vh; min-width: 15%; padding-top: 30px; padding-left: 30px;">
-		<div class="class_manage_box">
-			<h3 class="class_manage_title">
-				클래스 관리
-			</h3>
-			<div>
-				<div class="class_menu">
-					<a href="">클래스 만들기</a>
-				</div>
-				<div class="class_menu">
-					<a href="">내 클래스</a>
-				</div>
-			</div>
-		</div>
+    <div style="display: flex">
+      <nav id="side_nav">
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">클래스 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">클래스 만들기</a>
+            </div>
+            <div class="class_menu">
+              <a href="">내 클래스</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">대원 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">후기 관리</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">지원 센터</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">공지사항</a>
+            </div>
+            <div class="class_menu">
+              <a href="">자주 묻는 질문</a>
+            </div>
+          </div>
+        </div>
+        <a href="#!" class="myclass_logout"><span>로그아웃</span></a>
+      </nav>
+      <div style="margin-left: 292px"></div>
 
-		<div class="class_manage_box">
-			<h3 class="class_manage_title">
-				대원 관리
-			</h3>
-			<div>
-				<div class="class_menu">
-					<a href="">출석부</a>
-				</div>
-				<div class="class_menu">
-					<a href="">Q&A 관리</a>
-				</div>
-				<div class="class_menu">
-					<a href="">후기 관리</a>
-				</div>
-			</div>
-		</div>
-		<div class="class_manage_box">
-			<h3 class="class_manage_title">
-				정산
-			</h3>
-			<div>
-				<div class="class_menu">
-					<a href="">정산 요청</a>
-				</div>
-				<div class="class_menu">
-					<a href="">정산 완료</a>
-				</div>
-			</div>
-		</div>
-		<div class="class_manage_box">
-			<h3 class="class_manage_title">
-				지원 센터
-			</h3>
-			<div>
-				<div class="class_menu">
-					<a href="">공지사항</a>
-				</div>
-				<div class="class_menu">
-					<a href="">자주 묻는 질문</a>
-				</div>
-			</div>
-		</div>
-
-
-	</nav>
-
-	<div style="width: 85%; padding: 40px 30px 40px; background-color: #f5f4f0;">
-		<h4 class="class_manage_title">클래스 만들기</h3>
-		<div style="background-color: white; width: 100%; height: 100%; padding: 50px;">
-
-
-		</div>
-
-
-
-
-
-
-
+      <div id="myclass_content">
+        <h3 class="class_manage_title">클래스 만들기</h3>
+        <div
+          style="
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+          "
+        ></div>
+      </div>
+    </div>
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">
@@ -190,8 +192,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
