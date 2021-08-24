@@ -15,10 +15,12 @@ public class AdminController {
 	@Autowired
 	private AdminDAO dao;
 	
-	@RequestMapping(value = "/member.action", method = { RequestMethod.GET })
+	@RequestMapping(value = "admin/member.action", method = { RequestMethod.GET })
 	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {
 
 		return "admin.member";
 		
 	}
+	
+	
 }
