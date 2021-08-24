@@ -18,6 +18,11 @@ public class MypageDAO {
 		
 	}
 
+	public List<SignUpClassDTO> getSignUpClass(String seq) {
+
+		return template.selectList("mypage.signupClassList", seq);
+	}
+
 	
 	
 }

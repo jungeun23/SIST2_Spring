@@ -18,6 +18,8 @@
 	
 	<typeAliases>
 	
+		<typeAlias type="com.spring.hobbylovey.mypage.SignUpClassDTO" alias="sucdto" />
+	
 	
 	</typeAliases>
 
