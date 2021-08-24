@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!-- mypage.xml -->
+
+<!-- 
+
+	Mapper 파일
+	- SQL을 작성하는 파일
+
+ -->
+
+<mapper namespace="mypage"> <!-- 파일명을 보편적으로 사용 -->
+	
+	<!-- <select id="m7" resultType="dto" parameterType="String">
+		select * from tblMemo where seq=#{seq}
+	
+	</select>
+	
+	결과셋이 다중 레코드라도 1개의 레코드를 담을 수 있는 자료형만 resultType에 적는다 
+	<select id="m8" resultType="dto">
+		select * from tblMemo order by seq desc
+	</select> -->
+	
+	<select id="signupClassList" parameterType="String" resultType="sucdto">
+		select * from tblsignupclass where seq=#{seq};
+	</select>
+	
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
