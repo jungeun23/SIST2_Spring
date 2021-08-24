@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 	
 	
-	@RequestMapping(value = "/member/mypage.action", method = { RequestMethod.GET })
-	public String mypage(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+	@RequestMapping(value = "/auth/signup.action", method = { RequestMethod.GET })
+	public String signup(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		
-
-		return "member.mypage";
+		
+		
+		
+		return "auth.signup";
 	}
 
 }
