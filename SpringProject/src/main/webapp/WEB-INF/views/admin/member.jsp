@@ -3,10 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-	<!-- -----------------------------------------  헤더자리  ---------------------------------------------------------------- -->
-
-
-
 	<main class="h-full pb-16 overflow-y-auto">
 		<div class="container grid px-6 mx-auto">
 			<h2
