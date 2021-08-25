@@ -96,10 +96,16 @@
                             <th>결제금액</th>
                             <th>상태</th> <!-- 클래스 수강 완료 > 리뷰작성 버튼 활성화 / 리뷰작성 > 리뷰작성완료 텍스트 띄우기 -->
                           </tr>
-                          
+                          <%-- 
+                          <c:if test="${list.size() == 0}">
+                          <span>신청한 클래스가 없습니다.</span>
+                          </c:if> --%>
+                          <%-- 
+                          <c:if test="${list.size() > 0}">
+                          <c:forEach items="${list}" var="dto"> --%>
                           <tr>
                             <td>
-                              <span>2021-08-21</span>
+                              <span>${dto.regdate}</span>
                               <br>
                               <a href="#!">상세보기</a>
                             </td>
@@ -123,7 +129,10 @@
                               <br>
                               <button type="button" class="btn btn-dark">리뷰작성</button>
                             </td>
-                          </tr>
+                          </tr><%-- 
+                          </c:forEach>
+                          </c:if> --%>
+                          
                         </table>
                           
 

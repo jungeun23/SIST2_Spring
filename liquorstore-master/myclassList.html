@@ -102,7 +102,6 @@
         margin: 5px 15px;
         float: left;
         overflow: hidden;
-        cursor: pointer;
       }
 
       .myclass_info_image {
@@ -125,35 +124,36 @@
         height: 50px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
+        justify-content: space-around;
         border-top: 1px solid #aaa;
+        overflow: hidden;
       }
-      .myclass_edit_button{
+      .myclass_edit_button {
         margin-right: 10px;
       }
 
-      .myclassList_classTitle{
+      .myclassList_classTitle {
         font-size: 20px;
         color: rgb(33, 33, 33);
         font-weight: bold;
       }
-      .myclassList_classCategory{
+      .myclassList_classCategory {
       }
 
-      .myclassList_classLocation{
+      .myclassList_classLocation {
         position: absolute;
         left: 15px;
         bottom: 15px;
       }
 
-      .myclassList_classCategory, .myclassList_classLocation{
+      .myclassList_classCategory,
+      .myclassList_classLocation {
         color: rgb(33, 33, 33);
         font-weight: bold;
         font-size: 13px;
       }
 
-      #myclass_modal{
+      #myclass_modal {
         left: 0;
         top: 0;
         position: absolute;
@@ -161,66 +161,78 @@
         width: 100%;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-
       }
 
-      #myclass_option_add{
+      #myclass_option_add {
         position: absolute;
         left: 50%;
         top: 50%;
         width: 1000px;
         height: 800px;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         background-color: #f5f4f0;
         z-index: 4;
         padding: 20px;
-
       }
 
-      #myclass_modal_option_box{
+      #myclass_modal_option_box {
         width: 100%;
         height: 700px;
         background-color: white;
         padding: 30px;
       }
 
-      .myclass_option_info{
+      .myclass_option_info {
         display: flex;
         width: 100%;
       }
 
-      #myclass_option_buy{
+      #myclass_option_buy {
         height: 200px;
         border-bottom: 1px solid #ccc;
         margin-bottom: 20px;
       }
-      #myclass_option_count{
+      #myclass_option_count {
         height: 100px;
         border-bottom: 1px solid #ccc;
         margin-bottom: 20px;
       }
-      #myclass_option_date{
+      #myclass_option_date {
         height: 200px;
       }
-      .myclass_option_subject{
+      .myclass_option_subject {
         font-size: 20px;
         font-weight: bold;
         width: 130px;
         margin-right: 50px;
       }
 
-      .myclass_option_input{
+      .myclass_option_input {
         width: 800px;
         position: relative;
-
       }
 
-      #myclass_option_buy .myclass_option_input{
+      #myclass_option_buy .myclass_option_input {
         display: flex;
         flex-direction: column;
-
       }
 
+      .myclass_option_add_btn,
+      .myclass_option_edit_btn {
+        width: 100px;
+        height: 47px;
+        margin-top: -3px;
+        border: none;
+      }
+
+      #modal_off_btn {
+        position: absolute;
+        right: 30px;
+        top: 0px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -282,352 +294,527 @@
             padding: 50px;
           "
         >
-          
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
 
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
-              </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
-
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
 
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
-              </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
-
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
 
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
-              </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
-
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
 
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
-              </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
-
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
 
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
-              </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
-
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
               </div>
             </div>
-            <div class="myclass_info_box" onclick="location.href='/'">
-              <div
-                class="myclass_info_image"
-                style="background-image: url(/images/image_1.jpg)"
-              ></div>
-              <div class="myclass_info_text">
-
-                <div class="myclassList_classTitle">홍길동과 함께하는 댄스교실
-                  
-                </div> 
-                <div class="myclassList_classCategory">스포츠:댄스</div>
-
-                <div class="myclassList_classLocation">서울특별시 강남구 역삼동</div>
-                
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
               </div>
-              <div class="myclass_button_box">
-                <a href="#!">옵션추가</a>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
 
-                <div>
-                  <a href="#!" class="myclass_edit_button">수정</a>
-                  <a href="#!">아아아</a>
-                </div>
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
               </div>
             </div>
-            
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
+          <div class="myclass_info_box">
+            <div
+              class="myclass_info_image"
+              style="background-image: url(/images/image_1.jpg)"
+            ></div>
+            <div class="myclass_info_text">
+              <div class="myclassList_classTitle">
+                홍길동과 함께하는 댄스교실
+              </div>
+              <div class="myclassList_classCategory">스포츠:댄스</div>
+
+              <div class="myclassList_classLocation">
+                서울특별시 강남구 역삼동
+              </div>
+            </div>
+            <div class="myclass_button_box">
+              <input
+                type="button"
+                class="btn btn-outline-danger myclass_option_add_btn"
+                value="옵션추가"
+                data-option-seq="1"
+              />
+
+              <div>
+                <input
+                  type="button"
+                  class="btn btn-outline-success myclass_option_edit_btn"
+                  value="수정"
+                  data-edit-seq="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ---------------------------------------------------- -->
         </div>
       </div>
     </div>
 
+    <div id="myclass_modal" style="display: none">
+      <form action="#!" id="myclass_option_add" method="POST">
+        <h3>일정관리</h3>
+        <div id="myclass_modal_option_box">
+          <div id="myclass_option_buy" class="myclass_option_info">
+            <div class="myclass_option_subject">구매옵션</div>
 
-    <div id="myclass_modal">
-    <form action="#" id="myclass_option_add">
-      <h3>일정관리</h3>
-      <div id="myclass_modal_option_box">
-        <div id="myclass_option_buy" class="myclass_option_info">
-          <div class="myclass_option_subject">
-            구매옵션
-          </div>
+            <div class="myclass_option_input" id="option_list">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                style="position: absolute; right: 10px; top: 10px; width: 80px"
+                id="option_add_btn"
+              >
+                추가
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                style="position: absolute; right: 10px; top: 50px; width: 80px"
+                id="option_del_btn"
+              >
+                삭제
+              </button>
 
-          <div class="myclass_option_input" id="option_list">
-            <button type="button" class="btn btn-outline-primary" style="position: absolute; right: 10px; top: 10px; width: 80px;" id="option_add_btn">추가</button>
-            <button type="button" class="btn btn-outline-danger" style="position: absolute; right: 10px; top: 50px; width: 80px;" id="option_del_btn">삭제</button>
-            
-            <div style="display: flex; margin-bottom: 10px;">
-              <input type="text" class="form-control" name="classOption" placeholder="옵션명" style="width: 350px; margin-right: 30px;">
-  
-              <input type="number" name="price" class="form-control" style="text-align: right; width: 150px;" placeholder="가격"><span
-              style="
-              margin-top: 7px;
-              margin-left: 10px;
-                font-size: 20px;
-                font-weight: bold;
-              "
-              >원</span>
-              
+              <div style="display: flex; margin-bottom: 10px">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="classOption"
+                  placeholder="옵션명"
+                  style="width: 350px; margin-right: 30px"
+                />
+
+                <input
+                  type="number"
+                  name="price"
+                  class="form-control"
+                  style="text-align: right; width: 150px"
+                  placeholder="가격"
+                  min="0"
+                  maxlength="8"
+                /><span
+                  style="
+                    margin-top: 7px;
+                    margin-left: 10px;
+                    font-size: 20px;
+                    font-weight: bold;
+                  "
+                  >원</span
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div id="myclass_option_count" class="myclass_option_info">
-          <div class="myclass_option_subject">
-            모집인원
+          <div id="myclass_option_count" class="myclass_option_info">
+            <div class="myclass_option_subject">모집인원</div>
+            <div class="myclass_option_input" style="display: flex">
+              <input
+                style="width: 100px"
+                type="text"
+                name="personnel"
+                class="form-control"
+                min="0"
+              />
+              <span
+                style="
+                  margin-top: 7px;
+                  margin-left: 10px;
+                  font-size: 20px;
+                  font-weight: bold;
+                "
+                >명</span
+              >
+            </div>
           </div>
-          <div class="myclass_option_input" style="display: flex;">
-            <input style="width: 100px;" type="text" name="personnel" class="form-control">
-            <span
-            style="
-            margin-top: 7px;
-            margin-left: 10px;
-              font-size: 20px;
-              font-weight: bold;
-            "
-            >명</span>
+          <div id="myclass_option_date" class="myclass_option_info">
+            <div class="myclass_option_subject">일정</div>
+            <div class="myclass_option_input" style="display: flex">
+              <input
+                name="date"
+                type="date"
+                class="form-control"
+                id="date"
+                required
+                style="width: 300px; margin-right: 30px"
+              /><input
+                type="time"
+                class="form-control"
+                id="time"
+                required
+                style="width: 300px"
+              />
+            </div>
           </div>
-        </div>
-        <div id="myclass_option_date" class="myclass_option_info">
-          <div class="myclass_option_subject">
-            일정
-          </div>
-          <div class="myclass_option_input" style="display: flex;">
+          <div style="text-align: center">
             <input
-            name="date"
-            type="date"
-            class="form-control"
-            id="date"
-            required style="width: 300px; margin-right: 30px;"
-          /><input
-            type="time"
-            class="form-control"
-            id="time"
-            required style="width: 300px;"
-          />
-            
-            
+              type="button"
+              value="작성하기"
+              id="myclass_option_submit"
+              class="btn btn-success"
+              style="width: 400px; font-size: 30px"
+            />
           </div>
         </div>
-        <div style="text-align: center;">
-        <input type="button" value="작성하기" class="btn btn-success" style="width: 400px; font-size: 30px;" >
-      </div>
-      </div>
-      
-      <input type="hidden" name="classDate" id="classDate" />
-    </form>
-  </div>
-
+        <input type="hidden" name="classSeq" id="classSeq" />
+        <input type="hidden" name="classDate" id="classDate" />
+        <div id="modal_off_btn">&times;</div>
+      </form>
+    </div>
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen">
@@ -655,28 +842,81 @@
     </div>
 
     <script>
+      var cnt = 1;
 
-      var cnt=1;
-      
-      $('#option_add_btn').click(function(){
-        if(cnt<3){
-        $('#option_list').append('<div style="display: flex; margin-bottom: 10px;"><input type="text" class="form-control" name="classOption" placeholder="옵션명" style="width: 350px; margin-right: 30px;"><input type="number" name="price" class="form-control" style="text-align: right; width: 150px;" placeholder="가격"><span style="margin-top: 7px;margin-left: 10px;font-size: 20px;font-weight: bold;">원</span></div>');
-        cnt++;
+      $('#option_add_btn').click(function () {
+        if (cnt < 3) {
+          $('#option_list').append(
+            '<div style="display: flex; margin-bottom: 10px;"><input type="text" class="form-control" name="classOption" placeholder="옵션명" style="width: 350px; margin-right: 30px;"><input type="number" name="price" class="form-control" style="text-align: right; width: 150px;" placeholder="가격"><span style="margin-top: 7px;margin-left: 10px;font-size: 20px;font-weight: bold;">원</span></div>'
+          );
+          cnt++;
         }
-        
       });
 
-      
-      $('#option_del_btn').click(function(){
-        if(cnt>1){
-        $('#option_list div:last-child').remove();
-        cnt--;
+      $('#option_del_btn').click(function () {
+        if (cnt > 1) {
+          $('#option_list div:last-child').remove();
+          cnt--;
         }
       });
 
       //submit 하기전 더하기
-      $('#classDate').val($('#date').val() +' '+$('#time').val()+':00');
+      $('#myclass_option_submit').click(function () {
+        if (
+          $('#myclass_option_add input[name=classOption]').val() == '' ||
+          $('#myclass_option_add input[name=classOption]').val() == null
+        ) {
+          $('#myclass_option_add input[name=classOption]').focus();
+        } else if (
+          $('#myclass_option_add input[name=price]').val() == '' ||
+          $('#myclass_option_add input[name=price]').val() == null
+        ) {
+          $('#myclass_option_add input[name=price]').focus();
+        } else if (
+          $('#myclass_option_add input[name=personnel]').val() == '' ||
+          $('#myclass_option_add input[name=personnel]').val() == null
+        ) {
+          $('#myclass_option_add input[name=personnel]').focus();
+        } else if ($('#date').val() == '' || $('#date').val() == null) {
+          $('#date').focus();
+        } else if ($('#time').val() == '' || $('#time').val() == null) {
+          $('#time').focus();
+        } else {
+          $('#classDate').val(
+            $('#date').val() + ' ' + $('#time').val() + ':00'
+          );
+          this.form.submit();
+          alert('옵션이 추가되었습니다.');
+          location.href = '/myclassList.html';
+        }
+      });
 
+      $('.myclass_option_add_btn').click(function () {
+        $('#myclass_modal').css('top', $(window).scrollTop());
+        $('#classSeq').val($(this).data('optionSeq'));
+
+        $('#myclass_modal').css('display', 'block');
+        $('body').css('overflow', 'hidden');
+      });
+
+      $('#modal_off_btn').click(function () {
+        $('#myclass_modal').css('display', 'none');
+        $('body').css('overflow', 'unset');
+
+        $('#myclass_option_add input[name=classOption]').val('');
+        $('#myclass_option_add input[name=price]').val('');
+        $('#myclass_option_add input[name=personnel]').val('');
+        $('#myclass_option_add input[name=date]').val('');
+        $('#myclass_option_add input[name=time]').val('');
+      });
+
+      let year = new Date().getFullYear(); // 년도
+      let month = new Date().getMonth() + 1 + ''; // 월
+      if (month.length == 1) {
+        month = '0' + month;
+      }
+      let date = new Date().getDate(); // 날짜
+      $('#date').attr('min', year + '-' + month + '-' + date);
     </script>
 
     <script src="js/jquery.min.js"></script>

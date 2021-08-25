@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>하비러비</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .class_manage_title {
+        font-size: 20px;
+        color: rgb(119, 119, 119);
+        font-weight: bold;
+      }
+
+      .class_manage_box {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .class_menu {
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+
+      .class_menu > a {
+        color: rgb(119, 119, 119);
+      }
+      #myclass_content {
+        width: 85%;
+        padding: 40px 30px 40px;
+        background-color: #f5f4f0;
+        min-height: 100vh;
+        min-width: 1200px;
+      }
+
+      #side_nav {
+        width: 262px;
+        height: 95vh;
+        padding-top: 30px;
+        padding-left: 30px;
+        position: fixed;
+      }
+      .myclass_header {
+        background-color: #f5983b;
+        position: sticky;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
+
+      #host_manage_page {
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: bold;
+      }
+
+      .myclass_logout {
+        color: rgb(119, 119, 119);
+      }
+
+      .class_review_box {
+        display: flex;
+      }
+
+      .signup_class_subject {
+        font-weight: 900;
+        margin-bottom: 20px;
+        color: rgb(40, 40, 40);
+      }
+      .class_calssDate {
+        font-size: 15px;
+        margin-left: 40px;
+        color: rgb(119, 119, 119);
+      }
+
+      .signip_review_content {
+        width: 800px;
+        margin-right: 150px;
+        color: rgb(30, 30, 30);
+      }
+
+      .signup_review_user {
+        width: 100px;
+      }
+      .signup_review_score {
+        width: 150px;
+      }
+      .class_review_box {
+        margin-bottom: 40px;
+        min-height: 200px;
+      }
+      .reviewReply {
+        width: 800px;
+        height: 150px;
+        resize: none;
+        margin-right: 30px;
+      }
+
+      .review_reply_form {
+        display: flex;
+      }
+
+      .class_review_info {
+        padding-bottom: 50px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark ftco_navbar myclass_header"
+      id="ftco-navbar"
+    >
+      <div style="width: 100%">
+        <a class="navbar-brand" href="index.html" style="color: green"
+          >하비<span style="color: #b7472a">러비</span></a
+        >
+        <a href="#!" id="host_manage_page"><span>호스트 관리 페이지</span></a>
+      </div>
+    </nav>
+
+    <div style="display: flex">
+      <nav id="side_nav">
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">클래스 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">클래스 만들기</a>
+            </div>
+            <div class="class_menu">
+              <a href="">내 클래스</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">대원 관리</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">후기 관리</a>
+            </div>
+          </div>
+        </div>
+        <div class="class_manage_box">
+          <h3 class="class_manage_title">지원 센터</h3>
+          <div>
+            <div class="class_menu">
+              <a href="">공지사항</a>
+            </div>
+            <div class="class_menu">
+              <a href="">자주 묻는 질문</a>
+            </div>
+          </div>
+        </div>
+        <a href="#!" class="myclass_logout"><span>로그아웃</span></a>
+      </nav>
+      <div style="margin-left: 292px"></div>
+
+      <div id="myclass_content">
+        <h3 class="class_manage_title">후기 관리</h3>
+        <div
+          style="
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+          "
+        >
+          <div class="class_review_container">
+            <div class="class_review_info">
+              <h4 class="signup_class_subject">
+                홍길동과 함께하는 댄스 클래스<span class="class_calssDate"
+                  >2021-08-04 14:00 참석<!-- 참가일 --></span
+                >
+              </h4>
+
+              <div class="class_review_box">
+                <div class="signip_review_content">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi laboriosam, nulla a numquam distinctio, nostrum ea sunt
+                  architecto in eos ut eum, excepturi placeat nemo! Numquam vel
+                  soluta voluptatibus maiores! Id ab explicabo vero distinctio
+                  laborum iusto consequuntur quod magnam eius corporis, facere
+                  voluptas, tenetur ipsam exercitationem neque repellendus
+                  voluptatem maxime natus reiciendis eligendi ea voluptates
+                  soluta officia! Reprehenderit, nulla! Maxime accusantium quia
+                  fugiat harum molestias, ipsum officiis totam distinctio ipsam,
+                  quos corrupti. Odit porro odio eveniet doloribus. Corrupti
+                  nihil facere corporis quia illum ipsum autem deserunt voluptas
+                  expedita iusto!
+                </div>
+                <div class="signup_review_user">홍길동</div>
+                <div class="signup_review_score">
+                  <img src="images/star.svg" alt="" />
+                  <img src="images/star.svg" alt="" />
+                  <img src="images/star.svg" alt="" />
+                  <img src="images/star.svg" alt="" />
+                  <img src="images/star.svg" alt="" />
+                </div>
+                <div calss="signup_review_regdate">2021-08-09 14:00</div>
+                <!-- 작성일 -->
+              </div>
+              <div style="display: flex"></div>
+              <form action="#!" method="POST" class="review_reply_form">
+                <textarea
+                  class="reviewReply"
+                  name="content"
+                  cols="10"
+                  rows="10"
+                  placeholder="후기에 댓글을 달아주세요."
+                ></textarea>
+                <input type="hidden" name="classReviewSeq" value="후기번호" />
+
+                <button type="button" class="btn btn-success review_reply_btn">
+                  작성하기
+                </button>
+              </form>
+            </div>
+
+            <!-- ----------------------------------------------------- -->
+
+            <div class="class_review_info">
+              <h4 class="signup_class_subject">
+                홍길동과 함께하는 댄스 클래스<span class="class_calssDate"
+                  >2021-08-04 14:00 참석<!-- 참가일 --></span
+                >
+              </h4>
+
+              <div class="class_review_box">
+                <div class="signip_review_content">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Animi laboriosam, nulla a numquam distinctio, nostrum ea sunt
+                  architecto in eos ut eum, excepturi placeat nemo! Numquam vel
+                </div>
+                <div class="signup_review_user">홍길동</div>
+                <div class="signup_review_score">
+                  <img src="images/star.svg" alt="" />
+                </div>
+                <div calss="signup_review_regdate">2021-08-09 14:00</div>
+                <!-- 작성일 -->
+              </div>
+              <div style="display: flex"></div>
+              <form action="#!" method="POST" class="review_reply_form">
+                <textarea
+                  class="reviewReply"
+                  name="content"
+                  cols="10"
+                  rows="10"
+                  placeholder="후기에 댓글을 달아주세요."
+                ></textarea>
+                <input type="hidden" name="classReviewSeq" value="후기번호" />
+
+                <button type="button" class="btn btn-success review_reply_btn">
+                  작성하기
+                </button>
+              </form>
+            </div>
+            <!-- ----------------------------------------------------- -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#F96D00"
+        />
+      </svg>
+    </div>
+
+    <script>
+      $('.review_reply_btn').click(function () {
+
+        if($(this).siblings('textarea').val() != null && $(this).siblings('textarea').val() != ''){
+          this.form.submit();
+
+
+        }
+
+      });
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
