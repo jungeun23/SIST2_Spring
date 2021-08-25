@@ -25,8 +25,7 @@
 				autocomplete="off"> <input id="idcheck"
 				class="btn btn-outline-dark" type="button" value="중복확인"
 				style="position: absolute; right: -100px; top: 22%; height: 40px;">
-			<span class="warning_messege" id="idcheck_messege">이미 사용중이거나
-				탈퇴한 아이디입니다.</span> <span class="warning_messege" id="idlength_messege">5~20자의
+			<span id="idcheck_message_box"></span> <span class="warning_messege" id="idlength_messege">5~20자의
 				영문 소문자, 숫자만 사용 가능합니다.</span>
 		</div>
 
@@ -107,3 +106,130 @@
 		<input type="hidden" id="email">
 	</form>
 </main>
+
+<script>
+	  $('#email_sel').change(function() {
+			$("#email_sel option:selected").each(function() {
+				if ($(this).val() == '1') {
+					//직접입력일 경우
+					$("#email2").val('');
+					//값 초기화 
+				} else {
+					//직접입력이 아닐경우
+					$("#email2").val($(this).text());
+					//선택값 입력 
+				}
+			});
+		});
+
+		$('#email2').keyup(function(){
+
+			if($("#email_sel option:selected").val()!= $(this).val()){
+				
+				$("#email_sel option").each(function(){
+					$(this).attr("selected",false);
+					if($(this).val() == "1"){
+
+						$(this).attr("selected",true);
+					}
+
+				})
+			}
+
+		});
+
+
+		$('#signup_submit').click(function(){
+
+			$('#email').val($('#email1').val()+'@'+$('#email2').val());
+		});
+
+		$('#auth_1').click(function(){
+
+			$('#authRadio_1').attr('checked',true);
+			$('#authRadio_2').attr('checked',false);
+			
+			$('#auth_2').removeClass('chose');
+			$(this).addClass('chose');
+		});
+
+		$('#auth_2').click(function(){
+
+			$('#authRadio_1').attr('checked',false);
+			$('#authRadio_2').attr('checked',true);
+			$('#auth_1').removeClass('chose');
+			$(this).addClass('chose');
+		});
+
+		//var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+		$('#auth_'+$('input[id*=authRadio]:checked').val()).click();
+		
+		var idcheck=-1;
+		
+		$('#idcheck').click(function(){
+			
+			if($('#id').val()!=''){
+				$.ajax({
+					
+					type:'POST',
+					url: '/hobbylovey/auth/idcheck.action',
+					data: 'id='+$('#id').val(),
+					dataType: 'json',
+					success: function(result){
+						
+						if(result==1){
+							$('#idcheck_message_box').html('<span class=\"warning_messege\">이미 사용중이거나 탈퇴한 아이디입니다.</span>');
+						}else{
+							$('#idcheck_message_box').html('<span class=\"success_messege\">사용가능한 아이디입니다.</span>');
+						}
+						
+						
+					},
+					error: function(a,b,c){
+						console.log(a,b,c);
+					}
+					
+					
+				});
+			}else{
+				alert('아이디를 입력해주세요');
+			}
+		});
+		
+		
+		$('#signup_submit').click(function(){
+			
+			if($('#id').val()==''){
+				$('#id').focus();
+			}else if($('#pw').val()==''){
+				$('#pw').focus();
+			}else if($('#pwcheck').val()==''){
+				$('#pwcheck').focus();
+			}else if($('#name').val()==''){
+				$('#name').focus();
+			}else if($('#nickname').val()==''){
+				$('#nickname').focus();
+			}else if($('#email1').val()==''){
+				$('#email1').focus();
+			}else if($('#email2').val()==''){
+				$('#email2').focus();
+			}else if($('#tel').val()==''){
+				$('#tel').focus();
+			}else if($('#address').val()==''){
+				$('#address').focus();
+			}else if($('#birth').val()==''){
+				$('#birth').focus();
+			}else if($('#ssn').val()==''){
+				$('#ssn').focus();
+			}else{
+				
+				
+			}
+			
+			
+		});
+		
+		
+		
+
+  </script>
