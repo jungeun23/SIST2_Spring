@@ -12098,6 +12098,9 @@ text-align: center;
     white-space: nowrap;
     display: block;
 }
+.product-review-FilterReviewOption:hover {
+	backround-color:#EEE;
+}
 .product-review-ReviewListRatingSection{
 	padding: 0px;
     color: rgb(155, 155, 155);
@@ -12214,6 +12217,7 @@ text-align: center;
 .product-review-CardReviewLikeIcon{
 	margin-left: 4px;
     width: 18px;
+    display: inline-block;
 }
 .product-review-CardReviewImageWrapper{
 	display: flex;

@@ -31,21 +31,21 @@
 				<div>
 					후기 <span class="product-review-ReviewList-Count jiLLze">4</span>개
 				</div>
-				<div class="product-review-FilterReviewWrapper dYjXLj">
+				<div class="product-review-FilterReviewWrapper dYjXLj product-review-dropdown">
 					<button type="button">
 						평점 높은순<img
 							src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
 							class="product-review-FilterReview esTgfk"
 							style="transform: rotate(90deg);">
 					</button>
-					<div>
-						<div class="product-review-FilterReviewDropMenu ldipRM">
-							<button class="product-review-FilterReviewOption product-review-filterReview-active">평점 높은순</button>
-							<button class="product-review-FilterReviewOption hSyPxW">평점 낮은순</button>
-							<button class="product-review-FilterReviewOption hSyPxW">최신순</button>
-							<button class="product-review-FilterReviewOption hSyPxW">도움순</button>
-						</div>
+					
+					<div class="product-review-FilterReviewDropMenu ldipRM">
+						<button class="product-review-FilterReviewOption product-review-filterReview-active">평점 높은순</button>
+						<button class="product-review-FilterReviewOption hSyPxW">평점 낮은순</button>
+						<button class="product-review-FilterReviewOption hSyPxW">최신순</button>
+						<button class="product-review-FilterReviewOption hSyPxW">도움순</button>
 					</div>
+					
 				</div>
 			</div>
 			<div class="product-review-ReviewListRatingSection djKoQz">
