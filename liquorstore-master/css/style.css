@@ -12690,6 +12690,10 @@ textarea.form-control {
   color: red;
   font-size: 13px;
 }
+#signup_main .success_messege {
+  color: #34ce57;
+  font-size: 13px;
+}
 
 #signup_form #auth_choice {
   display: flex;

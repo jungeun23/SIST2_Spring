@@ -5,7 +5,7 @@
 
 
 
-  <script src="<%= request.getContextPath() %>/resources/js/jquery-3.6.0.js"></script>
+  
   <script src="<%= request.getContextPath() %>/resources/js/bootstrap.js"></script>
   <script src="<%= request.getContextPath() %>/resources/js/cookie.js"></script>
   <script src="<%= request.getContextPath() %>/resources/js/jquery.min.js"></script>
