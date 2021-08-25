@@ -59,4 +59,11 @@ public class LectureController {
 		return "class.hostreview";
 	}
 	
+	@RequestMapping(value = "/class/purchases.action", method = { RequestMethod.GET })
+	public String purchases(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.purchases";
+	}
 }
