@@ -10027,8 +10027,8 @@ textarea.form-control {
 
 
 
-/* hobbylovey - 마이페이지 */
-/* 사용자 정보 */
+/* hobbylovey - 留덉씠�럹�씠吏� */
+/* �궗�슜�옄 �젙蹂� */
 #customer_info {
   display: flex;
   flex-flow: column nowrap;
@@ -10148,7 +10148,7 @@ textarea.form-control {
 }
 
 
-/* 마이페이지 - hr */
+/* 留덉씠�럹�씠吏� - hr */
 .tQdWD {
   width: 100%;
   height: 10px;
@@ -10157,7 +10157,7 @@ textarea.form-control {
 }
 
 
-/* 마이페이지 - �ϴܸ޴� */
+/* 留덉씠�럹�씠吏� - 占싹단메댐옙 */
 .bgIsVr {
   display: flex;
   width: 100%;
@@ -10295,7 +10295,7 @@ textarea.form-control {
 
 
 
-/* 마이페이지 후기 리스트 */
+/* 留덉씠�럹�씠吏� �썑湲� 由ъ뒪�듃 */
 .cardReview_wrapper {
 	padding: 30px 0px;
 }
@@ -10805,7 +10805,7 @@ textarea.form-control {
 	padding-left: 250px;
 }
 
-/* 마이페이지 - 주문내역상세 */
+/* 留덉씠�럹�씠吏� - 二쇰Ц�궡�뿭�긽�꽭 */
 .bgIsVr {
   display: flex;
   width: 100%;
@@ -10950,7 +10950,7 @@ textarea.form-control {
 
 
 
-/* 클래스 리스트, 상세, 옵션 */
+/* �겢�옒�뒪 由ъ뒪�듃, �긽�꽭, �샃�뀡 */
 
 	#productlist-categorybig {
 		border: 0;
@@ -11229,7 +11229,7 @@ text-align: center;
 	margin-left: 40px;
 }
 
-/* 클래스 상세 페이지 */
+/* �겢�옒�뒪 �긽�꽭 �럹�씠吏� */
 .ProductDetailContainer{
 	width: 1100px;
 	margin: 0px auto;
@@ -11896,7 +11896,7 @@ text-align: center;
 
 
 
-/* 마이페이지 - 개인정보 수정 */
+/* 留덉씠�럹�씠吏� - 媛쒖씤�젙蹂� �닔�젙 */
 .input-short { width: 300px; }
 .table-infoModify {margin-bottom: 30px; font-size: 16px;}
 .table-infoModify .form-control { font-size: 16px; }
@@ -11910,7 +11910,7 @@ text-align: center;
 .modify-btns > button { width: 160px; height: 40px; }
 
 
-/* 마이페이지 - 클래스 스크랩 */
+/* 留덉씠�럹�씠吏� - �겢�옒�뒪 �뒪�겕�옪 */
 .wishlist-box {
   display: flex;
   flex-flow: row wrap;

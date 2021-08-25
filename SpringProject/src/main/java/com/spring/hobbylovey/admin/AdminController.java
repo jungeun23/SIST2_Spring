@@ -15,7 +15,6 @@ public class AdminController {
 	@Autowired
 	public AdminDAO dao;
 	
-	// 회원관리하기
 	@RequestMapping(value = "/admin/member.action", method = { RequestMethod.GET })
 	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
