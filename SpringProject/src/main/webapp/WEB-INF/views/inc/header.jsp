@@ -22,7 +22,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.action">하비<span>러비</span></a>
+			<a class="navbar-brand" href="/hobbylovey/index.action">하비<span>러비</span></a>
 			<div class="order-lg-last btn-group">
 				<div class='container'>
 					<div class='search-box-container'>

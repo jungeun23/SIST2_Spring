@@ -10950,7 +10950,7 @@ textarea.form-control {
 
 
 
-/* 클래스 리스트, 상세, 옵션 */
+/* 클래스 리스트  */
 
 	#productlist-categorybig {
 		border: 0;
@@ -11251,7 +11251,7 @@ text-align: center;
 .product-BannerImageSection{
 	width: 520px;
 	height: 520px;
-	border: 1px solid green;
+/* 	border: 1px solid green; */
 	margin: 65px 15px 15px 15px;
 	position: relative;
 	overflow: hidden;
@@ -11534,17 +11534,22 @@ text-align: center;
     padding: 0px 18px;
 }
 
+.bzFlWa{
+	width: 40px;
+	height: 40px;
+}
 .slick-slider{
 	position: relative;
     display: block;
     box-sizing: border-box;
 }
+/* 왼쪽 화살표 */
 .hlWAni .slick-arrow.slick-disabled {
-    display: none !important;
+    display: none;
 }
 .hlWAni .slick-arrow.slick-prev {
     left: 0px;
-    top: 0;
+    top: 185px;
     
 }
 
@@ -11700,7 +11705,7 @@ text-align: center;
 .slick-slide img {
     display: block;
 }
-
+/* 오른쪽 화살표 */
 .hlWAni .slick-arrow.slick-next {
     right: -18px;
     top: 185px;
@@ -11810,6 +11815,8 @@ text-align: center;
     transition: background-color 0.4s ease 0s;
     cursor: pointer;
     text-align: left;
+    border-top: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid rgb(238, 238, 238);
 }
 .product-listbtn {
     margin: 0px;
@@ -11836,14 +11843,15 @@ text-align: center;
     transform: rotate(90deg);
 }
 .product-question {
-    display: block;
+    display: none;
     overflow: hidden auto;
     width: 100%;
     margin: 0px;
     padding: 0px;
-    transform-origin: left top;
-    height: 0px;
-    transform: translateY(-2px) scale(1, 0);
+    padding-top: 30px;
+/*     transform-origin: left top; */
+    height: 400px;
+   /*  transform: translateY(-2px) scale(1, 0); */
 }
 .eXkIaF > div {
     margin-bottom: 10px;
@@ -11882,14 +11890,15 @@ text-align: center;
 }
 
 .product-refund{
-	display: block;
+	display: none;
     overflow: hidden auto;
     width: 100%;
     margin: 0px;
     padding: 0px;
-    transform-origin: left top;
-    height: 0px;
-    transform: translateY(-2px) scale(1, 0);
+    padding-top: 30px;
+/*     transform-origin: left top; */
+    height: 260px;
+    /* transform: translateY(-2px) scale(1, 0); */
 }
 
 /* 클래스 - 클래스 옵션 */
@@ -11899,7 +11908,7 @@ text-align: center;
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    height: 100%;
+    height: 800px;
     margin: 0px auto;
 }
 .product-option-Header{
@@ -11915,6 +11924,7 @@ text-align: center;
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
+    border: 0;
 }
 .dAMGt{
 	-webkit-box-flex: 1;
@@ -12022,6 +12032,444 @@ text-align: center;
     color: rgb(85, 85, 85);
 }
 
+
+/* 클래스 후기 리스트 */
+.product-review-PageWrapper{
+	display: flex;
+    flex-flow: column nowrap;
+    align-content: flex-start;
+    margin: 0px auto 80px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0px 20px;
+    min-height: 1px;
+}
+.product-review-FadeWrapper{
+	width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 1px;
+}
+.product-review-ReviewList-Header{
+	border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 30px 0px;
+}
+.product-review-ReviewList-Title{
+	padding: 0px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+.product-review-FilterReviewWrapper{
+	font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    text-align: right;
+}
+.product-review-FilterReviewDropMenu{
+	min-width: 110px;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid rgb(153, 153, 153);
+    padding: 20px;
+    top: 30px;
+    right: 0px;
+    background-color: white;
+    text-align: left;
+}
+.product-review-filterReview-active{
+	font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 0px;
+    white-space: nowrap;
+    display: block;
+}
+.product-review-FilterReviewOption{
+	font-weight: normal;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 0px;
+    white-space: nowrap;
+    display: block;
+}
+.product-review-ReviewListRatingSection{
+	padding: 0px;
+    color: rgb(155, 155, 155);
+    font-size: 14px;
+    font-weight: 500;
+}
+.product-review-ReviewListRatingWrapper{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.product-review-ReadonlyWrapper{
+	display: flex;
+    flex-flow: row nowrap;
+}
+.product-review-ReviewList-RatingNumber{
+	margin-left: 14px;
+}
+.product-review-ReviewWrapper{
+	padding: 0px;
+}
+.product-review-CardReviewWrapper{
+	padding: 30px 0px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.product-review-CardReviewHeader{
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.product-review-CardReviewProfileImageWrapper{
+	flex: 0 0 auto;
+    margin-right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.product-review-FadeWrapper{
+	width: auto;
+    height: auto;
+    transition: opacity 200ms ease-in-out 0s;
+    display: none;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 1px;
+}
+.product-review-CardReviewMetaData{
+	margin-right: auto;
+}
+.product-review-CardReviewTitle{
+	font-weight: bold;
+    font-size: 15px;
+    line-height: 12px;
+    margin-bottom: 10px;
+}
+.product-review-CardReviewRow{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.product-review-ReadonlyWrapper{
+	display: flex;
+    flex-flow: row nowrap;
+}
+.product-review-CardReviewCreated{
+	margin-left: 6px;
+    line-height: 10px;
+    color: rgb(155, 155, 155);
+    font-size: 13px;
+}
+.product-review-CardReviewBody{
+	margin-bottom: 20px;
+   /*  white-space: pre-wrap; */
+    font-size: 15px;
+    line-height: 22px;
+    width: 850px;
+}
+.product-review-CardReviewPurchaseInfo{
+	color: rgb(155, 155, 155);
+    display: inline-block;
+}
+.product-review-CardReviewPurchaseInfo > div{
+	margin-bottom: 10px;
+    line-height: 10px;
+    font-size: 13px;
+}
+.product-review-CardReviewProductTitle{
+	cursor: pointer;
+    font-size: 1em;
+    color: inherit;
+    
+}
+.product-review-CardReviewLikeButtonWrapper{
+	height: 24px;
+    text-align: right;
+}
+.product-review-CardReviewLikeButton{
+	width: auto;
+    height: auto;
+    line-height: 10px;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: rgb(85, 85, 85);
+    font-size: 12px;
+    border: 0;
+}
+.product-review-CardReviewLikeIcon{
+	margin-left: 4px;
+    width: 18px;
+}
+.product-review-CardReviewImageWrapper{
+	display: flex;
+    margin-top: 22px;
+    overflow: auto;
+}
+.product-review-CardReviewImageWrapper > *{
+	-webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.product-review-CardReviewReplyWrapper{
+	margin-top: 22px;
+}
+.product-review-ReplyEntityWrapper{
+	width: 100%;
+    line-height: 22px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgb(249, 249, 249);
+    font-size: 12px;
+}
+.product-review-ReplyEntityAuthorWrapper{
+	display: flex;
+    margin-bottom: 20px;
+}
+.product-review-ReplyEntityImageWrapper{
+	-webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.product-review-ReplyEntityName{
+	margin-bottom: 10px;
+    height: 12px;
+    line-height: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.product-review-ReplyEntityCreated{
+	line-height: 10px;
+    font-size: 12px;
+    color: rgb(155, 155, 155);
+}
+.product-review-ReplyEntityBody{
+	/* white-space: pre-wrap; */
+	width: 850px;
+	font-size: 15px;
+}
+
+/* 호스트 프로필  */
+.product-HostProfilePagePageWrapper{
+	max-width: 1100px;
+    padding: 0px 20px;
+    margin: 80px auto 80px;
+    width: 100%;
+}
+
+.product-Profile-sc{
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+.product-ProfileInfo-sc{
+	display: flex;
+    width: 100%;
+}
+.product-ProfilepageImage{
+	margin-right: 20px;
+    overflow: hidden;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 32px;
+}
+.dXNbSn{
+	width: 24px;
+    height: 24px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    border: 0;
+}
+.cZgpqN{
+	display: inline-flex;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -0.54px;
+    color: rgb(51, 51, 51);
+}
+.eZGjgL{
+	width: 32px;
+    height: 32px;
+    line-height: normal;
+    padding: 0px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+.product-NavigationWrapper{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding-top: 24px;
+    border-top: 1px solid #EEE;
+    margin-bottom: 20px;
+}
+.hostprofilepgbtn-active{
+	width: auto;
+    height: 24px;
+    line-height: 20px;
+    padding: 10px 0px 26px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 0px;
+    border: 0;
+    color: #F28316;
+}
+.hostprofilepgbtn{
+	width: auto;
+    height: 24px;
+    line-height: 20px;
+    padding: 10px 0px 26px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 0px;
+    border: 0;
+}
+.ProductList-ProductWrapper{
+	display: flex;
+    flex-flow: row wrap;
+}
+.ProductList-ProductWrapper > * {
+	margin-right: 15px;
+    -webkit-box-flex: 0;
+    flex: 0 1 calc(25% - 11.25px);
+    width: calc(25% - 11.25px);
+    max-width: 250px;
+    margin-bottom: 60px;
+}
+.product-CardProductWrapper{
+	display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    background-color: white;
+    min-height: 1px;
+}
+.prodcut-CardProduct-InfoWrapper{
+	overflow: hidden;
+}
+.product-CardProduct-ImageWrapper{
+	position: relative;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    min-height: 1px;
+    border-radius: 5px;
+    background-color: rgb(250, 250, 250);
+}
+.CardProduct-TopImageBadgeWrapper{
+	position: absolute;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1;
+}
+.CardProduct-Location{
+	margin: 2px 0px 0px 2px;
+    height: 10px;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 10px;
+    text-shadow: rgb(0 0 0 / 30%) 0px 0px 10px;
+}
+.product-CardProduct-Title{
+	margin-top: 10px;
+    height: auto;
+    max-height: 40px;
+    line-height: 20px;
+    font-size: 14px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.product-CardProduct-PriceWrapper{
+	margin-top: 14px;
+    line-height: 14px;
+    height: 14px;
+}
+.product-CardProductPrice{
+	font-size: 14px;
+    font-weight: 900;
+}
+.product-CardProduct-RatingBadgeWrapper{
+	margin-top: 14px;
+    display: flex;
+}
+.product-CardProduct-Rating{
+	font-size: 13px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(187, 187, 187);
+}
+.dYjXLj{
+	display: flex;
+	justify-content: left;
+}
 
 
 

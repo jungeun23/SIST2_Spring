@@ -35,4 +35,28 @@ public class LectureController {
 		return "class.option";
 	}
 	
+	@RequestMapping(value = "/class/reviewlist.action", method = { RequestMethod.GET })
+	public String reviewlist(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.reviewlist";
+	}
+	
+	@RequestMapping(value = "/class/hostprofile.action", method = { RequestMethod.GET })
+	public String hostprofile(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.hostprofile";
+	}
+	
+	@RequestMapping(value = "/class/hostreview.action", method = { RequestMethod.GET })
+	public String hostreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "class.hostreview";
+	}
+	
 }
