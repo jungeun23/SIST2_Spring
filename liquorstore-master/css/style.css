@@ -12549,7 +12549,7 @@ textarea.form-control {
   font-weight: bold;
 }
 
-#login_main,#signup_main ,#find_id_pw_main{
+#login_main, #signup_main, #find_id_pw_main {
   padding: 0px 15px;
   margin-top: 40px;
   display: flex;
@@ -12557,29 +12557,29 @@ textarea.form-control {
   flex-direction: column;
 }
 
-#login_main{
+#login_main {
   min-height: 700px;
 }
 
-#signup_main{
+#signup_main {
   min-height: 1400px;
 }
 
-#find_id_pw_main{
+#find_id_pw_main {
   min-height: 1000px;
 }
 
-#login_title>h3,#signup_title>h3 {
+#login_title>h3, #signup_title>h3 {
   color: #444;
   font-weight: bold;
 }
 
-#login_form,#signup_form {
+#login_form, #signup_form {
   padding: 28px 24px;
   width: 480px;
 }
 
-#login_form .login_box,#signup_form .signup_box {
+#login_form .login_box, #signup_form .signup_box {
   padding-bottom: 20px;
   width: 100%;
 }
@@ -12631,10 +12631,6 @@ textarea.form-control {
   border-radius: 10px;
 }
 
-
-
-
-
 #signup_form .form-control {
   background-color: rgb(250, 250, 250) !important;
   border: 1px solid rgb(250, 250, 250);
@@ -12644,8 +12640,6 @@ textarea.form-control {
 #signup_form .form-control:focus {
   border: 1px solid rgb(0, 117, 239);
 }
-
-
 
 #signup_submit {
   width: 100%;
@@ -12658,93 +12652,81 @@ textarea.form-control {
   border: 0px !important;
 }
 
-#signup_main .input_subject{
+#signup_main .input_subject {
   font-weight: bold;
 }
 
-#signup_main .birth_box{
+#signup_main .birth_box {
   display: flex;
 }
 
-#signup_main #birth{
+#signup_main #birth {
   width: 45%;
 }
 
-#signup_main #ssn{
+#signup_main #ssn {
   width: 10%;
 }
 
-#signup_main .text_span{
+#signup_main .text_span {
   margin: 0 10px;
   align-items: center;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 20px;
 }
 
-
-#signup_main .email_box{
+#signup_main .email_box {
   display: flex;
   position: relative;
 }
 
-#signup_main #email_sel{
+#signup_main #email_sel {
   position: absolute;
   right: -120px;
   top: 12px;
 }
 
-#signup_main .warning_messege{
+#signup_main .warning_messege {
   color: red;
   font-size: 13px;
 }
 
-#signup_form #auth_choice{
-
+#signup_form #auth_choice {
   display: flex;
-
   margin-bottom: 50px;
-
 }
 
-#auth_choice input[type=radio]{
+#auth_choice input[type=radio] {
   display: none;
 }
 
-#signup_form #auth_choice div{
-
+#signup_form #auth_choice div {
   border: 1px solid black;
   width: 50%;
   height: 56px;
   text-align: center;
   padding-top: 10px;
-
   border-radius: 5px 5px 0 0;
   font-weight: bold;
   font-size: 20px;
   cursor: pointer;
 }
 
-#signup_form #auth_choice #auth_2{
+#signup_form #auth_choice #auth_2 {
   border-left: 0px;
 }
 
-
-#auth_choice .chose{
+#auth_choice .chose {
   background-color: rgb(240, 173, 73);
   color: white;
-
 }
 
-
-
-.find_title > h3{
+.find_title>h3 {
   width: 800px;
   font-weight: 800;
 }
 
-
-
-#id_find_form,#pw_find_form{
+#id_find_form, #pw_find_form {
   width: 800px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -12757,20 +12739,17 @@ textarea.form-control {
   flex-direction: column;
 }
 
-#find_id_pw_main .id_find_box,#find_id_pw_main .pw_find_box{
+#find_id_pw_main .id_find_box, #find_id_pw_main .pw_find_box {
   display: flex;
   margin-bottom: 30px;
-
 }
 
-#find_id_pw_main .id_find_box input,#find_id_pw_main .pw_find_box input{
+#find_id_pw_main .id_find_box input, #find_id_pw_main .pw_find_box input {
   width: 300px;
   height: 40px !important;
 }
 
-
-#find_id_pw_main .find_info{
-
+#find_id_pw_main .find_info {
   font-weight: bold;
   font-size: 20px;
   width: 100px;
@@ -12779,31 +12758,19 @@ textarea.form-control {
   margin-left: -100px;
 }
 
-#find_id_pw_main input[type=submit]{
+#find_id_pw_main input[type=submit] {
   background-color: #007bff !important;
   border: 0px !important;
-
 }
 
-#find_id_pw_main input[type=submit]:hover{
+#find_id_pw_main input[type=submit]:hover {
   background-color: #268fff !important;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* hobbylovey - 마이페이지 */
+
 /* 怨좉컼�젙蹂� */
+
 #customer_info {
   display: flex;
   flex-flow: column nowrap;
@@ -12815,8 +12782,13 @@ textarea.form-control {
   min-height: 1px;
 }
 
-#customer_info .JiXdX { color: #333; }
-#customer_info .jHzHpp > a { color: #fff; }
+#customer_info .JiXdX {
+  color: #333;
+}
+
+#customer_info .jHzHpp>a {
+  color: #fff;
+}
 
 .jersza {
   width: 100%;
@@ -12826,6 +12798,7 @@ textarea.form-control {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .fSUxZv {
   display: flex;
   -webkit-box-pack: justify;
@@ -12836,6 +12809,7 @@ textarea.form-control {
   margin-bottom: 10px;
   overflow: hidden;
 }
+
 .hYJTCm {
   -webkit-box-flex: 1;
   flex: 1 1 auto;
@@ -12846,6 +12820,7 @@ textarea.form-control {
   min-width: 0px;
   width: 100%;
 }
+
 .bwVeRo {
   position: relative;
   -webkit-box-flex: 0;
@@ -12854,9 +12829,11 @@ textarea.form-control {
   height: 62px;
   cursor: pointer;
 }
-.bwVeRo > input {
+
+.bwVeRo>input {
   display: none;
 }
+
 .iqShOY {
   margin-top: 30px;
   border-radius: 5px;
@@ -12865,28 +12842,34 @@ textarea.form-control {
   -webkit-box-flex: 1;
   flex: 1 1 100%;
 }
+
 .gVkstK {
   display: flex;
   flex-wrap: wrap;
 }
+
 .jHzHpp:nth-child(2n+1) {
   border-right: 1px solid#d97a1e;
 }
+
 .jHzHpp:nth-child(3), .jHzHpp:nth-child(4) {
   border-top: 1px solid #d97a1e;
 }
+
 .eGCefe {
   margin-bottom: 2px;
   line-height: 11px;
   font-size: 11px;
   font-weight: 300;
 }
+
 .knwkPk {
   display: inline-block;
   vertical-align: top;
   width: 14px;
   height: 13px;
 }
+
 .jHzHpp {
   -webkit-box-flex: 1;
   flex: 1 1 50%;
@@ -12898,6 +12881,7 @@ textarea.form-control {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .hLhGnd {
   display: flex;
   -webkit-box-align: center;
@@ -12907,6 +12891,7 @@ textarea.form-control {
   font-size: 20px;
   font-weight: bold;
 }
+
 .JiXdX {
   max-width: 200px;
   text-overflow: ellipsis;
@@ -12914,10 +12899,12 @@ textarea.form-control {
   overflow: hidden;
   white-space: nowrap;
 }
+
 .hVNKgp {
   width: 100%;
   border-radius: 5px;
 }
+
 .isqgAm {
   position: absolute;
   width: 30%;
@@ -12925,8 +12912,8 @@ textarea.form-control {
   bottom: 0px;
 }
 
-
 /* 마이페이지 - hr */
+
 .tQdWD {
   width: 100%;
   height: 10px;
@@ -12934,19 +12921,21 @@ textarea.form-control {
   border: none;
 }
 
-
 /* 마이페이지 - �븯�떒硫붾돱 */
+
 .bgIsVr {
   display: flex;
   width: 100%;
   margin-bottom: 60px;
 }
+
 .kjZmPT {
   -webkit-box-flex: 1;
   flex: 1 1 100%;
   position: relative;
   overflow: hidden;
 }
+
 .fBjXys {
   display: flex;
   -webkit-box-align: center;
@@ -12955,12 +12944,14 @@ textarea.form-control {
   justify-content: space-between;
   margin: 0px 0px 20px;
 }
-.fBjXys > * {
+
+.fBjXys>* {
   margin-right: 0px;
   -webkit-box-flex: 1;
   flex: 1 1 auto;
   width: calc(33.3333%);
 }
+
 .fDdvEO {
   width: 100%;
   height: 60px;
@@ -12979,12 +12970,14 @@ textarea.form-control {
   border-radius: 0px;
   border: none;
 }
+
 .gAjsN {
   margin-left: 5px;
   font-weight: bold;
   position: absolute;
   color: #F28316;
 }
+
 .fDdvEO::after {
   content: "";
   display: block;
@@ -12994,6 +12987,7 @@ textarea.form-control {
   border-radius: 50%;
   background-color: #F28316;
 }
+
 .jwuGaR {
   width: 100%;
   height: 60px;
@@ -13012,6 +13006,7 @@ textarea.form-control {
   border-radius: 0px;
   border: none;
 }
+
 .koasSX {
   width: auto;
   height: auto;
@@ -13021,6 +13016,7 @@ textarea.form-control {
   min-width: 0px;
   min-height: 1px;
 }
+
 .iUqawC {
   display: flex;
   flex-direction: column;
@@ -13029,6 +13025,7 @@ textarea.form-control {
   margin-top: 60px;
   margin-bottom: 40px;
 }
+
 .cVpYem {
   font-size: 11px;
   font-weight: 300;
@@ -13038,67 +13035,70 @@ textarea.form-control {
   margin-top: 10px;
 }
 
-
-
-
-
 .classList .table-mypage {
   width: 768px;
   border-radius: 10px;
   margin: 0 auto;
   text-align: center;
 }
+
 .classList .table-mypage tbody th, .classList .table-mypage tbody td {
   padding: 10px;
   font-size: 14px;
-
 }
+
 .mypage-classbox {
   display: flex;
 }
+
 .mypage-classbox a img {
   width: 95px;
   height: 95px;
 }
+
 .mypage-classbox span {
   display: block;
-
 }
 
 .classbox-text {
   margin-left: 20px;
 }
 
-
 /* 마이페이지 - 주문내역상세 */
+
 .bgIsVr {
   display: flex;
   width: 100%;
   margin-bottom: 60px;
 }
+
 .kjZmPT {
   -webkit-box-flex: 1;
   flex: 1 1 100%;
   position: relative;
   overflow: hidden;
 }
+
 .itEdak {
   line-height: 20px;
   padding: 30px 20px 0px;
   font-size: 20px;
   font-weight: bold;
 }
+
 .CMuhv {
   display: flex;
   padding: 30px 20px 0px;
   flex-direction: column;
   border-bottom: 10px solid rgb(238, 238, 238);
 }
+
 .bupqiA {
   font-size: 10px;
   color: rgb(155, 155, 155);
   margin-bottom: 20px;
 }
+
 .jmotRF {
   display: flex;
   flex-direction: column;
@@ -13106,20 +13106,25 @@ textarea.form-control {
   justify-content: space-between;
   padding-bottom: 20px;
 }
+
 .gCLHVQ {
   display: flex;
 }
-.gCLHVQ > div:first-child {
+
+.gCLHVQ>div:first-child {
   -webkit-box-flex: 0;
   flex: 0 0 auto;
   width: 96px;
 }
+
 .gDuKGF {
   min-height: 1px;
 }
+
 .bUFcfh {
   display: none !important;
 }
+
 .koasSX {
   width: auto;
   height: auto;
@@ -13129,21 +13134,25 @@ textarea.form-control {
   min-width: 0px;
   min-height: 1px;
 }
+
 .VUNpu {
   display: initial;
   border-radius: 5px;
   width: 100%;
   height: 100%;
 }
+
 .bFyCsX {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
 }
-.gCLHVQ > div:last-child {
+
+.gCLHVQ>div:last-child {
   -webkit-box-flex: 1;
   flex: 1 1 auto;
 }
+
 .dubsrH {
   display: -webkit-box;
   overflow: hidden;
@@ -13154,51 +13163,61 @@ textarea.form-control {
   font-size: 13px;
   line-height: 19px;
 }
+
 .klHlsB {
   padding: 30px 0px;
   border-top: 1px solid rgb(238, 238, 238);
   display: flex;
   flex-direction: column;
 }
+
 .gvVnBj {
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
   align-items: flex-start;
 }
+
 .jrAsTS {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   line-height: 24px;
 }
+
 .order-finish {
   font-size: 10px;
   font-weight: 500;
   color: #01d28e;
 }
+
 .jvIWgL {
   font-size: 12px;
 }
+
 .cLgrgB {
   font-size: 10px;
   line-height: 17px;
   color: rgb(155, 155, 155);
   margin-top: 20px;
 }
+
 .kTTirE {
   padding: 30px 0px;
 }
+
 .ggJUGF {
   line-height: 20px;
   padding: 0px 20px;
   font-size: 20px;
   font-weight: bold;
 }
+
 .dTMvLl {
   padding: 0px 20px;
   margin-top: 26px;
 }
+
 .hvGdbY {
   display: flex;
   -webkit-box-pack: justify;
@@ -13206,31 +13225,66 @@ textarea.form-control {
   font-size: 13px;
   padding: 15px 0px;
 }
+
 .wSCxF {
   color: rgb(155, 155, 155);
 }
 
-
-
 /* 마이페이지 - 개인정보 수정 */
-.input-short { width: 300px; }
-.table-infoModify {margin-bottom: 30px; font-size: 16px; vertical-align: middle;}
-.table-infoModify .form-control { font-size: 16px; }
-.table-infoModify th { background-color: #f8f8f8; width: 200px; }
-.table-infoModify .input-email, .table-infoModify .input-tel { display: flex; }
-.table-infoModify .input-email > *, .table-infoModify .input-tel > * {margin: 0 5px;}
-.table-infoModify .input-email > #email1, .table-infoModify .input-tel > #tel1 {margin: 0px;}
-.table-infoModify .input-tel #tel1 { width: 100px; }
-.modify-btns { display: flex; justify-content: center;}
-.modify-btns > button { width: 160px; height: 40px; }
 
+.input-short {
+  width: 300px;
+}
+
+.table-infoModify {
+  margin-bottom: 30px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.table-infoModify .form-control {
+  font-size: 16px;
+}
+
+.table-infoModify th {
+  background-color: #f8f8f8;
+  width: 200px;
+}
+
+.table-infoModify .input-email, .table-infoModify .input-tel {
+  display: flex;
+}
+
+.table-infoModify .input-email>*, .table-infoModify .input-tel>* {
+  margin: 0 5px;
+}
+
+.table-infoModify .input-email>#email1, .table-infoModify .input-tel>#tel1 {
+  margin: 0px;
+}
+
+.table-infoModify .input-tel #tel1 {
+  width: 100px;
+}
+
+.modify-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.modify-btns>button {
+  width: 160px;
+  height: 40px;
+}
 
 /* 마이페이지 - 클래스 스크랩 */
+
 .wishlist-box {
   display: flex;
   flex-flow: row wrap;
 }
-.wishlist-box > * {
+
+.wishlist-box>* {
   margin-right: 15px;
   -webkit-box-flex: 0;
   flex: 0 1 calc(25% - 11.25px);
@@ -13238,6 +13292,7 @@ textarea.form-control {
   max-width: 250px;
   margin-bottom: 60px;
 }
+
 .wish-item {
   display: flex;
   flex-flow: column nowrap;
@@ -13245,9 +13300,11 @@ textarea.form-control {
   background-color: white;
   min-height: 1px;
 }
-.wish-item > a {
+
+.wish-item>a {
   min-height: 1px;
 }
+
 .wish-img {
   position: relative;
   -webkit-box-flex: 0;
@@ -13256,6 +13313,7 @@ textarea.form-control {
   border-radius: 5px;
   background-color: rgb(250, 250, 250);
 }
+
 .wish-badge {
   position: absolute;
   left: 0px;
@@ -13266,6 +13324,7 @@ textarea.form-control {
   padding: 10px;
   z-index: 1;
 }
+
 .wish-location {
   margin: 2px 0px 0px 2px;
   height: 10px;
@@ -13275,6 +13334,7 @@ textarea.form-control {
   line-height: 10px;
   text-shadow: rgb(0 0 0 / 30%) 0px 0px 10px;
 }
+
 .wish-button {
   width: 24px;
   height: 24px;
@@ -13287,12 +13347,15 @@ textarea.form-control {
   font-size: 14px;
   outline: none;
 }
+
 .gDuKGF {
   min-height: 1px;
 }
+
 .bUFcfh {
   display: none !important;
 }
+
 .koasSX {
   width: auto;
   height: auto;
@@ -13302,12 +13365,14 @@ textarea.form-control {
   min-width: 0px;
   min-height: 1px;
 }
+
 .wish-imgStyle {
   display: initial;
   border-radius: 5px;
   width: 100%;
   height: 100%;
 }
+
 .wish-bottomBadge {
   position: absolute;
   right: 0px;
@@ -13315,6 +13380,7 @@ textarea.form-control {
   z-index: 1;
   padding: 15px;
 }
+
 .wish-statusBadge {
   width: 57px;
   height: 27px;
@@ -13328,6 +13394,7 @@ textarea.form-control {
   align-items: center;
   display: none;
 }
+
 .wish-catchphrase {
   margin-top: 14px;
   font-size: 12px;
@@ -13337,6 +13404,7 @@ textarea.form-control {
   line-height: 14px;
   color: rgb(155, 155, 155);
 }
+
 .wish-title {
   margin-top: 10px;
   height: auto;
@@ -13352,25 +13420,30 @@ textarea.form-control {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+
 .wish-priceBox {
   margin-top: 14px;
   line-height: 14px;
   height: 14px;
 }
+
 .wish-price {
   font-size: 14px;
   font-weight: 900;
 }
-.wish-fakePrice  {
+
+.wish-fakePrice {
   margin-left: 4px;
   color: rgb(187, 187, 187);
   font-size: 12px;
   text-decoration: line-through;
 }
+
 .wish-ratingBox {
   margin-top: 14px;
   display: flex;
 }
+
 .wish-rating {
   font-size: 11px;
   display: flex;
@@ -13378,14 +13451,7 @@ textarea.form-control {
   align-items: center;
   color: rgb(187, 187, 187);
 }
-.wish-rating > img {
+
+.wish-rating>img {
   margin-right: 2px;
 }
-
-
-
-
-
-
-
-

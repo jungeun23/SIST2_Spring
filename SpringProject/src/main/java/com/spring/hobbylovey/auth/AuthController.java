@@ -15,11 +15,20 @@ public class AuthController {
 	public String signup(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		
-
-		
-		
-		
 		return "auth.signup";
+	}
+	
+	@RequestMapping(value = "/auth/login.action", method = { RequestMethod.GET })
+	public String login(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "auth.login";
+	}
+	
+	
+	@RequestMapping(value = "/auth/findidpw.action", method = { RequestMethod.GET })
+	public String findidpw(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "auth.findidpw";
 	}
 	
 
