@@ -13,7 +13,7 @@
 				<p class="breadcrumbs mb-0">
 
 					<!-- 페이지에 맞게 수정 필요  -->
-					<span class="mr-2"><a href="index.html">홈 <i
+					<span class="mr-2"><a href="/hobbylovey/index.action">홈 <i
 							class="fa fa-chevron-right"></i></a></span> <span>클래스 <i
 						class="fa fa-chevron-right"></i></span>
 				</p>
@@ -95,7 +95,7 @@
 									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E %3Cpath stroke='%23333' stroke-linecap='round' stroke-width='1.5' d='M6 3l5 5-5 5'/%3E %3C/svg%3E"
 									alt="arrow-right"></span></a>
 						</div>
-						<span class="product-ProfileStat">클래스 5 <span>|</span> 후기
+						<span class="product-ProfileStat">클래스 5 <span> | </span> 후기
 							108 <span> |</span> 저장 90
 						</span>
 					</div>
@@ -136,7 +136,7 @@
 	</div>
 	<div class="ReviewSection__Wrapper-h5kv09-0 clIKDA">
 
-		<div class="ReviewSection__ReviewSectionWrapper-h5kv09-1 eUAXZD">
+		<div class="ReviewSection__ReviewSectionWrapper-h5kv09-1 eUAXZD reviewMove">
 			<div class="CoverReviewCardList__Wrapper-knh3pe-0 cOxrJ">
 				<div
 					class="slick-slider CoverReviewSlider__StyledSlider-sc-1ty45po-2 hlWAni slick-initialized"
@@ -146,8 +146,12 @@
 						src="data:image/png;base64,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"
 						style="display: block;">
 					<div class="slick-list">
+					
+					
 						<div class="slick-track"
 							style="opacity: 1; transform: translate3d(0px, 0px, 0px); width: 7320px;">
+							
+							
 							<div data-index="0"
 								class="slick-slide slick-active slick-current" tabindex="-1"
 								aria-hidden="false" style="outline: none; width: 244px;">
@@ -221,6 +225,7 @@
 									</div>
 								</div>
 							</div>
+							
 							<div data-index="1" class="slick-slide slick-active"
 								tabindex="-1" aria-hidden="false"
 								style="outline: none; width: 244px;">
@@ -951,8 +956,8 @@
 							</div>
 							
 
-									</div>
-								</div>
+						</div>
+					</div>
 							
 
 					<img data-role="none"
@@ -972,7 +977,7 @@
 			
 		</div>
 		
-	</div>
+	
 	<div class="Default__SectionWrapper-sc-1oklcej-2 eHXrNY">
 		<section class="Section__Wrapper-sc-15fmp0p-0 kfLoin">
 			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
@@ -1196,100 +1201,11 @@
 					<p>
 						<br>
 					</p>
-					<p>
-						<img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/bottom-corona-notice_u2r6sx.jpg">
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="Section__Wrapper-sc-15fmp0p-0 kfLoin">
-			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
-				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">포함 사항</h4>
-			</header>
-			<div>
 
-				<div class="product-description">
-					연습실<br>탈의실<br>영상촬영
 				</div>
 			</div>
 		</section>
-		<section class="Section__Wrapper-sc-15fmp0p-0 kfLoin">
-			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
-				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">불포함 사항</h4>
-			</header>
-			<div>
 
-				<div class="product-description">
-					운동화<br>생수<br>주차장
-				</div>
-			</div>
-		</section>
-		<section
-			class="Section__Wrapper-sc-15fmp0p-0 kfLoin ProgramSection__Wrapper-h28g81-0 csJgL">
-			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
-				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">세부 일정</h4>
-			</header>
-			<div>
-				<table class="ProgramSection__Table-h28g81-1 iPLPcJ">
-					<tbody>
-						<tr class="ProgramSection__TableRow-h28g81-3 jqtZPV">
-							<td class="ProgramSection__Time-h28g81-5 eXeZiB">5분</td>
-							<td>몸풀기</td>
-						</tr>
-						<tr class="ProgramSection__TableRow-h28g81-3 jqtZPV">
-							<td class="ProgramSection__Time-h28g81-5 eXeZiB">65분</td>
-							<td>안무배우기</td>
-						</tr>
-						<tr class="ProgramSection__TableRow-h28g81-3 jqtZPV">
-							<td class="ProgramSection__Time-h28g81-5 eXeZiB">10분</td>
-							<td>영상 촬영</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-		<section
-			class="Section__Wrapper-sc-15fmp0p-0 kfLoin StuffsToPrepareSection__Wrapper-sc-1ay6i9y-0 foihoD">
-			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
-				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">준비물</h4>
-			</header>
-			<p>운동화 편안한 옷차림 즐겁게 배울 my바디😘</p>
-		</section>
-		<section class="Section__Wrapper-sc-15fmp0p-0 kfLoin">
-			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
-				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">유의사항</h4>
-			</header>
-			<div class="NoteSection__Warning-sc-1j6ad41-0 oiXzs">프립에서 구매하시지
-				않는 경우, 환불 거부, 서비스 불이행 등의 문제가 생길 수 있습니다.</div>
-			<div>
-
-				<div class="product-description">
-					스케줄을 자유롭게 정하여 진행합니다<br>못오실경우 전날 꼭 연락주세요<br>가능한 곡명은 매달 업로드
-					됩니다<br>
-					<p>
-						<span style="font-family: Verdana, Geneva, sans-serif;"><strong>[신청
-								시 유의사항]</strong></span>
-					</p>
-					<p>
-						<span style="font-family: Verdana, Geneva, sans-serif;"><strong>·&nbsp;</strong>구매
-							시 호스트 연락처를 문자로 보내드립니다.</span>
-					</p>
-					<p>
-						<span style="font-family: Verdana, Geneva, sans-serif;"><strong>·&nbsp;</strong>구매
-							후 업체에 전화로 가능한 날짜 예약 바랍니다.</span>
-					</p>
-					<p>
-						<span style="font-family: Verdana, Geneva, sans-serif;"><strong>·&nbsp;</strong>예약
-							확정 시 호스트가 출석체크를 진행합니다.</span>
-					</p>
-					<p>
-						<span style="font-family: Verdana, Geneva, sans-serif;"><strong>·&nbsp;</strong>예약
-							시간에 맞추어 늦지 않게 도착해 주시기 바랍니다.</span>
-					</p>
-				</div>
-			</div>
-		</section>
 		<section class="Section__Wrapper-sc-15fmp0p-0 kfLoin">
 			<header class="Section__Header-sc-15fmp0p-1 iNVXTg">
 				<h4 class="Section__Title-sc-15fmp0p-2 jdiFgu">진행 장소</h4>
@@ -1302,110 +1218,113 @@
 			</div>
 
 		</section>
-		<div class="AccordionSection__Wrapper-sc-1eajn81-0 grChwy">
-			<div class="Accordion__Wrapper-sc-11ajjas-0 fhiIvu">
-				<div class="Accordion__SectionLabelWrapper-sc-11ajjas-2 jpZuSu">
-					<h4 class="AccordionSection__Label-sc-1eajn81-1 product-listbtn">자주 묻는
-						질문</h4>
-					<div class="Accordion__ChevronWrapper-sc-11ajjas-1 lfCKVE">
-						<img
-							src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-							class="Accordion__IconArrow-sc-11ajjas-3 dTjHAc">
+		<div class="product-Accordion-group">
+			<div class="AccordionSection__Wrapper grChwy ">
+				<div class="Accordion__Wrapper-sc-11ajjas-0 fhiIvu">
+					<div class="Accordion__SectionLabelWrapper-sc-11ajjas-2 jpZuSu">
+						<h4 class="AccordionSection__Label product-listbtn">자주 묻는
+							질문</h4>
+						<div class="Accordion__ChevronWrapper-sc-11ajjas-1 lfCKVE">
+							<img
+								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+								class="Accordion__IconArrow-sc-11ajjas-3 dTjHAc">
+						</div>
+					</div>
+					<div class="Accordion__Content product-question">
+						<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>신청한 클래스는 어디서 확인하나요?</div>
+							</div>
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>[마이페이지]의 [신청 내역] 탭에서 신청하신 클래스을 확인하실 수 있습니다.</div>
+							</div>
+						</div>
+						<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>두 명 이상 신청하고 싶은데 어떻게 하나요?</div>
+							</div>
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>클래스에 따라 한 번에 여러명 신청하는 것이 가능하며, 1회 최대 신청 가능 인원 수는 클래스별로
+									다를 수 있으니 확인 부탁드립니다. 추가 신청을 원하시는 경우 추가 결제가 가능하니 참고 부탁드립니다.</div>
+							</div>
+						</div>
+						<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>신청 취소 및 환불 처리는 어떻게 되나요?</div>
+							</div>
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>구매 후 14일 이내에는 신청 취소 및 환불이 가능합니다. 다만, 14일이 지나지 않았더라도 이미
+									호스트님과 일정 확정 후 출석체크가 완료되었다면 환불이 불가합니다.</div>
+							</div>
+						</div>
+						<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>예약을 하고 싶은데, 호스트님의 연락처는 어떻게 알 수 있나요?</div>
+							</div>
+							<div class="FAQ__Row-olo0b1-1 eESLLZ">
+								<img
+									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
+									class="FAQ__Icon-olo0b1-2 boGXOv">
+								<div>클래스를 구매하시면 카카오톡 또는 문자로 호스트님의 연락처가 포함된 안내 메시지를 발송해드립니다.</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="Accordion__Content-sc-11ajjas-4 product-question">
-					<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
+			</div>
+	 
+			<div class="AccordionSection__Wrapper grChwy ">
+				<div class="Accordion__Wrapper-sc-11ajjas-0 fhiIvu">
+					<div class="Accordion__SectionLabelWrapper-sc-11ajjas-2 jpZuSu">
+						<h4 class="AccordionSection__Label product-listbtn">환불 정책</h4>
+						<div class="Accordion__ChevronWrapper-sc-11ajjas-1 lfCKVE">
 							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>신청한 프립은 어디서 확인하나요?</div>
-						</div>
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>[마이]의 [신청 내역] 탭에서 신청하신 프립을 확인하실 수 있습니다.</div>
+								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+								class="Accordion__IconArrow-sc-11ajjas-3 dTjHAc">
 						</div>
 					</div>
-					<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>두 명 이상 신청하고 싶은데 어떻게 하나요?</div>
-						</div>
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>프립에 따라 한 번에 여러명 신청하는 것이 가능하며, 1회 최대 신청 가능 인원 수는 프립별로
-								다를 수 있으니 확인 부탁드립니다. 추가 신청을 원하시는 경우 추가 결제가 가능하니 참고 부탁드립니다.</div>
-						</div>
-					</div>
-					<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>신청 취소 및 환불 처리는 어떻게 되나요?</div>
-						</div>
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>구매 후 14일 이내에는 신청 취소 및 환불이 가능합니다. 다만, 14일이 지나지 않았더라도 이미
-								호스트님과 일정 확정 후 출석체크가 완료되었다면 환불이 불가합니다.</div>
-						</div>
-					</div>
-					<div class="FAQ__Wrapper-olo0b1-0 eXkIaF">
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-opacity='0' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M3 9.112C3 5.329 5.831 3 8.992 3 12.169 3 15 5.33 15 9.112c0 1.652-.543 3.023-1.432 4.047l1.4 1.553L13.468 16l-1.432-1.586a6.2 6.2 0 0 1-3.045.793C5.832 15.207 3 12.878 3 9.112zm2.354-.017c0 2.643 1.844 3.899 3.638 3.899.51 0 1.037-.1 1.498-.298l-1.827-2.015 1.514-1.305 1.827 2.048c.395-.594.642-1.37.642-2.329 0-2.643-1.844-3.898-3.654-3.898-1.794 0-3.638 1.255-3.638 3.898z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>예약을 하고 싶은데, 호스트님의 연락처는 어떻게 알 수 있나요?</div>
-						</div>
-						<div class="FAQ__Row-olo0b1-1 eESLLZ">
-							<img
-								src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath fill='%23FFF' fill-rule='nonzero' d='M0 0h18v18H0z'/%3E %3Cpath fill='%23000' d='M12.436 15l-1.009-2.742H6.504L5.496 15H3L7.65 3h2.735L15 15h-2.564zm-3.47-9.41L7.29 10.126h3.35L8.966 5.59z'/%3E %3C/g%3E %3C/svg%3E"
-								class="FAQ__Icon-olo0b1-2 boGXOv">
-							<div>프립을 구매하시면 카카오톡 또는 문자로 호스트님의 연락처가 포함된 안내 메시지를 발송해드립니다.</div>
+					<div class="Accordion__Content product-refund">
+						<div>
+	
+							<div class="product-description">
+								<p>티켓 구매 후 2주 이내 : 100% 환불</p>
+								<p>티켓 구매 후 2주 후 : 환불 불가</p>
+								<br>
+								<p>[환불 신청 방법]</p>
+								<p>1. 해당 클래스를 결제한 계정으로 로그인</p>
+								<p>2. 내 클래스 - 신청내역</p>
+								<p>3. 취소를 원하는 클래스 상세 정보 버튼 - 취소</p>
+								<p>※ 결제 수단에 따라 예금주, 은행명, 계좌번호 입력</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="AccordionSection__Wrapper-sc-1eajn81-0 grChwy">
-			<div class="Accordion__Wrapper-sc-11ajjas-0 fhiIvu">
-				<div class="Accordion__SectionLabelWrapper-sc-11ajjas-2 jpZuSu">
-					<h4 class="AccordionSection__Label-sc-1eajn81-1 product-listbtn">환불 정책</h4>
-					<div class="Accordion__ChevronWrapper-sc-11ajjas-1 lfCKVE">
-						<img
-							src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-							class="Accordion__IconArrow-sc-11ajjas-3 dTjHAc">
-					</div>
-				</div>
-				<div class="Accordion__Content-sc-11ajjas-4 product-refund">
-					<div>
-
-						<div class="product-description">
-							<p>티켓 구매 후 2주 이내 : 100% 환불</p>
-							<p>티켓 구매 후 2주 후 : 환불 불가</p>
-							<br>
-							<p>[환불 신청 방법]</p>
-							<p>1. 해당 프립을 결제한 계정으로 로그인</p>
-							<p>2. 내 프립 - 신청내역</p>
-							<p>3. 취소를 원하는 프립 상세 정보 버튼 - 취소</p>
-							<p>※ 결제 수단에 따라 예금주, 은행명, 계좌번호 입력</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 </div>
-</div>
+
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a59ab72fe6eb98f4d9b891ada5aaa375"></script>
 <script>
@@ -1448,9 +1367,37 @@
 			});
 	
 	
-	var reviews;
-	var review_count;
+	
+	var reviews = $('.hlWAni .slick-list');
 	var review_position = 1;
+	var review_count = $('.hlWAni .slick-track').children().length;
+	var real_count = review_count / 4;
+	$('.hlWAni .slick-arrow.slick-disabled').click(function(){
+		if(1 < review_position) {
+			reviews.animate({
+				left: '+=976px'
+			});
+			review_position--;
+			$('.hlWAni .slick-arrow.slick-next').css('display','block');
+		} else if(review_position <= 1){
+			$('.hlWAni .slick-arrow.slick-disabled').css('display','none');
+		}
+	});
+	
+	$('.hlWAni .slick-arrow.slick-next').click(function(){
+		
+		if(review_position < real_count){
+			reviews.animate({
+				left: '-=976px'
+			});
+			review_position++;
+			$('.hlWAni .slick-arrow.slick-disabled').css('display','block');
+		} else if(review_position >= real_count){
+			$('.hlWAni .slick-arrow.slick-next').css('display','none');
+		}
+	});
+	
+	
 	
 
 	
@@ -1521,13 +1468,55 @@
             };
         }
 	
-	$('.product-listbtn').click(function(){
+	$(function(){
+		var group = $('.product-Accordion-group');
 		
-		var submenu = $('.product-question');
-		if(submenu.is(":visible")){
-			submenu.slideUP();
-		} else {
-			submenu.slideDown();
+		group.each(function(){
+			var _group = new GroupBox(this);
+		});
+		
+		
+		function GroupBox(groupElement){
+			
+			var box = $(groupElement).find(".AccordionSection__Wrapper");
+			var title = $(groupElement).find(".AccordionSection__Label");
+			
+ 			box.each(function(idx){
+				
+				var newBox = new RootBox(this);
+				if(idx > 0){
+					newBox.siblingsClose();
+				}
+				
+			}); 
+		}
+		
+		function RootBox(boxElement){
+			var _this = this;
+			var boxEl = $(boxElement);
+			var target = $(boxEl).find(".AccordionSection__Label");
+			var cont = $(boxEl).find(".Accordion__Content");
+			
+			target.on("click", anchorClickEvent);
+			
+			function anchorClickEvent(){
+				if(cont.is(':hidden')) {
+					_this.open();
+				} else {
+					_this.close();
+				}
+			}
+			
+			_this.siblingsClose = function(){
+				cont.css('display', 'hide');
+			};
+			
+			_this.open = function(){
+				cont.slideDown();
+			};
+			_this.close = function(){
+				cont.slideUp();
+			}
 		}
 		
 	});

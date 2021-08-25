@@ -13,19 +13,19 @@
 				<p class="breadcrumbs mb-0">
 
 					<!-- 페이지에 맞게 수정 필요  -->
-					<span class="mr-2"><a href="index.html">Home <i
-							class="fa fa-chevron-right"></i></a></span> <span>Products <i
-						class="fa fa-chevron-right"></i></span>
+					<span class="mr-2"><a href="/hobbylovey/index.action">홈
+							<i class="fa fa-chevron-right"></i>
+					</a></span> <span>클래스 <i class="fa fa-chevron-right"></i></span>
 				</p>
-				<h2 class="mb-0 bread">Products</h2>
+				<h2 class="mb-0 bread">클래스</h2>
 			</div>
 		</div>
 	</div>
 </section>
-<div class="FullScreenWrapper__Content-sc-1w6pu30-0 gUYDhF">
-	<header class="FullScreenHeader-n3p761-0 ifNQQr">
-		<button class="Button-bqxlp0-0 eupWyQ" type="button" width="24px"
-			height="24px">
+<div class="product-option-Wrapper gUYDhF">
+	<header class="product-option-Header ifNQQr">
+		<button class="product-option-backbtn eupWyQ" type="button"
+			width="24px" height="24px">
 			<img
 				src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cg fill='none' fill-rule='nonzero'%3E %3Cpath d='M0 0h24v24H0z'/%3E %3Cpath stroke='%23000' stroke-width='2' d='M12 19.071L4.929 12 12 4.929M5 12h15'/%3E %3C/g%3E %3C/svg%3E"
 				alt="" class="Icon-sc-1n96qsy-0 dsjmCy">
@@ -33,119 +33,40 @@
 	</header>
 	<div
 		class="BodyScrollLockContainer__Container-sc-19uqzq5-0 jFvWc FullScreenWrapper__FullWrapper-sc-1w6pu30-1 dAMGt">
-		<div class="OptionSelector__Title-sc-1c3pxsm-0 kjwgkO">
+		<div class="product-OptionSelector kjwgkO">
 			옵션 선택
 			<button color="black" font-size="13"
-				class="TextButton-sc-175c9eu-0 ItineraryViewTypeButton__ItineraryViewTypeButtonWrapper-sc-1e9g1d1-0 ktwSVi">달력에서
-				보기</button>
+				class="product-calendarbtn ktwSVi">달력에서 보기</button>
 		</div>
-		<div class="OptionSelector__SelectorContainer-sc-1c3pxsm-1 jMUtnM">
+		<div class="product-OptionSelectorContainer jMUtnM">
 			<div class="Accordion__Wrapper-sc-11ajjas-0 fhiIvu">
-				<div class="Accordion__SectionLabelWrapper-sc-11ajjas-2 gTdSym">
+				<div class="product-SectionLabelWrapper gTdSym">
 					<div font-size="13px" color="#9b9b9b"
-						class="AccordionLabelWrapper-sc-1t4rj3d-0 AccordionLabel__ExtendedAccordionLabelWrapper-sc-13wkt9g-0 eXwobX">
+						class="product-LabelWrapper eXwobX">
 						<div>일정</div>
 					</div>
+					<div class="Accordion__ChevronWrapper-sc-11ajjas-1 ejNywc">
+						<img
+							src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
+							class="Accordion__IconArrow-sc-11ajjas-3 dTjHAc">
+					</div>
+				</div>
+				<div class="product-ContentWrapper">
+					<div class="product-ItineraryWrapper cZOPBk">
+						<div class="ItineraryDate ehtKbJ">2021년 8월 25일(수요일) 14:00</div>
+						<div class="product-ItineraryQuantity coFIds">2 / 3명 | 신청 마감
+							8월 25일 07:30</div>
+					</div>
+					<div class="product-ItineraryWrapper cZOPBk">
+						<div class="ItineraryDate ehtKbJ">2021년 8월 26일(목요일) 16:00</div>
+						<div class="product-ItineraryQuantity coFIds">2 / 3명 | 신청 마감
+							8월 26일 07:30</div>
+					</div>
+				</div>
 
-				</div>
-				<div class="Accordion__Content-sc-11ajjas-4 impDuH">
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 25일(수요일) 14:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 25일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 26일(목요일) 16:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 26일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 27일(금요일) 16:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 27일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 28일(토요일) 11:30</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 28일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 28일(토요일) 13:15</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 28일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 28일(토요일) 15:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 8월 28일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							8월 30일(월요일) 14:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 8월 30일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 3일(금요일) 14:30</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 9월 3일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 4일(토요일) 13:15</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 4일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 4일(토요일) 14:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">2
-							/ 3명 | 신청 마감 9월 4일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 4일(토요일) 15:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 4일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 6일(월요일) 14:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 6일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 7일(화요일) 16:15</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 7일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 10일(금요일) 14:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 10일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 11일(토요일) 13:15</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 11일 07:30</div>
-					</div>
-					<div class="ItineraryEntity__Wrapper-sc-18pbk45-0 cZOPBk">
-						<div class="ItineraryEntity__ItineraryDate-sc-18pbk45-1 ehtKbJ">2021년
-							9월 11일(토요일) 15:00</div>
-						<div class="ItineraryEntity__Quantity-sc-18pbk45-2 coFIds">0
-							/ 3명 | 신청 마감 9월 11일 07:30</div>
-					</div>
-				</div>
+
+
+
 			</div>
 		</div>
 	</div>
