@@ -37,8 +37,6 @@ public class AuthController {
 	}
 	
 	
-	
-	
 	@RequestMapping(value = "/auth/idcheck.action", method = { RequestMethod.POST })
 	@ResponseBody
 	public int idcheck(HttpServletRequest req, HttpServletResponse resp, HttpSession session,String id) {

@@ -13,8 +13,8 @@
       select * from tblMemo order by seq desc
    </select> -->
    
+   <select id="member" resultType="admindto">
+   	  select * from tblUser order by seq desc
+   </select>
    
-   
-   
-
 </mapper>
