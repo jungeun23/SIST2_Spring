@@ -14,7 +14,7 @@
    </select> -->
    
    <select id="member" resultType="admindto">
-   	  select * from tblUser order by seq desc
+   	  select * from tblUser
    </select>
    
 </mapper>

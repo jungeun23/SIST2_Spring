@@ -23,6 +23,8 @@ public class AdminController {
 		// 회원 리스트 
 		List<AdminDTO> list = dao.member();
 		
+		req.setAttribute("list", list);
+		
 		return "admin.member";
 	}
 }
