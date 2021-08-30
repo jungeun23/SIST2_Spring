@@ -22,11 +22,13 @@ public class MypageController {
 
 		String seq = "14"; //임시 회원번호 - 로그인 기능구현 후 수정해야함
 		
-		//수강신청내역	
+		//수강신청내역	목록
 		List<SignUpClassDTO> list = dao.getSignUpClassList(seq);
 		
-		System.out.println("list 사이즈: " + list.size());
+		
+		
 		req.setAttribute("list", list);
+		
 		
 		return "member.mypage";
 		

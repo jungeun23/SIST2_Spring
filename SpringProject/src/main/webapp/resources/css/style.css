@@ -10273,6 +10273,9 @@ textarea.form-control {
   font-size: 14px;
 
 }
+
+.classList .table-mypage:nth-child(1) { width: 110px;}
+
 .mypage-classbox {
   display:flex;
 }

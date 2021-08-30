@@ -28,6 +28,14 @@ public class MypageDAO {
 		return template.selectOne("mypage.getSignupClass", seq);
 	}
 
+	public SignUpClassDTO getSignUpClass() {
+		return template.selectOne("mypage.getSignUpClass");
+	}
+
+	public int getTotalSignUpClass() {
+		return template.selectOne("mypage.getTotalSignUpClass");
+	}
+
 	
 	
 }
