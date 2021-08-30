@@ -70,11 +70,23 @@
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html" class="nav-link">회원관리</a></li>
+					<li class="nav-item active"><a href="/hobbylovey/admin/member.action" class="nav-link">회원관리</a></li>
 					<li class="nav-item"><a href="about.html" class="nav-link">클래스관리</a></li>
 					<li class="nav-item dropdown"></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">공지사항관리</a></li>
+					<li class="nav-item"><a href="" class="nav-link">공지사항관리</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">사이트통계</a></li>
 					</ul> </div>
 			</div>
 	</nav>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
