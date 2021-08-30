@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.UUID;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.google.gson.JsonObject;
 
@@ -55,7 +56,6 @@ public class HostController {
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
 	public String classenroll(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		System.out.println(req.getServletPath());
 
 		return "host.classenroll";
 	}
@@ -67,10 +67,28 @@ public class HostController {
 	}
 
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
-	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session,ClassDTO dto) {
+	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session,MultipartHttpServletRequest multi) {
+		
+		String path= session.getServletContext().getRealPath("/thumbnail");
+		int size = 1024 * 1024 * 20; //20MB
+		List<MultipartFile> file = multi.getFiles("classImage");
+		System.out.println(multi.getParameter("title"));
+		System.out.println(multi.getParameter("categoryBig"));
+		System.out.println(multi.getParameter("categorySmall"));
+		System.out.println(multi.getParameter("classOption"));
+		System.out.println(multi.getParameter("personnel"));
+		System.out.println(multi.getParameter("price"));
+		
+		System.out.println(multi.getParameter("content"));
+		System.out.println(multi.getParameter("classDate"));
+		System.out.println(multi.getParameter("latitude"));
+		System.out.println(multi.getParameter("longitude"));
+		System.out.println(multi.getParameter("location"));
+		
+		for(MultipartFile mf : file) {
+			System.out.println(mf.getOriginalFilename());
+		}
 
-		//System.out.println(dto);
-		System.out.println(dto);
 		
 		
 	}
