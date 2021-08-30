@@ -13,7 +13,7 @@
           "
         >
           <main id="classEnroll">
-            <form action="/hobbylovey/host/classenrollok.action" method="POST" ><!-- enctype="multipart/form-data" -->
+            <form action="/hobbylovey/host/classenrollok.action" method="POST"  enctype="multipart/form-data"><!-- enctype="multipart/form-data" -->
               <table class="table">
                 <tr>
                   <th>제목</th>
