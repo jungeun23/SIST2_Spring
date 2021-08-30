@@ -27,10 +27,21 @@
 	</select> -->
 	
 	<!-- 클래스 결제목록 -->
-	<select id="signupClassList" parameterType="String" resultType="com.spring.hobbylovey.mypage.SignUpClassDTO">
-		select * from tblsignupclass where userseq = #{seq};
+	<select id="getSignupClassList" parameterType="String" resultType="com.spring.hobbylovey.mypage.SignUpClassDTO">
+		select 
+		    sc.*,
+		    co.classdate, co.classoption, co.price, co.personnel,
+		    c.*, 
+		    h.*
+		from tblsignupclass sc
+		    inner join tblclassoption co
+		        on sc.classOptionSeq = co.classOptionSeq
+		    inner join tblClass c
+		        on c.classSeq = co.classSeq 
+		    inner join tblHost h
+		        on c.hostSeq = h.hostSeq
+		            where sc.userseq = #{seq}
 	</select>
-	
 	
 
 </mapper>

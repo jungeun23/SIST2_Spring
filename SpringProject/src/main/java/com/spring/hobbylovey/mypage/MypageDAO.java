@@ -20,12 +20,20 @@ public class MypageDAO {
 
 	public List<SignUpClassDTO> getSignUpClassList(String seq) {
 
-		return template.selectList("mypage.signupClassList", seq);
+		return template.selectList("mypage.getSignupClassList", seq);
 	}
 
 	public SignUpClassDTO getSignUpClass(String seq) {
 		// TODO Auto-generated method stub
-		return template.selectOne("mypage.signupClass", seq);
+		return template.selectOne("mypage.getSignupClass", seq);
+	}
+
+	public SignUpClassDTO getSignUpClass() {
+		return template.selectOne("mypage.getSignUpClass");
+	}
+
+	public int getTotalSignUpClass() {
+		return template.selectOne("mypage.getTotalSignUpClass");
 	}
 
 	
