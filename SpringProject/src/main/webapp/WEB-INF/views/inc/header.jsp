@@ -9,7 +9,12 @@
 
 					<div class="reg">
 						<p class="mb-0">
-							<a href="#" class="mr-2">회원가입</a><a href="#" class="mr-2">로그인</a>
+							<c:if test="${empty id}">
+							<a href="/hobbylovey/auth/signup.action" class="mr-2">회원가입</a><a href="/hobbylovey/auth/login.action" class="mr-2">로그인</a>
+							</c:if>
+							<c:if test="${not empty id}">
+							<a href="/hobbylovey/mypage/mypage.action" class="mr-2">${name}님(${id})</a>
+							</c:if>
 							<a href="#">공지사항</a>
 						</p>
 					</div>

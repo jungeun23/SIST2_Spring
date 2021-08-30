@@ -296,6 +296,19 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $('.review_reply_btn').click(function () {
+
+        if($(this).siblings('textarea').val() != null && $(this).siblings('textarea').val() != ''){
+          this.form.submit();
+
+
+        }
+
+      });
+    </script>
+
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">
@@ -321,17 +334,7 @@
       </svg>
     </div>
 
-    <script>
-      $('.review_reply_btn').click(function () {
-
-        if($(this).siblings('textarea').val() != null && $(this).siblings('textarea').val() != ''){
-          this.form.submit();
-
-
-        }
-
-      });
-    </script>
+    
 
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
