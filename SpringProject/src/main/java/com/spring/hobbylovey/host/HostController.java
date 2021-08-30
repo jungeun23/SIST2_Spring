@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,11 +27,29 @@ import com.google.gson.JsonObject;
 
 @Controller
 public class HostController {
+	
+	@Autowired
+	private HostDAO dao; 
 
-	@RequestMapping(value = "/host/classmain.action", method = { RequestMethod.GET })
-	public String name(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+	@RequestMapping(value = "/host/hostmain.action", method = { RequestMethod.GET })
+	public String hostmain(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		int classCount = dao.getMyClassCount((String)session.getAttribute("id"));
+		
 
-		return "host.name";
+		return "host.hostmain";
+	}
+	
+	@RequestMapping(value = "/host/classreview.action", method = { RequestMethod.GET })
+	public String classreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "host.classreview";
+	}
+	
+	@RequestMapping(value = "/host/hostlist.action", method = { RequestMethod.GET })
+	public String hostlist(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "host.hostlist";
 	}
 
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
@@ -48,15 +67,16 @@ public class HostController {
 	}
 
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
-	public String classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassDTO dto,MultipartHttpServletRequest multiFile, MultipartFile upload) {
+	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session,ClassDTO dto) {
 
+		//System.out.println(dto);
 		System.out.println(dto);
 		
-		return "host.classenrollok";
+		
 	}
 
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)
-	public String imageUpload(HttpServletRequest req, HttpServletResponse resp, MultipartHttpServletRequest multiFile, MultipartFile upload)  throws Exception {
+	public String imageUpload(HttpServletRequest req, HttpServletResponse resp,HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload)  throws Exception {
 		
 				JsonObject json = new JsonObject();
 				PrintWriter printWriter = null;
@@ -111,8 +131,7 @@ public class HostController {
 			}
 
 	@RequestMapping(value = "/host/ckImgSubmit.action")
-	public void ckSubmit(@RequestParam(value = "uid") String uid, @RequestParam(value = "fileName") String fileName,
-			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void ckSubmit(HttpServletRequest request, HttpServletResponse response,HttpSession session,@RequestParam(value = "uid") String uid, @RequestParam(value = "fileName") String fileName) throws ServletException, IOException {
 		String path = "C:\\Users\\cksgh\\Desktop\\백업\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\SpringProject\\resources\\images";
 		String sDirPath = path + uid + "_" + fileName;
 		File imgFile = new File(sDirPath);
