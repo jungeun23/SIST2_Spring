@@ -13,7 +13,7 @@
               font-weight: bold;
             "
           >
-            안녕하세요.<br />홍길동 호스트님
+            안녕하세요.<br />${name} 호스트님
           </h1>
           <span id="edit_host_info"><a href="#!">개인정보수정</a></span>
           <span style="color: rgb(119, 119, 119); margin-top: 50px"
