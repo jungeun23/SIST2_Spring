@@ -14,6 +14,11 @@
 		<put-attribute name="content" value="/WEB-INF/views/indexcontent.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="kakaomap" template="/WEB-INF/views/kakao.jsp">
+		<put-attribute name="asset_css" value="/inc/asset_css.jsp"></put-attribute>
+		<put-attribute name="asset_javascript" value="/inc/asset_javascript.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/kakaomap.jsp"></put-attribute>
+	</definition>
 	
 	
 	
@@ -55,7 +60,7 @@
 		<put-attribute name="asset_css" value="/inc/asset_css.jsp"></put-attribute>
 		<put-attribute name="asset_javascript" value="/inc/asset_javascript.jsp"></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/views/inc/host_header.jsp"></put-attribute>
-		<put-attribute name="content" value="/WEB-INF/views/auth/{1}.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/host/{1}.jsp"></put-attribute>
 	</definition>
 	
 

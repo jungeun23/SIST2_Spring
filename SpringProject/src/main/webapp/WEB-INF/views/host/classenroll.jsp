@@ -13,7 +13,7 @@
           "
         >
           <main id="classEnroll">
-            <form action="#!" method="POST" enctype="multipart/form-data">
+            <form action="/hobbylovey/host/classenrollok.action" method="POST" ><!-- enctype="multipart/form-data" -->
               <table class="table">
                 <tr>
                   <th>제목</th>
@@ -107,6 +107,7 @@
                       id="location"
                       type="text"
                       class="form-control"
+                      name="location"
                       readonly
                     />
                     <input
@@ -330,7 +331,7 @@
 
       $('#location').click(function () {
         window.open(
-          'map.html',
+          '/hobbylovey/kakaomap.action',
           'map',
           'top=10, left=10, width=1100, height=620, status=no, menubar=no, toolbar=no, resizable=no'
         );
@@ -403,6 +404,6 @@
       CKEDITOR.addCss('.cke_editable { font-size: 15px; padding: 2em; }');
 
       CKEDITOR.replace('editor1', {
-        filebrowserUploadUrl: '/업로드/실행할 서블릿',
+        filebrowserUploadUrl: '/hobbylovey/host/imageUpload.action',
       });
     </script>/html>

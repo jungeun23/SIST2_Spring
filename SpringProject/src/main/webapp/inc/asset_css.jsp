@@ -20,5 +20,8 @@
   <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
   <script src="<%= request.getContextPath() %>/resources/js/jquery-3.6.0.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/ckeditor/ckeditor.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/ckeditor/config.js"></script>
+  
 
 <!-- /inc/asset.jsp -->
