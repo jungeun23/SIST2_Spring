@@ -8,8 +8,29 @@
 
 <mapper namespace="auth">
 	
-	<select id="authIdCheck" parameterType="String" resultType="Integer">
+	<select id="authUserIdCheck" parameterType="String" resultType="Integer">
 		select count(*) from tblUser where id=#{id}
+	</select>
+	
+	<select id="authHostIdCheck" parameterType="String" resultType="Integer">
+		select count(*) from tblHost where id=#{id}
+	</select>
+	
+	
+	<insert id="authUserSignup" parameterType="authdto">
+		INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, #{name}, #{nickname}, #{birth}, #{gender}, #{id}, #{email}, #{pw}, #{tel}, default, #{address}, #{auth}, default)
+	</insert>
+	
+	<insert id="authHostSignup" parameterType="authdto">
+		INSERT INTO TBLHost (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, #{name}, #{nickname}, #{birth}, #{gender}, #{id}, #{email}, #{pw}, #{tel}, default, #{address}, #{auth}, default)
+	</insert>
+	
+	<select id="authUserLogin" resultType="authdto" parameterType="authdto">
+		select * from tblUser where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="authHostLogin" resultType="authdto" parameterType="authdto">
+		select * from tblHost where id=#{id} and pw=#{pw}
 	</select>
 	
 	
