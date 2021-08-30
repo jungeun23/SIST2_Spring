@@ -17,7 +17,7 @@ public class MypageController {
 	@Autowired
 	private MypageDAO dao;
 	
-	@RequestMapping(value = "/mypage.action", method = { RequestMethod.GET })
+	@RequestMapping(value = "/member/mypage.action", method = { RequestMethod.GET })
 	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {
 
 		String seq = "14"; //임시 회원번호 - 로그인 기능구현 후 수정해야함
