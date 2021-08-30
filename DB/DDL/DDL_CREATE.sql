@@ -163,7 +163,7 @@ ALTER TABLE tblSignupClass
     ADD CONSTRAINT fk_user_signupClass FOREIGN KEY ( userSeq )
         REFERENCES tblUser ( userSeq );
 
-ALTER TABLE tblSlassScrap
+ALTER TABLE tblclassScrap
     ADD CONSTRAINT fk_user_classScrap FOREIGN KEY ( userSeq )
         REFERENCES tblUser ( userSeq );
 

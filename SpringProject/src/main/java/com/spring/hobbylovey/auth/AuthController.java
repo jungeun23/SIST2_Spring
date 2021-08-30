@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AuthController {
 	
-	@Autowired
-	private AuthDAO dao;
+	/*
+	 * @Autowired private AuthDAO dao;
+	 */
 	
 	@RequestMapping(value = "/auth/signup.action", method = { RequestMethod.GET })
 	public String signup(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
@@ -39,14 +40,17 @@ public class AuthController {
 	
 	
 	
-	@RequestMapping(value = "/auth/idcheck.action", method = { RequestMethod.POST })
-	@ResponseBody
-	public int idcheck(HttpServletRequest req, HttpServletResponse resp, HttpSession session,String id) {
-
-		int result = dao.authIdCheck(id);
-		
-		return result;
-	}
+	/*
+	 * @RequestMapping(value = "/auth/idcheck.action", method = { RequestMethod.POST
+	 * })
+	 * 
+	 * @ResponseBody public int idcheck(HttpServletRequest req, HttpServletResponse
+	 * resp, HttpSession session,String id) {
+	 * 
+	 * int result = dao.authIdCheck(id);
+	 * 
+	 * return result; }
+	 */
 	
 
 }

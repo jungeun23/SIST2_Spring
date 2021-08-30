@@ -11985,7 +11985,10 @@ text-align: center;
     justify-content: center;
     padding: 14px 16px;
 }
-
+.product-LabelWrapper div {
+	display: flex;
+	margin-bottom: 5px;
+} 
 .ejNywc{
 	display: inline-block;
     position: absolute;
@@ -12030,6 +12033,138 @@ text-align: center;
     color: rgb(85, 85, 85);
 }
 
+.option-Accordion-Content{
+	display: block;
+    overflow: hidden auto;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    transform-origin: left top;
+    transform: translateY(0px) scale(1, 1);
+}
+.option-PurchaseOptionEntity-Wrapper{
+	line-height: 22px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 18px 16px;
+    background-color: rgb(249, 249, 249);
+    font-size: 13px;
+    cursor: pointer;
+}
+.PurchaseOptionEntity-OptionInfoWrapper{
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.PurchaseOptionEntity-TitleContainer{
+	-webkit-box-flex: 1;
+    flex: 1 1 auto;
+}
+.PurchaseOptionEntity-QuantityContainer{
+	margin-top: 12px;
+    line-height: 11px;
+    font-size: 11px;
+    color: rgb(85, 85, 85);
+}
+.PurchaseOptionEntity-PriceContainer{
+	margin-left: 10px;
+    text-align: right;
+}
+.PurchaseOptionEntity-Price{
+	white-space: nowrap;
+    font-weight: bold;
+}
+
+.option-PurchaseSelectionWrapper{
+	-webkit-box-flex: 1;
+    flex: 1 1 auto;
+    padding: 20px;
+}
+.PurchaseSelectionEntity-Wrapper{
+	position: relative;
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 5px;
+    padding: 20px;
+}
+#option-select-cancelbtn{
+	position: absolute;
+    top: 16px;
+    right: 20px;
+    margin-left: auto;
+    background-color: #FFF;
+    border: 0;
+}
+.PurchaseSelectionEntity-SelectionWrapper{
+	line-height: 12px;
+    font-size: 12px;
+}
+.PurchaseSelectionEntity-SelectionWrapper > div {
+	margin-bottom: 12px;
+}
+.PurchaseSelectionEntity-SelectionWrapper > div:last-child {
+    margin-bottom: 0px;
+}
+.PurchaseSelectionEntity-OptionTitle{
+	width: 230px;
+    line-height: 1.5;
+}
+.PurchaseSelectionEntity-Footer {
+	display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+.PurchaseSelectionEntity-Price{
+	line-height: 18px;
+    color: #F28316;
+    font-size: 16px;
+}
+.option-Counter-Wrapper{
+	display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: black;
+}
+.option-Counter-ControlButton{
+	-webkit-box-flex: 0;
+    flex: 0 0 18px;
+    cursor: not-allowed;
+}
+.option-Counter-Value{
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    width: 36px;
+    height: 18px;
+    line-height: 12px;
+    font-size: 12px;
+    border: 0;
+    text-align: center;
+    padding-left: 12px;
+    font-size: 14px;
+}
+.option-ButtonSection-ButtonWrapper{
+	position: relative;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-top: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.option-ButtonNext{
+	width: 100%;
+    height: 50px;
+    line-height: 24px;
+    padding: 0px 13px;
+    background-color: #F28316;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    margin: 0px;
+    border:0;
+}
+
+
 
 /* 클래스 후기 리스트 */
 .product-review-PageWrapper{
@@ -12041,6 +12176,7 @@ text-align: center;
     width: 100%;
     padding: 0px 20px;
     min-height: 1px;
+    
 }
 .product-review-FadeWrapper{
 	width: auto;
@@ -12053,7 +12189,7 @@ text-align: center;
 }
 .product-review-ReviewList-Header{
 	border-bottom: 1px solid rgb(238, 238, 238);
-    padding: 30px 0px;
+    padding: 70px 0px 30px;
 }
 .product-review-ReviewList-Title{
 	padding: 0px;

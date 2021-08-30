@@ -31,42 +31,42 @@
 			<div class="row">
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=스포츠';"
 							style="background-image: url('resources/images/sport.svg');"></div>
 						<h3>스포츠</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=음악';"
 							style="background-image: url('resources/images/music.svg');"></div>
 						<h3>음악</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=드로잉';"
 							style="background-image: url('resources/images/drawing.svg');"></div>
 						<h3>드로잉</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=쿠킹';"
 							style="background-image: url('resources/images/cooking.svg');"></div>
 						<h3>쿠킹</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=체험';"
 							style="background-image: url('resources/images/play.svg');"></div>
 						<h3>체험</h3>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 ">
 					<div class="sort w-100 text-center ftco-animate">
-						<div class="img"
+						<div class="img" onclick="location.href='/hobbylovey/class/list.action?category=핸드메이드';"
 							style="background-image: url('resources/images/handmade.svg');"></div>
 						<h3>핸드메이드</h3>
 					</div>

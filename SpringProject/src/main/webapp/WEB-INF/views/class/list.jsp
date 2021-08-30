@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-9">
 				<button type="button" id="productlist-categorybig">
-					스포츠 <img id="productlist-arrow" src="../resources/images/arrow.svg">
+					${category} <img id="productlist-arrow" src="../resources/images/arrow.svg">
 				</button>
 				<div class="productlist-categorysmall">
 					<span class="productlist-active">전체</span> <span class="">댄스</span>
@@ -45,304 +46,44 @@
 					<div
 						class="col-md-12 d-flex justify-content-between align-items-center">
 
-						<h4 class="product-select">인기 댄스 100</h4>
-						<!-- <select class="selectpicker" multiple>
-						          <option>Brandy</option>
-						          <option>Gin</option>
-						          <option>Rum</option>
-						          <option>Tequila</option>
-						          <option>Vodka</option>
-						          <option>Whiskey</option>
-						        </select> -->
+						<h4 class="product-select">인기 스포츠 ${fn:length(list)}</h4>
 					</div>
 				</div>
-				<div class="row">
+				<div id="productlist" class="row">
 
-					<!-- 이거로 작업하시면 됩니다~~ -->
+					
+					<c:forEach items="${list}" var="dto">
 					<div class="col-md-4 d-flex">
 						<div class="product ftco-animate">
 							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-1.jpg');">
+								style="background-image: url('../resources/images/classimage/${dto.classImage}');">
 								<div class="desc">
 									<p class="meta-prod d-flex">
 										<a href="#"
 											class="d-flex align-items-center justify-content-center"><span
 											class="flaticon-heart"></span></a> <a
-											href="/hobbylovey/class/detail.action"
+											href="/hobbylovey/class/detail.action?classSeq=${dto.classSeq}"
 											class="d-flex align-items-center justify-content-center"><span
 											class="flaticon-visibility"></span></a>
 									</p>
 								</div>
 							</div>
 							<div class="text text-center">
-								<span class="sale">신규</span> <span class="list-rate"><img
-									class="list-star" src="../resources/images/bxs-star-orange.svg">
-									4.0</span>
-								<h2>[1:1] 댄스 정복하기(예약 가능)</h2>
+								<!-- <span class="sale">신규</span>  -->
+<%-- 							<span class="list-rate">
+									<img class="list-star" src="../resources/images/bxs-star-orange.svg">
+									${dto.score}
+								</span> --%>
+								<h2>${dto.title}</h2>
 								<p class="mb-0">
-									<span class="price">50,000원</span> <span
-										class="price price-sale">80,000원</span>
+									<span class="price">${dto.price}원</span> 
 								</p>
 							</div>
 						</div>
 					</div>
-
-
-
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-2.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="seller">인기</span> <span class="list-star">5.0</span>
-								<h2>K-POP 방송댄스 원데이 클래스 (예약 가능)</h2>
-								<span class="price">43,000원</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-3.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="new">Only</span> <span class="">4.8</span>
-								<h2>[청담] 소그룹 발레 기초 베이직반 1회 (예약 가능)</h2>
-								<span class="price">60,000원</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-4.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Rum</span>
-								<h2>The Glenlivet</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-5.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Black Label</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-6.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Tequila</span>
-								<h2>Macallan</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-7.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Vodka</span>
-								<h2>Old Monk</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-8.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Jameson Irish Whiskey</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-9.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Screwball</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-10.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Screwball</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-11.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>McClelland's</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
-							<div class="img d-flex align-items-center justify-content-center"
-								style="background-image: url('../resources/images/prod-12.jpg');">
-								<div class="desc">
-									<p class="meta-prod d-flex">
-										<a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-shopping-bag"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-heart"></span></a> <a href="#"
-											class="d-flex align-items-center justify-content-center"><span
-											class="flaticon-visibility"></span></a>
-									</p>
-								</div>
-							</div>
-							<div class="text text-center">
-								<span class="category">Whiskey</span>
-								<h2>Plantation</h2>
-								<span class="price">$69.00</span>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
+				
+					
 				</div>
 				<div class="row mt-5">
 					<div class="col text-center">
@@ -413,7 +154,7 @@
 						<div class="filter-small">가격</div>
 						<div id="sort-cost" >
 							<label for="range">
-							      <input type="range" name="range" id="sort-range" min="1" max="300" step="5" value="175"/>
+							      <input type="range" name="range" id="sort-range" min="1" max="100" step="5" value="175"/>
 							</label>
 							
 						</div>
@@ -519,6 +260,49 @@
 		}
 	}
 	
+	/* 카테고리 소 클릭 */
+	$('.productlist-categorysmall span').click(function(){
+		$('.productlist-categorysmall span').removeClass("productlist-active");
+		$(this).addClass("productlist-active");
+		
+		var categorySmall = $(this).text();
+		var categoryBig = '${category}';
+		alert(categoryBig +','+categorySmall);
+		$.ajax({
+			type: 'GET',
+			url: '/hobbylovey/class/list_cgsmall.action',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall +'&classseq=1&title=ㅁㄴㅇ&latitude=123&longitude=42&price=12222&classImage=ㄴㅁㅇㄻ&recommend=223',
+			dataType: 'json',
+			success: function(list){
+				
+				$('#productlist').html('');
+				
+				$(list).each(function (index, dto) {
+					
+					console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+					
+					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product ftco-animate"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+					
+					
+				});
+				
+				var length = $(list).length;
+				
+				
+				$('.product-select').text('인기 '+ categorySmall + ' ' + length);
+				
+				
+			},
+			error: function(a,b,c){
+				console.log(a,b,c);
+			}
+			
+		});
+		
+		
+		
+	});
+	
 	 
 	 /* 정렬 필터 클릭 */
 	$('.productfilter-sort').click(function() {
@@ -557,7 +341,7 @@
 	
 	var options = {
 		center: new daum.maps.LatLng(37.551415, 126.981086), // 지도의 중앙 좌표
-		level: 8 // 지도의 레벨(확대,축소)
+		level: 9 // 지도의 레벨(확대,축소)
 	};
 	
 	var map = new daum.maps.Map(container, options); //지도 생성
@@ -566,9 +350,9 @@
        var positions = [
        	<c:forEach items="${list}" var="dto" varStatus="status">
            {
-               title: '${dto.place_name}', 
-               content: '<div>${dto.place_name}</div>', 
-               latlng: new kakao.maps.LatLng(${dto.y}, ${dto.x})
+               title: '${dto.title}', 
+               content: '<div>${dto.title}</div>', 
+               latlng: new kakao.maps.LatLng(${dto.latitude}, ${dto.longitude})
            }
            
            <c:if test="${list.size()-1 > status.index}">
