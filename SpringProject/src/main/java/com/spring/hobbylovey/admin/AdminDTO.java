@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class AdminDTO {
 
+	private String seq;
 	private String name;
 	private String nickname;
 	private String birth;
@@ -14,4 +15,5 @@ public class AdminDTO {
 	private String tel;
 	private String id;
 	private String point;
+	
 }

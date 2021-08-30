@@ -27,5 +27,21 @@ public class AdminController {
 		
 		return "admin.member";
 	}
+	
+	@RequestMapping(value = "/admin/notice_manage.action", method = { RequestMethod.GET })
+	public String notice_manage(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+
+		
+		return "admin.notice_manage";
+	}
+	
+	@RequestMapping(value = "/admin/class_manage.action", method = { RequestMethod.GET })
+	public String class_manage(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+
+		
+		return "admin.class_manage";
+	}
 }
 
