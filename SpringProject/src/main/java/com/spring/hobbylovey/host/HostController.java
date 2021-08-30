@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,10 +26,30 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 @Controller
 public class HostController {
 
-	@RequestMapping(value = "/host/classmain.action", method = { RequestMethod.GET })
-	public String name(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+	@Autowired
+	private HostDAO dao; 
+	
+	@RequestMapping(value = "/host/hostmain.action", method = { RequestMethod.GET })
+	public String hostmain(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		
+		
+		
+		int classCount = dao.getMyClassCount((String)session.getAttribute("id"));
+		
 
-		return "host.name";
+		return "host.hostmain";
+	}
+	
+	@RequestMapping(value = "/host/classreview.action", method = { RequestMethod.GET })
+	public String classreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "host.classreview";
+	}
+	
+	@RequestMapping(value = "/host/hostlist.action", method = { RequestMethod.GET })
+	public String hostlist(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "host.hostlist";
 	}
 
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
@@ -65,7 +86,7 @@ public class HostController {
 			String fileName = upload.getOriginalFilename();
 			byte[] bytes = upload.getBytes();
 
-			String path = "C:\\Users\\cksgh\\Desktop\\백업\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\SpringProject\\resources\\images";
+			String path = "C:\\Users\\cksgh\\Desktop\\백업\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\SpringProject\\resources\\images\\";
 			String ckUploadPath = path + uid + "_" + fileName;
 			File folder = new File(path); // 해당 디렉토리 확인
 			if (!folder.exists()) {
