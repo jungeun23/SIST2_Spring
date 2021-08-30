@@ -51,16 +51,6 @@ public class AuthController {
 	@RequestMapping(value = "/auth/signupok.action", method = { RequestMethod.POST })
 	public void signupok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, AuthDTO dto) {
 
-		System.out.println(dto.getName());
-		System.out.println(dto.getNickname());
-		System.out.println(dto.getBirth());
-		System.out.println(dto.getGender());
-		System.out.println(dto.getId());
-		System.out.println(dto.getEmail());
-		System.out.println(dto.getPw());
-		System.out.println(dto.getTel());
-		System.out.println(dto.getAddress());
-		System.out.println(dto.getAuth());
 
 		if (dto.getGender().equals("1") || dto.getGender().equals("3")) {
 			dto.setGender("남자");

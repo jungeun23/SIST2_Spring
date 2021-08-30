@@ -31,7 +31,7 @@
 									<td class="px-5 py-2">${dto.seq}</td>
 									<td class="px-1 py-1">${dto.id}</td>
 									<td class="px-2 py-1">${dto.name}</td>
-									<td class="px-4 py-1">${dto.age}</td>
+									<td class="px-4 py-1">${dto.birth}</td>
 									<td class="px-6 py-1">${dto.gender}</td>
 									<td>${dto.address}</td>
 									<td>${dto.tel}</td>
