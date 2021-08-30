@@ -48,11 +48,12 @@ public class HostController {
 	}
 
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
-	public String classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassDTO dto,MultipartHttpServletRequest multiFile, MultipartFile upload) {
+	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassDTO dto) {
 
 		System.out.println(dto);
+	
 		
-		return "host.classenrollok";
+		//return "host.classenrollok";
 	}
 
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)
