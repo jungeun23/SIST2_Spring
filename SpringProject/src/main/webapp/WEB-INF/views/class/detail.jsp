@@ -1332,6 +1332,7 @@
 	var img_count;
 	var img_position = 1;
 
+	/* 썸네일 사진 움직이기 */
 	imgs = $('.product-ImageSlider ul');
 	img_count = imgs.children().length;
 
@@ -1367,7 +1368,7 @@
 			});
 	
 	
-	
+	/* 후기 사진 움직이기 */
 	var reviews = $('.hlWAni .slick-list');
 	var review_position = 1;
 	var review_count = $('.hlWAni .slick-track').children().length;
@@ -1467,7 +1468,11 @@
                 infowindow.close();
             };
         }
+        
+        
+        
 	
+    /* 자주묻는질문,공지사항 아코디언  */
 	$(function(){
 		var group = $('.product-Accordion-group');
 		

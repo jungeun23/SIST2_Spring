@@ -8077,8 +8077,6 @@ h1, h2, h3, h4, h5,
 
 .ftco-navbar-light {
   background: transparent !important;
-  position: absolute;
-  top: 35px;
   left: 0;
   right: 0;
   z-index: 3;
@@ -12072,17 +12070,41 @@ text-align: center;
     line-height: 18px;
     position: relative;
     text-align: right;
+    
+}
+.product-review-FilterReviewWrapper > button{
+	border: 0;
+    background-color: #FFF;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
 }
 .product-review-FilterReviewDropMenu{
 	min-width: 110px;
     position: absolute;
     border-radius: 5px;
     border: 1px solid rgb(153, 153, 153);
-    padding: 20px;
+    padding: 5px 20px 20px;
     top: 30px;
     right: 0px;
     background-color: white;
     text-align: left;
+    /* display: none; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.product-review-FilterReview{
+	transform: rotate(90deg);
+}
+
+.product-review-FilterReviewOption{
+	font-weight: normal;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 0px;
+    white-space: nowrap;
+    display: block;
+    border: 0;
+    background-color: #FFF;
 }
 .product-review-filterReview-active{
 	font-weight: bold;
@@ -12091,17 +12113,12 @@ text-align: center;
     padding: 0px;
     white-space: nowrap;
     display: block;
+    border: 0;
+    background-color: #FFF;
 }
-.product-review-FilterReviewOption{
-	font-weight: normal;
-    margin-top: 15px;
-    cursor: pointer;
-    padding: 0px;
-    white-space: nowrap;
-    display: block;
-}
+
 .product-review-FilterReviewOption:hover {
-	backround-color:#EEE;
+	backround-color:red;
 }
 .product-review-ReviewListRatingSection{
 	padding: 0px;

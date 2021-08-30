@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <section class="hero-wrap hero-wrap-2"
 	style="background-image: url('../resources/images/sample4.jpg');"
 	data-stellar-background-ratio="0.5">
@@ -32,22 +32,26 @@
 					후기 <span class="product-review-ReviewList-Count jiLLze">4</span>개
 				</div>
 				<div class="product-review-FilterReviewWrapper dYjXLj product-review-dropdown">
-					<button type="button">
-						평점 높은순<img
-							src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23000' stroke-width='1.5' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E"
-							class="product-review-FilterReview esTgfk"
-							style="transform: rotate(90deg);">
+					<button class="product-review-dropbtn" type="button">
+						평점 높은순 <img src="../resources/images/arrow.svg" class="product-review-FilterReview esTgfk">
 					</button>
 					
-					<div class="product-review-FilterReviewDropMenu ldipRM">
-						<button class="product-review-FilterReviewOption product-review-filterReview-active">평점 높은순</button>
-						<button class="product-review-FilterReviewOption hSyPxW">평점 낮은순</button>
-						<button class="product-review-FilterReviewOption hSyPxW">최신순</button>
-						<button class="product-review-FilterReviewOption hSyPxW">도움순</button>
+					<div id="myDropdown" class="product-review-FilterReviewDropMenu ldipRM">
+						<button type="button" class="product-review-FilterReviewOption product-review-filterReview-active">평점 높은순</button>
+						<button type="button" class="product-review-FilterReviewOption hSyPxW">평점 낮은순</button>
+						<button type="button" class="product-review-FilterReviewOption hSyPxW">최신순</button>
+						<button type="button" class="product-review-FilterReviewOption hSyPxW">도움순</button>
 					</div>
 					
 				</div>
 			</div>
+
+
+
+
+			
+			
+			
 			<div class="product-review-ReviewListRatingSection djKoQz">
 				<div class="product-review-ReviewListRatingWrapper kNKdca">
 					<div class="product-review-ReadonlyWrapper jTHKhF">
@@ -613,5 +617,27 @@
 	</div>
 </div>
 
+<script type="text/javascript">
 
+	$(function(){
+		$('#myDropdown').hide();
+		$('.product-review-dropbtn').click(function(){
+			$('#myDropdown').slideToggle();
+		});
+		
+		var img = $('.product-review-dropbtn').find('img');
+		
+		$('#myDropdown').children().click(function(){
+			//alert($(this).hasClass('product-review-filterReview-active'));
+			$('#myDropdown').children().removeClass('product-review-filterReview-active');
+			$(this).addClass('product-review-filterReview-active');
+			$('.product-review-dropbtn').text($(this).text());
+			$('.product-review-dropbtn').append('<img src="../resources/images/arrow.svg" class="product-review-FilterReview esTgfk">');
+		});
+		
+		/* todo: document를 클릭하면 드롭다운 사라지도록.. 그 이후에 반응 제대로 하도록.. */
+		
+	});
+	
+</script>
 

@@ -50,6 +50,14 @@
 		<put-attribute name="content" value="/WEB-INF/views/auth/{1}.jsp"></put-attribute>
 	</definition>
 	
+	
+	<definition name="host.*" template="/WEB-INF/views/layout/host.jsp">
+		<put-attribute name="asset_css" value="/inc/asset_css.jsp"></put-attribute>
+		<put-attribute name="asset_javascript" value="/inc/asset_javascript.jsp"></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/inc/host_header.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/auth/{1}.jsp"></put-attribute>
+	</definition>
+	
 
 </tiles-definitions>
 

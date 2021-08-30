@@ -1,28 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
-
-
-<style>
-   
-</style>
-
+<tiles:insertAttribute name="asset_css"></tiles:insertAttribute>
+<title>하비러비</title>
 </head>
 <body>
-   <!--  -->
-	<div class="container">
+
+	<!-- header -->
+	<tiles:insertAttribute name="header"></tiles:insertAttribute>
 	
-		<h1 class="page-header"></h1>
-      
-	</div>   
-   
-	<script>
-      
-	</script>
+	
+	<tiles:insertAttribute name="content"></tiles:insertAttribute>
+	
+
+	<!-- footer -->
+	<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+
+
+
+	
+	
+	<!-- footer -->
+  <tiles:insertAttribute name="asset_javascript"></tiles:insertAttribute>
+
+
 </body>
 </html>

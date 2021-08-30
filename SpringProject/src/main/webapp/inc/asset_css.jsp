@@ -19,9 +19,6 @@
   <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/style.css">
   <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
-
-  <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/tailwind.output.css" />
-  <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/tailwind.css" />
-
+  <script src="<%= request.getContextPath() %>/resources/js/jquery-3.6.0.js"></script>
 
 <!-- /inc/asset.jsp -->
