@@ -1,5 +1,6 @@
 package com.spring.hobbylovey.lecture;
 
+import java.awt.print.Printable;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,11 +37,53 @@ public class LectureController {
 		return dao.csmallList(dto);
 	}
 	
+	
 	// 클래스 상세 페이지
-
 	@RequestMapping(value = "/class/detail.action", method = { RequestMethod.GET })
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
+		//임시 클래스 번호
+		String cSeq = "3";
+		
+		//클래스 정보
+		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
+		
+		//가격 데이터 가공 
+		//정규식 활용하여 천단위 , 찍기
+		//price = price.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
+		
+		//클래스 이미지 리스트
+		List<ClassImageDTO> classImgList = dao.getClassImgList(cSeq);
+		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
+		
+		
+		
+		//해당 클래스 호스트 정보
+		HostDTO hdto = dao.getHost(cSeq);
+		
+		//호스트 전체 클래스 수
+		int hCount = dao.getHostCount(hdto.getHostSeq());
+		
+		//해당 호스트의 전체 후기 수
+		int hrCount = dao.getHostReviewCount(cSeq);
+		
+		//해당 클래스 호스트의 스크랩 수
+		int hsCount = dao.getHostScrapCount(hdto.getHostSeq());
+		
+		
+		//해당 클래스의 후기리스트
+		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
+		
+		req.setAttribute("cddto", cddto);
+		req.setAttribute("classImgList", classImgList);
+		
+		req.setAttribute("hdto", hdto);
+		req.setAttribute("hCount", hCount);
+		req.setAttribute("hrCount", hrCount);
+		req.setAttribute("hsCount", hsCount);
+		
+		req.setAttribute("reviewList", reviewList);
+		
 		
 
 		return "class.detail";

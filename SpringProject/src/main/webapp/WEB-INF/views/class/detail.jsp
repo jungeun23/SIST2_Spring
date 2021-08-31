@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.js"></script>
 <section class="hero-wrap hero-wrap-2"
 	style="background-image: url('../resources/images/sample4.jpg');"
@@ -36,12 +38,9 @@
 					style="display: block;">
 
 				<ul>
-					<li><img
-						src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_1.0,f_auto,q_auto,r_0,w_768/12_pdv9c6"></li>
-					<li><img
-						src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_1.0,f_auto,q_auto,r_0,w_768/2_xvoomh"></li>
-					<li><img
-						src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_1.0,f_auto,q_auto,r_0,w_768/10_y5krhd"></li>
+					<c:forEach items="${classImgList}" var="cidto">
+					<li><img src="/hobbylovey/resources/images/classimage/${cidto.classImage}"></li>
+					</c:forEach>
 				</ul>
 
 				<img id="next" class="product-ImageSlider-NextArrow"
@@ -58,8 +57,7 @@
 			<section class="product-InfoSection">
 				<div class="product-TitleContainer">
 
-					<label class="product-InfoTitle">&lt;홍대,신림&gt;방송댄스&amp;재즈댄스
-						도전기(예약 가능)</label>
+					<label class="product-InfoTitle">${cddto.title}</label>
 					<div class="product-InfoButtonContainer">
 						<button name="ShareBtn" type="button" id="product-share-btn"
 							class="ButtonShare__Button-sc-10dysbk-0 gwvcwl">
@@ -72,7 +70,7 @@
 				</div>
 				
 					<div class="product-PriceInfo-Price">
-						30,000 <span class="product-PriceInfo-PriceUnit"> 원</span>
+						<fmt:formatNumber value="${cddto.price}" pattern="#,###"/> <span class="product-PriceInfo-PriceUnit"> 원</span>
 					</div>
 				
 			</section>
@@ -91,12 +89,12 @@
 					<div class="product-ProfileContent">
 						<div class="product-HostNameWrapper">
 							<a href="/hosts/11779"><span
-								class="Profile__NickName-sc-18xe7ny-7 cZgpqN"><span>쯩이</span><img
+								class="Profile__NickName-sc-18xe7ny-7 cZgpqN"><span>${hdto.nickname}</span><img
 									src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E %3Cpath stroke='%23333' stroke-linecap='round' stroke-width='1.5' d='M6 3l5 5-5 5'/%3E %3C/svg%3E"
 									alt="arrow-right"></span></a>
 						</div>
-						<span class="product-ProfileStat">클래스 5 <span> | </span> 후기
-							108 <span> |</span> 저장 90
+						<span class="product-ProfileStat">클래스 ${hCount} <span> | </span> 후기
+							${hrCount} <span> |</span> 저장 ${hsCount}
 						</span>
 					</div>
 
@@ -986,222 +984,7 @@
 			<div class="Description__Wrapper-sc-1c2xu5b-0 jtBNuh">
 
 				<div class="product-description">
-					<p style="text-align: center">
-						<strong>ㅡ</strong>
-					</p>
-					<p style="text-align: center">
-						<strong>구매 후 호스트 연락처를 문자로 보내드립니다.</strong>
-					</p>
-					<p style="text-align: center">
-						<strong>구매 전 문의사항은 Q&amp;A 게시판을 이용해주세요.</strong>
-					</p>
-					<p style="text-align: center">
-						<strong>ㅡ</strong>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<strong style="color: #1d1c1d">&lt;당일 사용 가능 시간 안내&gt;</strong>
-					</p>
-					<p style="text-align: center">
-						<span style="color: #1d1c1d">* 호스트와 시간 확인 후 이용 가능합니다</span>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<span style="color: #1d1c1d">■ 8월 스케줄 확인 후 당일 예약 및 참석 가능합니다
-							:)</span>
-					</p>
-					<p style="text-align: center">
-						<u>※ 하단의 8월 스케줄 참조 부탁드립니다</u>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<strong><u>✔️스케줄이 일정하지않아 스케줄을 올려놓지 않는거일뿐이니&nbsp;</u></strong>
-					</p>
-					<p style="text-align: center">
-						<strong><u>일정 문의주세요^^</u></strong>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p>
-						<br>
-					</p>
-					<p style="text-align: center">
-						<img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/f6utfhecmbt5txgq3ff3.jpg">
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						안녕하세요 피치스댄스크루🍑 <strong>승희(쯩이)쌤</strong>입니다.
-					</p>
-					<p style="text-align: center">댄서,강사로 활동중이구요.</p>
-					<p style="text-align: center">
-						최신 or 추억의 <strong><u>K-pop🕺🏻</u></strong> 또는 <strong><u>Jazzdance💃🏻</u></strong>
-					</p>
-					<p style="text-align: center">또는!!!</p>
-					<p style="text-align: center">
-						<strong><u>배우고 싶으신</u></strong> 안무가 있으시면 보여주세요!
-					</p>
-					<p style="text-align: center">다 알려드립니다^^</p>
-					<p style="text-align: center">(깡 빼고ㅋㅋㅋㅋㅋㅋ)</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<strong>🔸홍대는 1시간20분 수업&nbsp;</strong>
-					</p>
-					<p style="text-align: center">
-						<strong>🔸신림은 1시간 or 1시간20분 선택 가능</strong>
-					</p>
-					<p style="text-align: center">그때그때&nbsp;스케줄이&nbsp;달라&nbsp;우선&nbsp;문의주세요^^❣️</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<strong><u>'레슨신청방법'</u></strong><strong>과&nbsp;</strong><strong><u>'필독'</u></strong><strong>등
-							꼼꼼히 읽어봐주세요^^</strong>
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						‼️현재 코로나로 인해 <strong><u>소그룹레슨</u></strong>으로 진행합니다🙏🏻
-					</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p>
-						<br> <img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/m8meotbikuqeqdvf1ixq.jpg">
-					</p>
-					<p style="text-align: right">수업중인 쯩이쌤♥</p>
-					<p style="text-align: right">
-						<img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/ws4vmp2ysvew75tpwdzi.jpg">
-					</p>
-					<p style="text-align: right">수업후 쁘이♥</p>
-					<p>
-						<br> <img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/ey6zpwt8qpcnwwa4k8xo.jpg">
-					</p>
-					<p style="text-align: right">수업후 쯩이쌤과 함께♥</p>
-					<p style="text-align: center">
-						<br>
-					</p>
-					<p style="text-align: center">
-						<img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/p3talv7m7wm6ogqq79lj.jpg">
-					</p>
-					<p>
-						원하는 지점 스케줄 확인하기 ➡️ 원하는 지점 수강권 구입 ➡️ 승희쌤 번호로 프립 닉네임, 본인 성함과 함께 가능한
-						시간대와 하고싶은곡 연락하여 알려주기 ➡️ 상세일정 예약하기 ➡️ 공지사항 및 장소 안내받기 ➡️ 레슨날 만나기♡<br>
-						<br> <br>✅<strong>수강권 구매하기</strong><br>홍대점, 신림점
-						수강권을 <u>구분하여</u> 구매해주셔야 합니다.<br> <br> <span
-							style="color: #000000">✅</span><strong style="color: #000000">단체수업은&nbsp;2인이상&nbsp;부터
-							진행</strong><br>먼저 원하는 곡과 시간으로 스케줄을 올려두고 다른분이 예약을 하면 2인 이상시 수업진행가능!<br>일정
-						<u>전날까지</u> 예약자 없으면 일정을 미뤄도 되고 차액지불후 1:1로 전환해서 수업진행 가능!!<br>
-						<br>✅<strong>1:1레슨, 소그룹레슨 가능</strong><br> <span
-							style="color: #000000">1:1을&nbsp;원하시는&nbsp;경우&nbsp;1:1수강권을&nbsp;구입
-							후 저와 상세 일정 맞추시면 됩니다^^</span><br> <strong><u>▪️소그룹레슨</u></strong>
-						2:1,3:1,4:1 등 우리끼리만 하고싶다!!<br>가능하세요^^ 문의주세요^^ (3:1까지 추가요금 있음)<br>
-						<br>✅<strong>수업목록에 없는 곡도 가능</strong><br> <u>배우고&nbsp;싶은&nbsp;안무</u>로&nbsp;수업&nbsp;진행이&nbsp;가능한&nbsp;점!!!^^<br>언제든&nbsp;문의&nbsp;주세요:)<br>상의&nbsp;후&nbsp;수업진행해드려요^^
-						(추가요금 있음)<br> <br>✅<strong>평일,주말 추가금</strong><br> <strong>평일
-						</strong><u>오전</u>(1시전)과 <u>저녁</u>(7시이후) 레슨과 <strong>주말</strong> 추가요금을
-						선택해주셔야 하세요(4명부터는 추가요금없음)<br> <br> <br> <img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/vgktzmf5a8tz5v25ol6u.jpg"><br>‼️<strong>한달안에
-							사용!</strong><br>쿠폰 구입후 <u>수업 시작한날부터</u> <strong>한달안에</strong> 사용해주셔야
-						합니다.(8/7일에 사용하셨으면 8/7~9/6 까지 입니다)<br> <br>‼️<strong>예약한
-							날 당일은 취소 가능!</strong><br>수강권 구입 후 <u>일정예약전</u> 취소는 프립 규정에 따른 취소가 언제든
-						가능하세요. 일정 <u>예약후</u>는 수업준비 시간과 예약인원수 제한(2인이상시 수업진행)이 있어 수업일 <strong>3일전</strong>까지만
-						<strong><u>일정변경</u></strong>만 가능하십니다! (5일로 예약 -&gt; 2일까지 변경 가능) <strong>&nbsp;</strong><br>이후&nbsp;취소,환불&nbsp;및&nbsp;변경은&nbsp;불가능하세요,,&nbsp;양해부탁드려요😭😭<br>
-						<strong>소그룹레슨은</strong> <u>1일전</u>까지 <u>최초한번</u> 변경만 가능하세요. (단,홀비
-						내주셔야합니다ㅠ)<br> <strong>당일</strong>은 취소 어려우세요😭🙏🏻<br> <br>‼️<strong>일정예약
-							후 출석체크!</strong><br>수업전날 <u>출석체크</u>가 되세요! <br>이상 있는게 아니니 걱정하지
-						않으셔도 됩니다^^<br> <br> <br> <br> <img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/zupkocyjbsgzvrnmmzcn.jpg"><br>⚠️코로나로
-						인해 소그룹으로 진행중입니다!<br> <br>(괄호)안에 숫자는 수업 진행횟수 입니다.<br>(1)은&nbsp;첫째날,
-						(2)는&nbsp;둘째날, (3)은&nbsp;셋째날&nbsp;입니다.<br>▪️첫날부터가 아닌
-						둘째,셋째날부터도 수강 가능합니다.<br>ㅤ(단, 진도 진행상황 문의 주세요🙂)<br>▪️신림,논현,강남점은
-						1시간 수업입니다.(1시간20분 따로표시)<br>▪️모두 오후,저녁시간입니다. (오전은 am표시)<br>▪️special
-						oneday class(✨표시)<br>원데이 클래스로 <u>2시간동안&nbsp;</u>주요 안무(후렴)
-						마스터입니다<br>(1시간20분권과 추가요금 1만원 수강권 선택해주시면 되세요!)<br> <br>
-						<br> <strong>스케줄이 일정하지않아 일부만 올려둔거니 일정 문의주세요^^</strong><br>
-						<strong>논현 월,수 정규수업은 가능하세용😀</strong><br> <br>✅<strong>&lt;홍대점&gt;</strong><br>
-						<strong>8/20(금) 4:00 방탄 - dynamite(1)</strong><br> <br>✅<strong>&lt;신림점&gt;</strong><br>
-						<br> <br> <br> <u>[논현,강남]&nbsp;수강권으로&nbsp;신청해주셔야합니다!</u><br>✅<strong>&lt;강남점&gt;</strong><br>
-						<br> <br>✅<strong>&lt;논현점&gt;</strong><br>[정규수업]<br>
-						<strong><u>8/18(수) 선미 - you can't sit with us</u></strong><u>
-							첫날!!!</u>❣️<br> <br>[개인레슨,소그룹레슨]<br> <br> <br>
-						<br> <img
-							src="https://res.cloudinary.com/frientrip/image/upload/c_limit,dpr_3.0,f_auto,q_auto:best,w_500/egzgsxlahfdwvtbo0d3i.jpg"><br>
-						<strong>[8월 kpop] 목록</strong><br> <strong>신곡,&nbsp;</strong><u>인기곡</u><strong><u>&nbsp;</u></strong>입니다^^<br>(목록에
-						없는곡도 가능하나 곡에 따라 추가금이 있습니다)<br> <br>전소미 - 🔥<strong><u>덤덤</u></strong><br>선미
-						- <strong>you can't sit with us</strong>, 보라빛밤, 날라리, 사이렌, 가시나<br>NCT
-						dream - hello future(후렴), diggity(후렴)<br>프로미스나인 - we go(후렴)<br>방탄소년단&nbsp;-
-						🔥<strong><u>permission to dance</u></strong>, 🔥<u>butter</u>,<br>ㅤㅤㅤㅤㅤㅤ<u>dynamite</u>,
-						black swan, 불타오르네, idol<br>ㅤㅤㅤㅤㅤㅤ작은것들을&nbsp;위한&nbsp;시<br>있지
-						- 마피아, not shy, wannabe,&nbsp;달라달라, icy<br>오마이걸 - <u>dun
-							dun dance</u>, 살짝 설렜어, 돌핀<br>에스파 - 🔥<u>next level</u>, black
-						mamba<br>스테이씨 - <u>ASAP</u><br>아이유 - 라일락<br>브레이브걸스
-						- <u>롤린</u>, <u>운전만해,</u> <u>help me,</u> <u>아나요</u><br>보아 -
-						<u>better</u><br>박재범 - 🔥<u>all i wanna do</u><br>현아 -
-						I'm not cool<u>,</u> flower shower<br>몬스타엑스 - 판타지아(후렴)<br>비,박진영
-						- 나로 바꾸자<br>2pm - 우리집<br>카이 - 음<br>여자친구 - mago<br>청하
-						- bicycle<strong>,&nbsp;</strong>dream of you, play, stay
-						tonight,&nbsp;벌써12,<br>ㅤㅤㅤchica, love u, roller coaster,
-						snapping<br>트와이스 - 🔥<u>알코올프리</u>, I can't stop me,
-						more&amp;more,<br> ㅤㅤㅤㅤㅤfeel special, fancy, dance the night
-						away,<br>ㅤㅤㅤㅤㅤ heart shaker, ooh-ahh하게, knock knock,<br>ㅤㅤㅤㅤㅤ
-						signal, likey, TT<br>마마무 - <u>딩가딩가</u><strong><u>,</u></strong><strong>&nbsp;</strong>hip,&nbsp;별이빛나는밤,&nbsp;고고베베<br>화사
-						- 마리아<br>블랙핑크 - lovesick girls, how you like that, 뚜두뚜두,<br>ㅤㅤㅤㅤㅤkill
-						this love,&nbsp;마지막처럼<br>리사 - 세뇨리따<u>,</u> I like it<br>배윤정,지연
-						- <u>세뇨리따</u><br>제시 - 눈누난나<br>손담비 - 토요일밤에<br>지코(feat.비)
-						- summer hate, 아무노래<br>싹쓰리 - 다시 여기 바닷가<br>세븐틴 -
-						left&amp;right(후렴), hit<br>홍진영 - 오늘밤에, 잘가라<br>여자아이들 -
-						화,&nbsp;덤디덤디, 세뇨리따<br>에이프릴&nbsp;- lalalilala<br>에이핑크&nbsp;-&nbsp;덤더럼<br>아이유
-						- 삐삐<br>아이즈원&nbsp;- 피에스타,&nbsp;비올레타, 파로나마, 루머<br>태연&nbsp;-&nbsp;불티<br>모모랜드&nbsp;-
-						Thumbs up,&nbsp;뿜뿜<br>에버글로우&nbsp;-&nbsp;던던<br>레드벨벳&nbsp;-
-						psycho,&nbsp;빨간맛,&nbsp;짐살라빔<br>제니&nbsp;- solo<br>전소미&nbsp;-
-						birthday<br>라붐 - 아로아로<br>펜타곤&nbsp;-&nbsp;빛나리<br>프로듀스X101
-						-&nbsp;움직여<br>엑소&nbsp;- obsession, tempo, love shot<br>박진영&nbsp;-
-						when we disco, fever<br>싸이 - 연예인<br> <u>외&nbsp;</u><strong><u>Youtube</u></strong><u>&nbsp;</u><strong><u>&lt;재즈댄서승희&gt;</u></strong><u>&nbsp;에
-							있는 곡 모두 가능💪🏻</u><br> <br> <strong>[재즈 안무]</strong><br>쯩이쌤
-						유튜브나 인스타에 있는 모든 재즈 안무 가능😊<br> <br> <br>&lt;승희쌤의 춤
-						엿보기❣️&gt;
-					</p>
-					<iframe frameborder="0" allowfullscreen="true"
-						src="https://www.youtube.com/embed/rkyqkm9mESg?showinfo=0"></iframe>
-					<p>
-						<br>
-					</p>
-
-					<p>
-						<br> <br> <br> <strong>[클래스 안내]</strong><br> <strong>·&nbsp;</strong>진행
-						가능 시간 : 상시 예약 가능<br> <strong>·&nbsp;</strong>문의 : Q&amp;A 게시판
-						활용<br>※ 정확한 일정 협의는 Q&amp;A 게시판 또는 구매 후 문자로 발송되는 호스트 연락처로
-						문의해주세요.
-					</p>
-					<p>
-						<br>
-					</p>
-
+					${cddto.content}
 				</div>
 			</div>
 		</section>
@@ -1213,7 +996,7 @@
 
 			<div class="productlist-map_box" id="map"overflow:hidden;"></div>
 			<div class="MapSection__AddressWrapper-sc-1mte25v-0 lewBkU">
-				서울 관악구 신림동 1432-126 지하1층
+				${cddto.location}
 				<!-- <button class="TextButton-sc-175c9eu-0 bFIvir">주소 복사</button> -->
 			</div>
 

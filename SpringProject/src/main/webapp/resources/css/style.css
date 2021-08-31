@@ -10274,7 +10274,7 @@ textarea.form-control {
 
 }
 
-.classList .table-mypage:nth-child(1) { width: 110px;}
+.classList .table-mypage td:nth-child(1) { width: 110px;}
 
 .mypage-classbox {
   display:flex;
