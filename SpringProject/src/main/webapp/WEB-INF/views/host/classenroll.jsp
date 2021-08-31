@@ -141,9 +141,9 @@
                 <tr>
                   <th>썸네일</th>
                   <td style="display: flex;">
-                      <input type="text" class="form-control" value="" id="thumbnail_name" style="width: 300px; margin-right: 10px;" readonly />
+                      <input type="text" class="form-control" value="" id="thumbnail_name" style="width: 300px; margin-right: 10px;"/>
                        <input type="file"
-                        id="thumbnail_upload" name="classImage" style="display: none;" multiple="multiple" accept=".gif, .jpg, .png">
+                        id="thumbnail_upload" name="classThumb" style="display: none;" accept=".gif, .jpg, .png">
 
                       <button type="button" class="btn btn-secondary" id="class_thumbnail">이미지 찾기</button>
         
@@ -388,9 +388,9 @@
         }
       });
 
-      $('#class_thumbnail,#thumbnail_name').click(function() {
+      $('#class_thumbnail').click(function() {
 
-     	 $('#thumbnail_upload').click();
+      $('#thumbnail_upload').click();
       });
 
       $('#thumbnail_upload').change(
