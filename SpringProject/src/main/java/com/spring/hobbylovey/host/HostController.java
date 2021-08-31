@@ -78,8 +78,8 @@ public class HostController {
 		System.out.println(multi.getParameter("classOption"));
 		System.out.println(multi.getParameter("personnel"));
 		System.out.println(multi.getParameter("price"));
-		
 		System.out.println(multi.getParameter("content"));
+		
 		System.out.println(multi.getParameter("classDate"));
 		System.out.println(multi.getParameter("latitude"));
 		System.out.println(multi.getParameter("longitude"));
