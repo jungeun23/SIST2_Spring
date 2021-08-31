@@ -54,7 +54,7 @@
 					
 					<c:forEach items="${list}" var="dto">
 					<div class="col-md-4 d-flex">
-						<div class="product ftco-animate">
+						<div class="product ">
 							<div class="img d-flex align-items-center justify-content-center"
 								style="background-image: url('../resources/images/classimage/${dto.classImage}');">
 								<div class="desc">
@@ -107,32 +107,32 @@
 					<div class="productlist-categories">
 						<div id="filter-big">
 							<h3>필터</h3>
-							<a href="#!">전체 초기화</a>
+							<span class="product-filterNone">전체 초기화</span>
 						</div>
 						<hr>
 						<div class="filter-small">정렬</div>
-						<button type="button" id="btn-sort" class="productfilter-sort"
+						<button type="button" value="recommend desc" class="productfilter-sort"
 							style="display: flex; align-items: center; padding-left: 0px; padding-right: 0px;">
 							<div class="filter-sort">
 								<span class="glyphicon glyphicon-thumbs-up sort-img"
 									aria-hidden="true"></span><span> 인기순</span>
 							</div>
 						</button>
-						<button type="button" class="productfilter-sort"
+						<button type="button" value="score" class="productfilter-sort"
 							style="display: flex; align-items: center; padding-left: 0px; padding-right: 0px;">
 							<div class="filter-sort">
 								<span class="glyphicon glyphicon-star-empty sort-img"
 									aria-hidden="true"></span><span> 평점순</span>
 							</div>
 						</button>
-						<button type="button" class="productfilter-sort"
+						<button type="button" value="price asc" class="productfilter-sort"
 							style="display: flex; align-items: center; padding-left: 0px; padding-right: 0px;">
 							<div class="filter-sort">
 								<span class="glyphicon glyphicon-sort-by-attributes sort-img"
 									aria-hidden="true"></span> <span> 가격 낮은순</span>
 							</div>
 						</button>
-						<button type="button" class="productfilter-sort"
+						<button type="button" value="price desc" class="productfilter-sort"
 							style="display: flex; align-items: center; padding-left: 0px; padding-right: 0px;">
 							<div class="filter-sort">
 								<span
@@ -267,11 +267,13 @@
 		
 		var categorySmall = $(this).text();
 		var categoryBig = '${category}';
-		alert(categoryBig +','+categorySmall);
-		$.ajax({
-			type: 'GET',
+		let filter = 'classSeq asc';
+		
+		
+		/* $.ajax({
+			type: 'POST',
 			url: '/hobbylovey/class/list_cgsmall.action',
-			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall +'&classseq=1&title=ㅁㄴㅇ&latitude=123&longitude=42&price=12222&classImage=ㄴㅁㅇㄻ&recommend=223',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
 			dataType: 'json',
 			success: function(list){
 				
@@ -279,15 +281,16 @@
 				
 				$(list).each(function (index, dto) {
 					
-					console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+					//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
 					
-					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product ftco-animate"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
 					
 					
 				});
 				
 				var length = $(list).length;
 				
+				if(categorySmall == '전체') {categorySmall = '스포츠';}
 				
 				$('.product-select').text('인기 '+ categorySmall + ' ' + length);
 				
@@ -297,8 +300,9 @@
 				console.log(a,b,c);
 			}
 			
-		});
+		}); */
 		
+		getAjax (categoryBig, categorySmall, filter);
 		
 		
 	});
@@ -319,9 +323,91 @@
 		} else {
 			$(this).addClass("active-sort");
 			$(this).find('span').css("color", "#FFF");
+			
+			
+			var categoryBig = '${category}';
+			var categorySmall = $('.productlist-active').text();
+			let filter = $(this).val();
+			
+			/* $.ajax({
+				type: 'POST',
+				url: '/hobbylovey/class/list_cgsmall.action',
+				data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
+				dataType: 'json',
+				success: function(list){
+					
+					$('#productlist').html('');
+					
+					$(list).each(function (index, dto) {
+						
+						//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+						
+						$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+						
+						
+					});
+					
+				},
+				error: function(a,b,c){
+					console.log(a,b,c);
+				}
+				
+			}); */
+			
+			getAjax(categoryBig, categorySmall, filter);
+			
 		}
 	});
 	
+	/* 필터 초기화  */
+	$('.product-filterNone').click(function(){
+		
+		var categoryBig = '${category}';
+		var categorySmall = $('.productlist-active').text();
+		let filter = 'classSeq asc';
+		getAjax (categoryBig, categorySmall, filter);
+	});
+	
+	/* 필터 ajax 함수 */
+	function getAjax (categoryBig, categorySmall, filter){
+	
+		$.ajax({
+			type: 'POST',
+			url: '/hobbylovey/class/list_cgsmall.action',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
+			dataType: 'json',
+			success: function(list){
+				
+				$('#productlist').html('');
+				
+				$(list).each(function (index, dto) {
+					
+					//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+					
+					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+					
+					
+				});
+				
+				var length = $(list).length;
+				
+				if(categorySmall == '전체') {categorySmall = '스포츠';}
+				
+				$('.product-select').text('인기 '+ categorySmall + ' ' + length);
+				
+				
+			},
+			error: function(a,b,c){
+				console.log(a,b,c);
+			}
+			
+		});
+		
+		
+	}
+	
+	
+	 
     /* 별점 */
     $('.filter-ratebtn').click(function(){
     	$(this).parent().children("button").removeClass("ratebtn-active");

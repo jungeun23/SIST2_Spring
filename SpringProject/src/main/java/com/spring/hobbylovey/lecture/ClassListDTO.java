@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class ClassListDTO {
 
-	private String classseq;
+	private String classSeq;
 	private String title;
 	private String categoryBig;
 	private String categorySmall;
@@ -15,5 +15,6 @@ public class ClassListDTO {
 	private String classImage;
 	private String recommend;
 	//private String score;
+	private String filter;
 	
 }

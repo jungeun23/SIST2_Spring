@@ -11021,6 +11021,10 @@ textarea.form-control {
 	margin: 15px;
 } 
 
+.product-filterNone{
+	cursor: pointer
+}
+
 .productfilter-sort {
 -webkit-text-size-adjust: 100%;
 -webkit-tap-highlight-color: transparent;

@@ -90,6 +90,7 @@ public class HostController {
 							if(!uploadFile.exists()){
 								uploadFile.mkdirs();
 							}
+							
 							//fileName = UUID.randomUUID().toString();
 							uploadPath = uploadPath + "/" + fileName;
 							out = new FileOutputStream(new File(uploadPath));

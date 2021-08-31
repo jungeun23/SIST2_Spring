@@ -12,9 +12,9 @@ public class LectureDAO {
 	@Autowired
 	private SqlSessionTemplate template;
 	
-	public List<ClassListDTO> getAll(String category) {
+	public List<ClassListDTO> getAll(ClassListDTO dto) {
 		
-		return template.selectList("lecture.getAll", category);
+		return template.selectList("lecture.getAll", dto);
 	}
 
 

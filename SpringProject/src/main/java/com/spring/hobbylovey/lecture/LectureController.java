@@ -20,21 +20,37 @@ public class LectureController {
 	
 	// 클래스 목록 페이지 
 	@RequestMapping(value = "/class/list.action", method = { RequestMethod.GET })
-	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String category) {
+	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
 
-		List<ClassListDTO> list = dao.getAll(category);
+		dto.setFilter("classSeq asc");
+		
+		List<ClassListDTO> list = dao.getAll(dto);
 		
 		req.setAttribute("list", list);
-		req.setAttribute("category", category);
+		req.setAttribute("category", dto.getCategoryBig());
 		return "class.list";
 	}
 	
-	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.GET })
+	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.POST })
 	@ResponseBody
 	public List<ClassListDTO> list_cgsmall(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
 		
-		return dao.csmallList(dto);
+		if( dto.getFilter() == null || dto.getFilter().equals("") || dto.getFilter().equals("score")) {
+			dto.setFilter("classSeq asc");
+			return dao.getAll(dto);		
+		} else if(!dto.getFilter().equals("") || dto.getFilter() != null) {
+			
+			if(dto.getCategorySmall().equals("전체")) {
+				return dao.getAll(dto);
+			} else {
+				return dao.csmallList(dto);
+			}
+		}
+		return null;
 	}
+
+	
+	
 	
 	// 클래스 상세 페이지
 
