@@ -13,7 +13,7 @@
 							<a href="/hobbylovey/auth/signup.action" class="mr-2">회원가입</a><a href="/hobbylovey/auth/login.action" class="mr-2">로그인</a>
 							</c:if>
 							<c:if test="${not empty id}">
-							<a href="/hobbylovey/mypage/mypage.action" class="mr-2">${name}님(${id})</a>
+							<a href="/hobbylovey/mypage/mypage.action" class="mr-2">${name}님(${id})</a><a href="/hobbylovey/auth/logout.action" class="mr-2">로그아웃</a>
 							</c:if>
 							<a href="#">공지사항</a>
 						</p>

@@ -22,6 +22,9 @@
 		<typeAlias type="com.spring.hobbylovey.admin.AdminDTO" alias="admindto" />
 		<typeAlias type="com.spring.hobbylovey.auth.AuthDTO" alias="authdto" />
 		<typeAlias type="com.spring.hobbylovey.lecture.ClassListDTO" alias="lcldto"/>
+		<typeAlias type="com.spring.hobbylovey.host.ClassDTO" alias="hostdto"/>
+		<typeAlias type="com.spring.hobbylovey.host.ClassOptionDTO" alias="optiondto"/>
+		<typeAlias type="com.spring.hobbylovey.host.MyClassListDTO" alias="myclasslistdto"/>
 	
 	</typeAliases>
 

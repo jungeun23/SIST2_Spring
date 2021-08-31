@@ -23,5 +23,47 @@ public class LectureDAO {
 		return template.selectList("lecture.csmallList", dto);
 	}
 
+
+	public ClassDetailDTO getClassDetail(String cSeq) {
+
+		return template.selectOne("lecture.getClassDetail", cSeq);
+	}
+
+
+	public HostDTO getHost(String cSeq) {
+
+		return template.selectOne("lecture.getHost", cSeq);
+	}
+
+
+	public int getHostCount(String hostSeq) {
+
+		return template.selectOne("lecture.getHostCount", hostSeq);
+	}
+
+
+	public List<ReviewListDTO> getReviewList(String cSeq) {
+		
+		return template.selectList("lecture.getReviewList", cSeq);
+	}
+
+
+	public List<ClassImageDTO> getClassImgList(String cSeq) {
+
+		return template.selectList("lecture.getClassImgList", cSeq);
+	}
+
+
+	public int getHostReviewCount(String cSeq) {
+
+		return template.selectOne("lecture.getHostReviewCount", cSeq);
+	}
+
+
+	public int getHostScrapCount(String hostSeq) {
+
+		return template.selectOne("lecture.getHostScrapCount", hostSeq);
+	}
+
 	
 }
