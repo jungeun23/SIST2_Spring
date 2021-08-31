@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartRequest;
 
 import com.google.gson.JsonObject;
 
@@ -56,6 +55,7 @@ public class HostController {
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
 	public String classenroll(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
+		System.out.println(req.getServletPath());
 
 		return "host.classenroll";
 	}
@@ -67,30 +67,84 @@ public class HostController {
 	}
 
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
-	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session,MultipartHttpServletRequest multi) {
-		
-		String path= session.getServletContext().getRealPath("/thumbnail");
-		int size = 1024 * 1024 * 20; //20MB
-		List<MultipartFile> file = multi.getFiles("classImage");
-		System.out.println(multi.getParameter("title"));
-		System.out.println(multi.getParameter("categoryBig"));
-		System.out.println(multi.getParameter("categorySmall"));
-		System.out.println(multi.getParameter("classOption"));
-		System.out.println(multi.getParameter("personnel"));
-		System.out.println(multi.getParameter("price"));
-		System.out.println(multi.getParameter("content"));
-		
-		System.out.println(multi.getParameter("classDate"));
-		System.out.println(multi.getParameter("latitude"));
-		System.out.println(multi.getParameter("longitude"));
-		System.out.println(multi.getParameter("location"));
-		
-		for(MultipartFile mf : file) {
-			System.out.println(mf.getOriginalFilename());
-		}
+	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload, ClassDTO dto) throws IOException {
 
+		//System.out.println(dto);
+		System.out.println(dto);
+		
+		// 다중 파일 업로드
+		List<MultipartFile> fileList = multiFile.getFiles("classThumb");
+		
+		for(MultipartFile file : fileList) {
+			OutputStream out = null;
+			if(file != null){
+				if(file.getSize() > 0 && !file.getName().isBlank()){
+					if(file.getContentType().toLowerCase().startsWith("image/")){
+						try{
+							String fileName = file.getOriginalFilename();
+							System.out.println("fileName: " + fileName);
+							byte[] bytes = file.getBytes();
+							String uploadPath = req.getSession().getServletContext().getRealPath("/files");
+							System.out.println(uploadPath);
+							File uploadFile = new File(uploadPath);
+							if(!uploadFile.exists()){
+								uploadFile.mkdirs();
+							}
+							//fileName = UUID.randomUUID().toString();
+							uploadPath = uploadPath + "/" + fileName;
+							out = new FileOutputStream(new File(uploadPath));
+	                        out.write(bytes);
+	
+	                        String fileUrl = req.getContextPath() + "/files/" + fileName;
+	                        
+	                        System.out.println("fileurl: " + fileUrl);
+	                    }catch(IOException e){
+	                        e.printStackTrace();
+	                    }finally{
+	                        if(out != null){
+	                            out.close();
+	                        }	
+						}
+					}
+				}
+			}
+		}
 		
 		
+		//단일 파일 업로드
+//		OutputStream out = null;
+//		MultipartFile file = multiFile.getFile("classThumb");
+//		if(file != null){
+//			if(file.getSize() > 0 && !file.getName().isBlank()){
+//				if(file.getContentType().toLowerCase().startsWith("image/")){
+//					try{
+//						String fileName = file.getOriginalFilename();
+//						System.out.println("fileName: " + fileName);
+//						byte[] bytes = file.getBytes();
+//						String uploadPath = req.getSession().getServletContext().getRealPath("/files");
+//						System.out.println(uploadPath);
+//						File uploadFile = new File(uploadPath);
+//						if(!uploadFile.exists()){
+//							uploadFile.mkdirs();
+//						}
+//						//fileName = UUID.randomUUID().toString();
+//						uploadPath = uploadPath + "/" + fileName;
+//						out = new FileOutputStream(new File(uploadPath));
+//                        out.write(bytes);
+//
+//                        String fileUrl = req.getContextPath() + "/files/" + fileName;
+//                        
+//                        System.out.println("fileurl: " + fileUrl);
+//                    }catch(IOException e){
+//                        e.printStackTrace();
+//                    }finally{
+//                        if(out != null){
+//                            out.close();
+//                        }	
+//					}
+//				}
+//			}
+//		}
 	}
 
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)
