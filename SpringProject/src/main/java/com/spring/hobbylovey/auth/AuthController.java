@@ -85,7 +85,6 @@ public class AuthController {
 	public void loginok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, AuthDTO dto) {
 
 		int result = -1;
-		System.out.println(dto);
 
 		AuthDTO user = null;
 
@@ -96,7 +95,6 @@ public class AuthController {
 			user = dao.authHostLogin(dto);
 
 		}
-		System.out.println(user);
 
 		try {
 			if (user != null) {

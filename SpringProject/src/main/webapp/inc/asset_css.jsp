@@ -22,6 +22,10 @@
   <script src="<%= request.getContextPath() %>/resources/js/jquery-3.6.0.js"></script>
   <script src="<%= request.getContextPath() %>/resources/ckeditor/ckeditor.js"></script>
   <script src="<%= request.getContextPath() %>/resources/ckeditor/config.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/js/highcharts.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/js/modules/data.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/js/modules/exporting.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/js/modules/accessibility.js"></script>
   
 
 <!-- /inc/asset.jsp -->

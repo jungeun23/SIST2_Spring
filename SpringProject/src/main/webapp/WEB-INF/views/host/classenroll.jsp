@@ -13,7 +13,7 @@
           "
         >
           <main id="classEnroll">
-            <form action="/hobbylovey/host/classenrollok.action" method="POST" ><!-- enctype="multipart/form-data" -->
+            <form action="/hobbylovey/host/classenrollok.action" method="POST" enctype="multipart/form-data"><!-- enctype="multipart/form-data" -->
               <table class="table">
                 <tr>
                   <th>제목</th>
@@ -57,7 +57,6 @@
                   <th>일정</th>
                   <td id="schedule_box">
                     <input
-                      name="classDate"
                       type="date"
                       class="form-control"
                       id="date"
@@ -107,7 +106,6 @@
                       id="location"
                       type="text"
                       class="form-control"
-                      name="location"
                       readonly
                     />
                     <input
@@ -143,9 +141,9 @@
                 <tr>
                   <th>썸네일</th>
                   <td style="display: flex;">
-                      <input type="text" class="form-control" value="" id="thumbnail_name" style="width: 300px; margin-right: 10px;"/>
+                      <input type="text" class="form-control" value="" id="thumbnail_name" style="width: 300px; margin-right: 10px;" readonly />
                        <input type="file"
-                        id="thumbnail_upload" name="classImage" style="display: none;" accept=".gif, .jpg, .png">
+                        id="thumbnail_upload" name="classImage" style="display: none;" multiple="multiple" accept=".gif, .jpg, .png">
 
                       <button type="button" class="btn btn-secondary" id="class_thumbnail">이미지 찾기</button>
         
@@ -382,15 +380,17 @@
         } else if ($('#editor1').val() == '' || $('#editor1').val() == null) {
           $('#editor1').focus();
         } else {
+        	
+          $('input[name=location]').val($('#location').val()+' '+$('#location_detail').val());
           $('#classDate').val($('#date').val() +' '+$('#time').val()+':00');
           
           this.form.submit();
         }
       });
 
-      $('#class_thumbnail').click(function() {
+      $('#class_thumbnail,#thumbnail_name').click(function() {
 
-      $('#thumbnail_upload').click();
+     	 $('#thumbnail_upload').click();
       });
 
       $('#thumbnail_upload').change(
