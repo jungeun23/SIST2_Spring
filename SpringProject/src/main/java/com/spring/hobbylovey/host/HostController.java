@@ -7,7 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.UUID;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -67,12 +67,84 @@ public class HostController {
 	}
 
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
-	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session,ClassDTO dto) {
+	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload, ClassDTO dto) throws IOException {
 
 		//System.out.println(dto);
 		System.out.println(dto);
 		
+		// 다중 파일 업로드
+		List<MultipartFile> fileList = multiFile.getFiles("classThumb");
 		
+		for(MultipartFile file : fileList) {
+			OutputStream out = null;
+			if(file != null){
+				if(file.getSize() > 0 && !file.getName().isBlank()){
+					if(file.getContentType().toLowerCase().startsWith("image/")){
+						try{
+							String fileName = file.getOriginalFilename();
+							System.out.println("fileName: " + fileName);
+							byte[] bytes = file.getBytes();
+							String uploadPath = req.getSession().getServletContext().getRealPath("/files");
+							System.out.println(uploadPath);
+							File uploadFile = new File(uploadPath);
+							if(!uploadFile.exists()){
+								uploadFile.mkdirs();
+							}
+							//fileName = UUID.randomUUID().toString();
+							uploadPath = uploadPath + "/" + fileName;
+							out = new FileOutputStream(new File(uploadPath));
+	                        out.write(bytes);
+	
+	                        String fileUrl = req.getContextPath() + "/files/" + fileName;
+	                        
+	                        System.out.println("fileurl: " + fileUrl);
+	                    }catch(IOException e){
+	                        e.printStackTrace();
+	                    }finally{
+	                        if(out != null){
+	                            out.close();
+	                        }	
+						}
+					}
+				}
+			}
+		}
+		
+		
+		//단일 파일 업로드
+//		OutputStream out = null;
+//		MultipartFile file = multiFile.getFile("classThumb");
+//		if(file != null){
+//			if(file.getSize() > 0 && !file.getName().isBlank()){
+//				if(file.getContentType().toLowerCase().startsWith("image/")){
+//					try{
+//						String fileName = file.getOriginalFilename();
+//						System.out.println("fileName: " + fileName);
+//						byte[] bytes = file.getBytes();
+//						String uploadPath = req.getSession().getServletContext().getRealPath("/files");
+//						System.out.println(uploadPath);
+//						File uploadFile = new File(uploadPath);
+//						if(!uploadFile.exists()){
+//							uploadFile.mkdirs();
+//						}
+//						//fileName = UUID.randomUUID().toString();
+//						uploadPath = uploadPath + "/" + fileName;
+//						out = new FileOutputStream(new File(uploadPath));
+//                        out.write(bytes);
+//
+//                        String fileUrl = req.getContextPath() + "/files/" + fileName;
+//                        
+//                        System.out.println("fileurl: " + fileUrl);
+//                    }catch(IOException e){
+//                        e.printStackTrace();
+//                    }finally{
+//                        if(out != null){
+//                            out.close();
+//                        }	
+//					}
+//				}
+//			}
+//		}
 	}
 
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)

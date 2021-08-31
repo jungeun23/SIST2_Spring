@@ -13,7 +13,7 @@
           "
         >
           <main id="classEnroll">
-            <form action="/hobbylovey/host/classenrollok.action" method="POST"><!-- enctype="multipart/form-data" -->
+            <form action="/hobbylovey/host/classenrollok.action" method="POST" enctype="multipart/form-data"><!-- enctype="multipart/form-data" -->
               <table class="table">
                 <tr>
                   <th>제목</th>
@@ -143,7 +143,7 @@
                   <td style="display: flex;">
                       <input type="text" class="form-control" value="" id="thumbnail_name" style="width: 300px; margin-right: 10px;"/>
                        <input type="file"
-                        id="thumbnail_upload" name="classImage" style="display: none;" accept=".gif, .jpg, .png">
+                        id="thumbnail_upload" name="classThumb" style="display: none;" accept=".gif, .jpg, .png">
 
                       <button type="button" class="btn btn-secondary" id="class_thumbnail">이미지 찾기</button>
         
