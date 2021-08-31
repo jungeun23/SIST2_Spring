@@ -20,11 +20,25 @@
 		select * from tblMemo order by seq desc
 	</select> -->
 	
-	<select id="getAll" parameterType="String" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{category} order by classSeq asc
+	<!-- 클래스 리스트 -->
+	<select id="getAll" parameterType="lcldto" resultType="lcldto">
+		select * from vwClassList where categoryBig = #{categoryBig} order by ${filter}
 	</select>
+	
 	<select id="csmallList" parameterType="lcldto" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{categoryBig} and categorySmall = #{categorySmall} order by classSeq asc
+		select * from vwClassList where categoryBig = #{categoryBig} and categorySmall = #{categorySmall} order by ${filter} 
+	</select>
+	
+	<select id="listCount" parameterType="lcldto" resultType="Integer">
+		select count(classSeq) from vwClassList where 
+			<choose>
+				<when test="categorySmall != null and categorySmall !=''">
+					categoryBig = #{categoryBig} and categorySmall = #{categorySmall}					
+				</when>
+				<otherwise>
+					categoryBig = #{categoryBig}					
+				</otherwise>
+			</choose>
 	</select>
 	
 	

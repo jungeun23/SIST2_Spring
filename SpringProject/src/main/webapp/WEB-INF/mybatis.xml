@@ -26,6 +26,12 @@
 		<typeAlias type="com.spring.hobbylovey.host.ClassOptionDTO" alias="optiondto"/>
 		<typeAlias type="com.spring.hobbylovey.host.MyClassListDTO" alias="myclasslistdto"/>
 	
+		<typeAlias type="com.spring.hobbylovey.lecture.ClassDetailDTO" alias="cddto"/>
+        <typeAlias type="com.spring.hobbylovey.lecture.HostDTO" alias="hdto"/>
+        <typeAlias type="com.spring.hobbylovey.lecture.ReviewListDTO" alias="rldto"/>
+        <typeAlias type="com.spring.hobbylovey.lecture.ReviewListDTO" alias="rldto"/>
+        <typeAlias type="com.spring.hobbylovey.lecture.ClassImageDTO" alias="cidto"/>
+	
 	</typeAliases>
 
    

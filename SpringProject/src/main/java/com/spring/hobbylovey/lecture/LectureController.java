@@ -99,7 +99,7 @@ public class LectureController {
 		req.setAttribute("hsCount", hsCount);
 		
 		req.setAttribute("reviewList", reviewList);
-		
+		req.setAttribute("classSeq", classSeq);
 		
 
 		return "class.detail";
@@ -108,9 +108,9 @@ public class LectureController {
 	
 	// 클래스 옵션 선택 페이지
 	@RequestMapping(value = "/class/option.action", method = { RequestMethod.GET })
-	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
-
+	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 		
+		System.out.println(classSeq);
 
 		return "class.option";
 	}
