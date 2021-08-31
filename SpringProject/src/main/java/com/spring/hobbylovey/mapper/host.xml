@@ -9,10 +9,46 @@
 <mapper namespace="host">
 	
 	<select id="getMyClassCount" parameterType="String" resultType="Integer">
-	
 		select count(*) from tblClass where hostSeq = (select hostSeq from tblHost where id=#{id})
-	
 	</select>	
+	
+	
+	<select id="getHostSeq" parameterType="String" resultType="String">
+	
+		select hostSeq from tblHost where id=#{id}
+	
+	</select>
+	
+	
+	<insert id="addClass" parameterType="hostdto">
+		insert into tblClass (classSeq, hostseq, title, content, categorybig, categorysmall, location,  latitude, longitude) values (seqClass.nextVal,#{hostSeq},#{title},#{content},#{categoryBig},#{categorySmall},#{location},#{latitude},#{longitude})
+	</insert>
+	
+	<select id="getClassSeq" resultType="Integer">
+		select max(classSeq) from tblClass
+	</select>
+	
+	<insert id="addClassOption" parameterType="hostdto">
+	insert into tblClassOption(classoptionseq,classdate,classoption,price,personnel,classseq) values(seqClassOption.nextVal,to_date(#{classDate},'yyyy-mm-dd hh24:mi:ss'),#{classOption},#{price},#{personnel},#{classSeq})
+	</insert>
+	
+	<insert id="addClassImage" parameterType="hostdto">
+		insert into tblClassImage (classImageSeq, classImage, classSeq) values (seqClassImage.nextVal, #{classImage}, #{classSeq})
+	</insert>
+	
+	<insert id="addOption" parameterType="map">
+		insert into tblClassOption(classoptionseq,classdate,classoption,price,personnel,classseq) values(seqClassOption.nextVal,to_date(#{classDate},'yyyy-mm-dd hh24:mi:ss'),#{classOption},#{price},#{personnel},#{classSeq})
+	</insert>
+	
+	<select id="getMyClassList" parameterType="String" resultType="myclasslistdto">
+	
+		select * from vwMyClassList where hostSeq=(select hostSeq from tblHost where id=#{id})
+	
+	
+	
+	
+	</select>
+
 
 </mapper>
 

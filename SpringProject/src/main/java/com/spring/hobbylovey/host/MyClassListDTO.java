@@ -3,9 +3,8 @@ package com.spring.hobbylovey.host;
 import lombok.Data;
 
 @Data
-public class ClassDTO {
+public class MyClassListDTO {
 
-	//클래스
 	private String classSeq;
 	private String hostSeq;
 	private String title;
@@ -15,17 +14,6 @@ public class ClassDTO {
 	private String location;
 	private String latitude;
 	private String longitude;
-	
-	//클래스 이미지
-	private String classImageSeq;
 	private String classImage;
-	
-	//클래스 옵션
-	private String classOptionSeq;
-	private String classDate;
-	private String classOption;
-	private String price;
-	private String personnel;
-
 	
 }

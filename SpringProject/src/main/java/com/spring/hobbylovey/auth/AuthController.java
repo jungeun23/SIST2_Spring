@@ -114,5 +114,24 @@ public class AuthController {
 		}
 
 	}
+	
+	
+	@RequestMapping(value = "/auth/logout.action", method = { RequestMethod.GET })
+	public void logout(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+			
+		session.removeAttribute("name");
+		session.removeAttribute("id");
+		session.removeAttribute("auth");
+
+		try {
+				
+
+				resp.sendRedirect("/hobbylovey/index.action");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

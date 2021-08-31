@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -35,7 +36,10 @@ public class HostController {
 	public String hostmain(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		
 		int classCount = dao.getMyClassCount((String)session.getAttribute("id"));
+		//int thisMonth = dao.getThisMonthCount();
 		
+		
+		req.setAttribute("classCount", classCount);
 
 		return "host.hostmain";
 	}
@@ -49,13 +53,19 @@ public class HostController {
 	@RequestMapping(value = "/host/hostlist.action", method = { RequestMethod.GET })
 	public String hostlist(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
+		String id = (String)session.getAttribute("id");
+		
+		List<MyClassListDTO> list = dao.getMyClassList(id);
+		
+		req.setAttribute("list", list);
+		
 		return "host.hostlist";
 	}
 
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
 	public String classenroll(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		System.out.println(req.getServletPath());
+		
 
 		return "host.classenroll";
 	}
@@ -69,11 +79,11 @@ public class HostController {
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
 	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload, ClassDTO dto) throws IOException {
 
-		//System.out.println(dto);
-		System.out.println(dto);
 		
 		// 다중 파일 업로드
 		List<MultipartFile> fileList = multiFile.getFiles("classThumb");
+		String fileName="";
+		String id = (String)session.getAttribute("id");
 		
 		for(MultipartFile file : fileList) {
 			OutputStream out = null;
@@ -81,10 +91,10 @@ public class HostController {
 				if(file.getSize() > 0 && !file.getName().isBlank()){
 					if(file.getContentType().toLowerCase().startsWith("image/")){
 						try{
-							String fileName = file.getOriginalFilename();
+							fileName = file.getOriginalFilename();
 							System.out.println("fileName: " + fileName);
 							byte[] bytes = file.getBytes();
-							String uploadPath = req.getSession().getServletContext().getRealPath("/files");
+							String uploadPath = req.getSession().getServletContext().getRealPath("/resources/images/classimage");
 							System.out.println(uploadPath);
 							File uploadFile = new File(uploadPath);
 							if(!uploadFile.exists()){
@@ -95,9 +105,7 @@ public class HostController {
 							out = new FileOutputStream(new File(uploadPath));
 	                        out.write(bytes);
 	
-	                        String fileUrl = req.getContextPath() + "/files/" + fileName;
 	                        
-	                        System.out.println("fileurl: " + fileUrl);
 	                    }catch(IOException e){
 	                        e.printStackTrace();
 	                    }finally{
@@ -108,6 +116,28 @@ public class HostController {
 					}
 				}
 			}
+			
+		}
+		String hostSeq= dao.getHostSeq(id);
+		dto.setHostSeq(hostSeq);
+		dto.setClassImage(fileName);
+		
+		int classResult= dao.addClass(dto);
+		
+		dto.setClassSeq(Integer.toString(dao.getClassSeq()));
+		
+		int classOptionResult = dao.addClassOption(dto);
+		
+		int classImageResult = 0; 
+		
+		for(MultipartFile file : fileList) {
+			
+			fileName=file.getOriginalFilename();
+			
+			dto.setClassImage(fileName);
+			
+			classImageResult += dao.addClassImage(dto);
+			
 		}
 		
 		
@@ -146,7 +176,41 @@ public class HostController {
 //			}
 //		}
 	}
+	
+	@RequestMapping(value = "/host/addoption.action", method = { RequestMethod.POST })
+	public void addoption(HttpServletRequest req, HttpServletResponse resp, HttpSession session,ClassOptionDTO dto) {
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		int result = 0;
+		
+		for(int i=0;i<dto.getClassOption().length;i++ ) {
+			
+			map.put("classSeq", dto.getClassSeq());
+			map.put("classDate", dto.getClassDate());
+			map.put("classOption", dto.getClassOption()[i]);
+			map.put("price", dto.getPrice()[i]);
+			map.put("personnel", dto.getPersonnel());
+			
+			result += dao.addOption(map);
+		
+		}
+		
+		try {
+			
 
+			resp.sendRedirect("/hobbylovey/host/hostmain.action");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+		 
+
+		
+	}
+
+	
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)
 	public String imageUpload(HttpServletRequest req, HttpServletResponse resp,HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload)  throws Exception {
 		
