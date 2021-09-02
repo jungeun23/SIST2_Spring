@@ -108,7 +108,7 @@
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
-								<c:if test="${map.nexPage <= map.totalPage}">
+								<c:if test="${map.nextPage <= map.totalPage}">
 								<li><a href="#">&gt;</a></li>
 								</c:if>
 							</ul>
@@ -281,9 +281,41 @@
 		$(this).addClass("productlist-active");
 		
 		var categorySmall = $(this).text();
-		var categoryBig = '${categoryBig}';
+		var categoryBig = '${category}';
 		let filter = 'classSeq asc';
 		
+		
+		/* $.ajax({
+			type: 'POST',
+			url: '/hobbylovey/class/list_cgsmall.action',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
+			dataType: 'json',
+			success: function(list){
+				
+				$('#productlist').html('');
+				
+				$(list).each(function (index, dto) {
+					
+					//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+					
+					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+					
+					
+				});
+				
+				var length = $(list).length;
+				
+				if(categorySmall == '전체') {categorySmall = '스포츠';}
+				
+				$('.product-select').text('인기 '+ categorySmall + ' ' + length);
+				
+				
+			},
+			error: function(a,b,c){
+				console.log(a,b,c);
+			}
+			
+		}); */
 		
 		getAjax (categoryBig, categorySmall, filter);
 		
@@ -308,10 +340,34 @@
 			$(this).find('span').css("color", "#FFF");
 			
 			
-			var categoryBig = '${categoryBig}';
+			var categoryBig = '${category}';
 			var categorySmall = $('.productlist-active').text();
 			let filter = $(this).val();
 			
+			/* $.ajax({
+				type: 'POST',
+				url: '/hobbylovey/class/list_cgsmall.action',
+				data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
+				dataType: 'json',
+				success: function(list){
+					
+					$('#productlist').html('');
+					
+					$(list).each(function (index, dto) {
+						
+						//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+						
+						$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+						
+						
+					});
+					
+				},
+				error: function(a,b,c){
+					console.log(a,b,c);
+				}
+				
+			}); */
 			
 			getAjax(categoryBig, categorySmall, filter);
 			
@@ -321,7 +377,7 @@
 	/* 필터 초기화  */
 	$('.product-filterNone').click(function(){
 		
-		var categoryBig = '${categoryBig}';
+		var categoryBig = '${category}';
 		var categorySmall = $('.productlist-active').text();
 		let filter = 'classSeq asc';
 		getAjax (categoryBig, categorySmall, filter);
@@ -333,7 +389,7 @@
 		$.ajax({
 			type: 'POST',
 			url: '/hobbylovey/class/list_cgsmall.action',
-			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter +'',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter,
 			dataType: 'json',
 			success: function(list){
 				
@@ -451,8 +507,6 @@
         }
         
 	function fnGoPaging(page){
-		//ajax로 뿌려주기..?
-		
 		location.href="/hobbylovey/class/list.action?categoryBig=" + ${categoryBig} + "&nowPage=" + page;
 	}
         

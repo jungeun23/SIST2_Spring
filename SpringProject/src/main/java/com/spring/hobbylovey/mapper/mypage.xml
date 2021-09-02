@@ -32,7 +32,8 @@
 		    sc.*,
 		    co.classdate, co.classoption, co.price, co.personnel,
 		    c.*, 
-		    h.*
+		    h.*,
+            (select min(classImage) from tblClassImage where classSeq = c.classSeq) as classImage
 		from tblsignupclass sc
 		    inner join tblclassoption co
 		        on sc.classOptionSeq = co.classOptionSeq
@@ -43,6 +44,10 @@
 		            where sc.userseq = #{seq}
 	</select>
 	
+	<!-- 클래스 썸네일 이미지 -->
+	<select id="getClassImg" parameterType="String" resultType="String">
+		select min(classImage) from tblClassImage where classSeq = #{classSeq}
+	</select>
 
 </mapper>
 

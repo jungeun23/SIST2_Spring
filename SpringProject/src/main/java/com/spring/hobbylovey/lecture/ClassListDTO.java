@@ -14,6 +14,7 @@ public class ClassListDTO {
 	private String price;
 	private String classImage;
 	private String recommend;
+	
 	//private String score;
 	private String filter;
 	

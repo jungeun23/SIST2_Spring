@@ -53,7 +53,7 @@
 	<!-- 클래스 1개 정보 -->
 	<select id="getClassDetail" parameterType="String" resultType="cddto">
 		select 
-		    c.*, (select min(price) from tblClassOption where classSeq = 3) as price
+		    c.*, (select min(price) from tblClassOption where classSeq = #{cSeq}) as price
 		from tblClass c
 		    where classSeq = #{cSeq}
 	</select>
@@ -148,6 +148,14 @@
 		INSERT INTO TBLSIGNUPCLASS (signupSeq, userSeq, classOptionSeq, regdate) 
 			values (seqSignupClass.nextVal, #{userSeq}, #{classOptionSeq}, default)
 	</insert>
+	
+	
+	<select id="getIndexClassList" resultType="lcldto">
+	
+		select * from vwClassList where classSeq in (1,3,6,7,10,11,16,2) 
+	
+	
+	</select>
 	
 </mapper>
 

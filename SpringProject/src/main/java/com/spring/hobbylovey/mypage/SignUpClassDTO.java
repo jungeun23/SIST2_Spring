@@ -27,4 +27,7 @@ public class SignUpClassDTO {
 	
 	private String name; //호스트이름
 	
+	private String classImage; //클래스 썸네일 이미지
+	
+	
 }
