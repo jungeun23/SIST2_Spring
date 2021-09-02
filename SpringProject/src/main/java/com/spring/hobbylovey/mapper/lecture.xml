@@ -149,6 +149,14 @@
 			values (seqSignupClass.nextVal, #{userSeq}, #{classOptionSeq}, default)
 	</insert>
 	
+	
+	<select id="getIndexClassList" resultType="lcldto">
+	
+		select cl.*,rownum from (select * from vwClassList order by recommend desc) cl where rownum 1 and 8
+	
+	
+	</select>
+	
 </mapper>
 
 

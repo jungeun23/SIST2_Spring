@@ -88,5 +88,11 @@ public class LectureDAO {
 		return template.selectOne("lecture.listCount", dto);
 	}
 
+
+	public List<ClassListDTO> getIndexClassList() {
+
+		return template.selectList("lecture.getIndexClassList");
+	}
+
 	
 }

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <section class="hero-wrap hero-wrap-2"
-	style="background-image: url('resources/images/sample4.jpg');"
+	style="background-image: url('../resources/images/sample4.jpg');"
 	data-stellar-background-ratio="0.5">
 	<div class="overlay"></div>
 	<div class="container">
