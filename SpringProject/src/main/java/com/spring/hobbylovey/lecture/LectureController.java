@@ -64,6 +64,7 @@ public class LectureController {
 		return "class.list";
 	}
 	
+	//페이징 + 필터링 ajax 
 	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.POST })
 	@ResponseBody
 	public List<ClassListDTO> list_cgsmall(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
@@ -91,8 +92,8 @@ public class LectureController {
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
 		//임시 클래스 번호
-		String cSeq = "3";
-		//String cSeq = classSeq;
+		//String cSeq = "3";
+		String cSeq = classSeq;
 		
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
@@ -173,7 +174,7 @@ public class LectureController {
 		String id = (String)session.getAttribute("id");
 		
 		//임시 id
-		id = "rAyvQp111";
+		//id = "rAyvQp111";
 		
 		dto.setUserSeq(dao.getUserSeq(id));
 		

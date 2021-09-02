@@ -395,7 +395,7 @@
 				width="100%" height="56px" color="white" font-size="16px">
 				<div class="DefaultButton__ActionLabel-sc-4mlqfg-0 eaCxDu">참여하기</div>
 			</button>
-		</div>s
+		</div>
 	</div>
 
 
