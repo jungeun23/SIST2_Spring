@@ -167,6 +167,11 @@ public class HostController {
 		
 		List<MyClassListDTO> list = dao.getMyClassList(id);
 		
+		//테스트
+		for(MyClassListDTO ll : list) {
+	         System.out.println(ll.getClassSeq());
+	      }
+		
 		req.setAttribute("list", list);
 		
 		return "host.hostlist";

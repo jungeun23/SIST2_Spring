@@ -101,6 +101,7 @@ public class AuthController {
 
 				session.setAttribute("name", user.getName());
 				session.setAttribute("id", user.getId());
+				session.setAttribute("seq", user.getUserSeq());
 				session.setAttribute("auth", user.getAuth());
 
 				resp.sendRedirect("/hobbylovey/index.action");

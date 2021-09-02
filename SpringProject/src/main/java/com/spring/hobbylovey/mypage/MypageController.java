@@ -18,14 +18,27 @@ public class MypageController {
 	private MypageDAO dao;
 	
 	@RequestMapping(value = "/member/mypage.action", method = { RequestMethod.GET })
-	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String id) {
+	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		String seq = "14"; //임시 회원번호 - 로그인 기능구현 후 수정해야함
+		CheckMember cm = new CheckMember();
+		cm.check(req, resp);
+		
+		String seq = (String) session.getAttribute("seq");
+		String id = (String) session.getAttribute("id");
 		
 		//수강신청내역	목록
 		List<SignUpClassDTO> list = dao.getSignUpClassList(seq);
 		
+		//신청일자 데이터 가공
+		for (SignUpClassDTO dto : list) {
+			String regdate = dto.getRegdate();
+			regdate = regdate.substring(0, 10);
+			dto.setRegdate(regdate);
+		}
+		
+		
 		req.setAttribute("list", list); 
+		req.setAttribute("id", id); 
 		
 		
 		return "member.mypage";
