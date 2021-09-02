@@ -8,29 +8,37 @@
 
 <!-- lecture.xml -->
 
-<mapper namespace="lecture"> <!-- 파일명을 보편적으로 사용 -->
+<mapper namespace="lecture">
 	
-	<!-- <select id="m7" resultType="dto" parameterType="String">
-		select * from tblMemo where seq=#{seq}
-	
-	</select>
-	
-	결과셋이 다중 레코드라도 1개의 레코드를 담을 수 있는 자료형만 resultType에 적는다 
-	<select id="m8" resultType="dto">
-		select * from tblMemo order by seq desc
-	</select> -->
+
 	
 	<!-- 클래스 리스트 -->
 	<select id="getAll" parameterType="lcldto" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{categoryBig} order by ${filter}
+		select 
+    		vcl.* 
+    	from
+			(select 
+   				a.*, 
+   				rownum as rnum,
+   				FLOOR((ROWNUM - 1) /#{pageSize} + 1) as pageNumber 
+			from (select * from vwclasslist where categoryBig = #{categoryBig} order by ${filter}) a) vcl
+    	where vcl.pageNumber = #{nowpage}	
 	</select>
 	
 	<select id="csmallList" parameterType="lcldto" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{categoryBig} and categorySmall = #{categorySmall} order by ${filter} 
+		select 
+			vcl.*, 
+			rownum as rnum,
+			FLOOR((ROWNUM - 1) /#{pageSize} + 1) pageNumber 
+		from (select * from vwclasslist where categoryBig = #{categoryBig} and categorySmall = #{categorySmall}  order by ${filter}) vcl
+			 where vcl.pageNumber = #{nowpage}
 	</select>
 	
-	<select id="listCount" parameterType="lcldto" resultType="Integer">
-		select count(classSeq) from vwClassList where 
+	<select id="listCount" parameterType="lcldto" resultType="lcldto">
+		select 
+			count(classSeq) as totalCount,
+			ceil(count(*) / #{pageSize}) totalPage 
+		from vwClassList where
 			<choose>
 				<when test="categorySmall != null and categorySmall !=''">
 					categoryBig = #{categoryBig} and categorySmall = #{categorySmall}					
@@ -98,6 +106,29 @@
 		select count(*) from tblHostScrap where hostSeq = #{cSeq}
 	</select>
 
+
+	<!-- 옵션 -->
+	<select id="getOption" parameterType="String" resultType="codto">
+		select 
+    		o.classOptionSeq, o.classseq, o.classdate, o.classoption, o.price, o.personnel,
+			count(s.signupseq) as signup
+		from tblClassOption o
+    		left outer join tblSignupClass s
+        		on o.classOptionSeq = s.classOptionSeq
+            		where classSeq = #{classSeq}
+            			group by o.classOptionSeq, o.classseq, o.classdate, o.classoption, o.price, o.personnel
+            				order by o.classdate asc
+	</select>
+	
+	<select id="getUserSeq" parameterType="String" resultType="String">
+		select userSeq from tblUser where id = #{id}
+	</select>
+	<!-- 수강신청 추가 -->
+	<insert id="addSign" parameterType="codto">
+		INSERT INTO TBLSIGNUPCLASS (signupSeq, userSeq, classOptionSeq, regdate) 
+			values (seqSignupClass.nextVal, #{userSeq}, #{classOptionSeq}, default)
+	</insert>
+	
 </mapper>
 
 

@@ -65,5 +65,28 @@ public class LectureDAO {
 		return template.selectOne("lecture.getHostScrapCount", hostSeq);
 	}
 
+
+	public List<ClassOptionDTO> getOption(String classSeq) {
+
+		return template.selectList("lecture.getOption", classSeq);
+	}
+
+
+	public String getUserSeq(String id) {
+
+		return template.selectOne("lecture.getUserSeq",id);
+	}
+
+
+	public void addSign(ClassOptionDTO dto) {
+
+		template.insert("lecture.addSign", dto);
+	}
+
+
+	public ClassListDTO listCount(ClassListDTO dto) {
+		return template.selectOne("lecture.listCount", dto);
+	}
+
 	
 }

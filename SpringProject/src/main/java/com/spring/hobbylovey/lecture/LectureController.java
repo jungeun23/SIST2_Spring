@@ -1,6 +1,6 @@
 package com.spring.hobbylovey.lecture;
 
-import java.awt.print.Printable;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +19,47 @@ public class LectureController {
 	@Autowired
 	private LectureDAO dao;
 	
+	@Autowired
+	private MyDate date;
+	
 	// 클래스 목록 페이지 
 	@RequestMapping(value = "/class/list.action", method = { RequestMethod.GET })
 	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
-
+		
+		ClassListDTO pagecount = dao.listCount(dto);
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		if(dto.getNowpage() == 0) dto.setNowpage(1);
+		
+		map.put("nowpage", dto.getNowpage());
+		
+		map.put("totalPage", pagecount.getTotalPage());
+		
+		int pageGroup = (int)Math.ceil((double)dto.getNowpage()/dto.getBlockSize());
+		map.put("pageGroup", pageGroup);
+		
+		int startPage = (pageGroup -1) * dto.getBlockSize() + 1;
+		map.put("startPage", startPage);
+		
+		int endPage = startPage + dto.getBlockSize() -1;
+		map.put("endPage", endPage);
+		
+		int prePage = (pageGroup -2) * dto.getBlockSize() + 1;
+		map.put("prePage", prePage);
+		
+		int nextPage = pageGroup * dto.getBlockSize() + 1;
+		map.put("nextPage", nextPage);
+		
+		System.out.println(map);
+		
+		
 		dto.setFilter("classSeq asc");
 		
 		List<ClassListDTO> list = dao.getAll(dto);
 		
 		req.setAttribute("list", list);
+		req.setAttribute("map", map);
 		req.setAttribute("category", dto.getCategoryBig());
 		return "class.list";
 	}
@@ -110,10 +142,48 @@ public class LectureController {
 	@RequestMapping(value = "/class/option.action", method = { RequestMethod.GET })
 	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 		
-		System.out.println(classSeq);
+		//System.out.println(classSeq);
 
+		List<ClassOptionDTO> list = dao.getOption(classSeq);
+		
+		
+		for(ClassOptionDTO dto: list) {
+			
+			String cdate = dto.getClassdate();
+			
+			dto.setClassdate(date.getDate(dto.getClassdate()));
+			dto.setDeadline(date.getDeadline(cdate));
+			dto.setPrice(dto.getPrice().substring(0, (dto.getPrice().length()%3)) + "," + dto.getPrice().substring(dto.getPrice().length()%3));
+		}
+		
+		req.setAttribute("classSeq", classSeq);
+		req.setAttribute("list", list);
+		
 		return "class.option";
 	}
+	
+	@RequestMapping(value = "/class/optionok.action", method = { RequestMethod.GET })
+	public String optionok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassOptionDTO dto) {
+
+		//수강신청 db 작업
+		
+		String id = (String)session.getAttribute("id");
+		
+		//임시 id
+		id = "rAyvQp111";
+		
+		dto.setUserSeq(dao.getUserSeq(id));
+		
+		dao.addSign(dto);
+		
+		
+		req.setAttribute("classSeq", dto.getClassSeq());
+		
+		return "forward:/class/detail.action";
+	}
+	
+	
+	
 	
 	// 클래스 후기 페이지
 	@RequestMapping(value = "/class/reviewlist.action", method = { RequestMethod.GET })

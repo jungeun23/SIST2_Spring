@@ -17,4 +17,12 @@ public class ClassListDTO {
 	//private String score;
 	private String filter;
 	
+	private int rnum =0;
+	private int pageNumber = 0;
+	private int nowpage = 0;
+	private int pageSize = 12;
+	private int totalCount = 0;
+	private int totalPage = 0;
+	private int blockSize = 5;
+	
 }

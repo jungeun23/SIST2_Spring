@@ -89,13 +89,28 @@
 					<div class="col text-center">
 						<div class="block-27">
 							<ul>
-								<li><a href="#">&lt;</a></li>
-								<li class="active"><span>1</span></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
+								<c:if test = "${map.pageGroup > 1}">
+									<li>
+										<a href="javascript: fnGoPaging(<c:out value='${map.prePage}'/>) ">&lt;</a>
+									</li>
+								</c:if>
+								<c:forEach var="i" begin="${map.startPage}" end="${map.endPage > map.totalPage ? map.totalPage : map.endPage}" varStatus = "status">
+									<c:choose>
+										<c:when test="${map.nowpage eq i}">
+											<li class="active">
+												<a href="javascript: fnGoPaging(${i});">${i}</a>
+											</li>
+										</c:when>
+										<c:otherwise>
+											<li>
+												<a href="javascript: fnGoPaging(${i});">${i}</a>
+											</li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+								<c:if test="${map.nexPage <= map.totalPage}">
 								<li><a href="#">&gt;</a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div>
@@ -491,7 +506,9 @@
             };
         }
         
-
+	function fnGoPaging(page){
+		location.href="/hobbylovey/class/list.action?nowPage=" + page;
+	}
         
         
         

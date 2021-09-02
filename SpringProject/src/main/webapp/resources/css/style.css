@@ -12082,7 +12082,7 @@ text-align: center;
 	display: block;
     overflow: hidden auto;
     width: 100%;
-    margin: 0px;
+    margin: 0;
     padding: 0px;
     transform-origin: left top;
     transform: translateY(0px) scale(1, 1);
@@ -12092,16 +12092,53 @@ text-align: center;
     padding: 16px;
     background-color: rgb(249, 249, 249);
     cursor: pointer;
+    height: 73px;
+    width: 1083px;
+    display: flex;
+    justify-content: space-between;
+}
+.product-ItineraryWrapper:hover {
+	background-color: rgb(240,240,240);
+}
+.ItineraryDateBox{
+	width: 550px;
+	height: 40px;
+	padding-left: 60px;
+    display: flex; 
+    align-content: center;
+}
+.ItineraryPrice{
+	width: 280px;
+	height: 40px;
+    display: flex; 
+    align-content: center;
+}
+.ItineraryPrice div:first-child {
+	width: 150px;
+	font-size: 15px;
+	margin-right: 20px;
+	line-height: 40px;
+	color: #222;
+}
+.ItineraryPrice div:last-child {
+	font-size: 15px;
+	margin-right: 20px;
+	line-height: 40px;
+	color: rgb(85, 85, 85);
 }
 .ItineraryDate{
-	line-height: 21px;
-    font-size: 13px;
+	line-height: 40px;
+    font-size: 15px;
+    width: 230px;
+    font-weight: 500;
+    margin-right: 20px;
 }
 .product-ItineraryQuantity{
-	margin-top: 8px;
-    line-height: 11px;
-    font-size: 11px;
+	margin-top: 0px;
+    line-height: 40px;
+    font-size: 13px;
     color: rgb(85, 85, 85);
+    width: 220px;
 }
 
 .option-Accordion-Content{
@@ -12149,6 +12186,7 @@ text-align: center;
 	-webkit-box-flex: 1;
     flex: 1 1 auto;
     padding: 20px;
+    margin: 40px 0px 40px;
 }
 .PurchaseSelectionEntity-Wrapper{
 	position: relative;
