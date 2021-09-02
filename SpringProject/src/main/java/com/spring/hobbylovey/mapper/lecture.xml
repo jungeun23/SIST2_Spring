@@ -53,7 +53,7 @@
 	<!-- 클래스 1개 정보 -->
 	<select id="getClassDetail" parameterType="String" resultType="cddto">
 		select 
-		    c.*, (select min(price) from tblClassOption where classSeq = 3) as price
+		    c.*, (select min(price) from tblClassOption where classSeq = #{cSeq}) as price
 		from tblClass c
 		    where classSeq = #{cSeq}
 	</select>

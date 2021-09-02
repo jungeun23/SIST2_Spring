@@ -63,10 +63,9 @@
                     <a href="#!">
                       <div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">스크랩<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                     <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp">
-                      <a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">나의 문의글<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>1</a></div>
+                      <a href="#!"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">나의 문의글<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                       <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageReview.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">후기<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                       <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageFeed.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">피드<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
-                      <div class="CustomerInfoBoxItem__Wrapper-sc-1r3co4d-0 jHzHpp"><a href="/hobbylovey/mypageCourseDetail.action"><div class="CustomerInfoBoxItem__LabeledTitle-sc-1r3co4d-1 eGCefe">수강내역<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18'%3E %3Cg fill='none' fill-rule='evenodd'%3E %3Cpath d='M18 0H0v18h18z'/%3E %3Cpath stroke='%23FFF' stroke-width='2' d='M7 5l4 4-4 4'/%3E %3C/g%3E %3C/svg%3E" class="CustomerInfoBoxItem__IconArrow-sc-1r3co4d-2 knwkPk"></div>0</a></div>
                     </div>
                   </div>
                 </div>
@@ -79,7 +78,7 @@
                 <div class="MyPage__NavContentWrapper-sc-8hrgc7-0 bgIsVr">
                   <div class="MyPage__RouteContainer-sc-8hrgc7-1 kjZmPT">
                     <div class="NavigationWrapper-z696u8-0 fBjXys">
-                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="bold" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 fDdvEO"><div>신청내역<span class="TabNavigation__Count-e8ysba-0 gAjsN">0</span></div></button></a>
+                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="bold" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 fDdvEO"><div>신청내역<span class="TabNavigation__Count-e8ysba-0 gAjsN">${list.size()}</span></div></button></a>
                     </div>
                     <div class="Fade__Wrapper-sc-1s0ipfq-0 koasSX" style="opacity: 1; display: block;">
 
@@ -109,7 +108,7 @@
                             </td>
                             <td>
                               <div class="mypage-classbox">
-                                <a href="#!"><img src="/hobbylovey/resources/images/sample4.jpg" alt="KPOP댄스 정복하기"></a>
+                                <a href="#!"><img src="/hobbylovey/resources/images/classimage/${dto.classImage}" alt="KPOP댄스 정복하기"></a>
                                 <div class="classbox-text">
                                   <a href="#!">
                                     <span class="classbox-host">${dto.name}</span>

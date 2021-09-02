@@ -36,6 +36,10 @@ public class MypageDAO {
 		return template.selectOne("mypage.getTotalSignUpClass");
 	}
 
+	public String getClassImg(String classSeq) {
+		return template.selectOne("mypage.getClassImg");
+	}
+
 	
 	
 }
