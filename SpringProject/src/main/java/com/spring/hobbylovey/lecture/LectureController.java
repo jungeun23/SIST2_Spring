@@ -97,6 +97,9 @@ public class LectureController {
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
 		
+		System.out.println("lat 좌표: " + cddto.getLatitude());
+		System.out.println("lng 좌표: " + cddto.getLongitude());
+		
 		//가격 데이터 가공 
 		//정규식 활용하여 천단위 , 찍기
 		//price = price.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
