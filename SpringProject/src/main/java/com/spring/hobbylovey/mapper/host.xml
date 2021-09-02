@@ -10,7 +10,67 @@
 	
 	<select id="getMyClassCount" parameterType="String" resultType="Integer">
 		select count(*) from tblClass where hostSeq = (select hostSeq from tblHost where id=#{id})
+	</select>
+	
+	<select id="getThisMonthCount" parameterType="map" resultType="Integer">
+		select count(*) from tblClass c
+		   inner join tblClassOption co
+		       on c.classseq = co.classseq
+		           inner join tblsignupclass sc
+		               on co.classoptionseq = sc.classoptionseq
+		                   where c.hostseq=#{hostSeq} and co.classdate between #{startDate} and #{endDate}
+	</select>
+	
+	<select id="getThisMonthSales" parameterType="map" resultType="Integer">
+		select nvl(sum(co.price),0) from tblClass c
+		   inner join tblClassOption co
+		       on c.classseq = co.classseq
+		           inner join tblsignupclass sc
+		               on co.classoptionseq = sc.classoptionseq
+		                   where c.hostseq=#{hostSeq} and co.classdate between #{startDate} and #{today}
+	</select>
+	
+	<select id="getAllSales" parameterType="map" resultType="Integer">
+		select nvl(sum(co.price),0) from tblClass c
+		   inner join tblClassOption co
+		       on c.classseq = co.classseq
+		           inner join tblsignupclass sc
+		               on co.classoptionseq = sc.classoptionseq
+		                   where c.hostseq=#{hostSeq}
+	</select>
+	
+	<select id="getAllCount" parameterType="String" resultType="Integer">
+		select count(*) from tblClass c
+		   inner join tblClassOption co
+		       on c.classseq = co.classseq
+		           inner join tblsignupclass sc
+		               on co.classoptionseq = sc.classoptionseq
+		                   where c.hostseq=#{hostSeq}
 	</select>	
+	
+	<select id="getReviewCount" parameterType="String" resultType="Integer">
+		select count(*) from tblClass c
+	    inner join tblClassOption co
+	        on c.classseq = co.classseq
+	            inner join tblsignupclass sc
+	                on co.classoptionseq = sc.classoptionseq
+	                    inner join tblClassReview cr
+	                        on sc.signupseq = cr.signupseq
+	                            where c.hostseq=#{hostSeq}
+	</select>
+	
+	<select id="getAvgScore" parameterType="map" resultType="Integer">
+		select nvl(sum(cr.score)/#{reviewCount},0) from tblClass c
+	    inner join tblClassOption co
+	        on c.classseq = co.classseq
+	            inner join tblsignupclass sc
+	                on co.classoptionseq = sc.classoptionseq
+	                    inner join tblClassReview cr
+	                        on sc.signupseq = cr.signupseq
+	                            where c.hostseq=#{hostSeq}
+	</select>
+	
+	
 	
 	
 	<select id="getHostSeq" parameterType="String" resultType="String">
@@ -43,9 +103,37 @@
 	<select id="getMyClassList" parameterType="String" resultType="myclasslistdto">
 	
 		select * from vwMyClassList where hostSeq=(select hostSeq from tblHost where id=#{id})
+	</select>
+
+
+
+	<select id="getNoticeList" resultType="noticedto">
+		select n.*,rownum from (select * from tblNotice n order by regdate desc) n
+		 where rownum between 1 and 3
+	
+	</select>
+	
+	<select id="getManCount" parameterType="String" resultType="Integer">
+	
+		select count(*) from tblClass c
+			   inner join tblClassOption co
+			       on c.classseq = co.classseq
+			           inner join tblsignupclass sc
+			               on co.classoptionseq = sc.classoptionseq
+	                        inner join tblUser u
+	                            on u.userseq = sc.userseq
+	                                where c.hostseq=#{hostSeq} and u.gender='남자'
+	</select>
 	
 	
-	
+	<select id="getSalesList" resultType="salesdto" parameterType="String">
+		select sum(co.price) as sales,to_char(co.classdate,'yyyy-mm') as classDate from tblClass c
+		   inner join tblClassOption co
+		       on c.classseq = co.classseq
+		           inner join tblsignupclass sc
+		               on co.classoptionseq = sc.classoptionseq
+                        where c.hostseq=#{hostSeq} and to_char(co.classdate,'yyyy-mm') like '2021%'
+                            group by to_char(co.classdate,'yyyy-mm')
 	
 	</select>
 

@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.spring.hobbylovey.notice.NoticeDTO;
 
 @Controller
 public class HostController {
@@ -35,19 +37,127 @@ public class HostController {
 	@RequestMapping(value = "/host/hostmain.action", method = { RequestMethod.GET })
 	public String hostmain(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		
-		int classCount = dao.getMyClassCount((String)session.getAttribute("id"));
-		//int thisMonth = dao.getThisMonthCount();
+		Calendar cal = Calendar.getInstance();
+		
+		String today = String.format("%tF", cal);
+		int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+		cal.set(Calendar.DATE, 1);
+		String startDate= String.format("%tF",cal);
+		cal.set(Calendar.DATE, lastDay);
+		String endDate =String.format("%tF",cal);
+		String id=(String)session.getAttribute("id");
+		
+		String hostSeq= dao.getHostSeq(id);
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		map.put("today", today);
+		map.put("startDate", startDate);
+		map.put("endDate", endDate);
+		map.put("hostSeq", hostSeq);
 		
 		
+		int classCount = dao.getMyClassCount(id);
+		int thisMonthParticipant = dao.getThisMonthCount(map);
+		int allParticipant = dao.getAllCount(hostSeq);
+		int reviewCount = dao.getReviewCount(hostSeq);
+		int thisMonthSales = dao.getThisMonthSales(map);
+		int allSales = dao.getAllSales(map);
+		int manCount = dao.getManCount(hostSeq);
+		List<SalesDTO> slist = dao.getSalesList(hostSeq);
+		
+		map.put("Jan", "0");
+		map.put("Feb", "0");
+		map.put("Mar", "0");
+		map.put("Apr", "0");
+		map.put("May", "0");
+		map.put("Jun", "0");
+		map.put("Jul", "0");
+		map.put("Aug", "0");
+		map.put("Sep", "0");
+		map.put("Oct", "0");
+		map.put("Nov", "0");
+		map.put("Dec", "0");
+		
+		
+		for(SalesDTO sl:slist) {
+			if(sl.getClassDate().substring(5).equals("01")) {
+				map.put("Jan", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("02")) {
+				map.put("Feb", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("03")) {
+				map.put("Mar", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("04")) {
+				map.put("Apr", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("05")) {
+				map.put("May", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("06")) {
+				map.put("Jun", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("07")) {
+				map.put("Jul", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("08")) {
+				map.put("Aug", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("09")) {
+				map.put("Sep", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("10")) {
+				map.put("Oct", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("11")) {
+				map.put("Nov", sl.getSales());
+			}else if(sl.getClassDate().substring(5).equals("12")) {
+				map.put("Dec", sl.getSales());
+			}
+			
+		}
+	
+		String manPer="";
+		String womanPer="";
+		
+		if(allParticipant!=0) {
+		manPer = String.format("%.1f", ((double)manCount/allParticipant)*100); 
+		womanPer = String.format("%.1f",((double)(allParticipant-manCount)/allParticipant)*100); 
+		}else {
+			manPer="0";
+			womanPer="0";
+		}
+		
+		System.out.println(manPer+" "+womanPer);
+		map.put("reviewCount", Integer.toString(reviewCount));
+			
+		int avgScore=-1;
+			
+		if(reviewCount != 0) {
+			avgScore = dao.getAvgScore(map);
+		}else {
+			avgScore=0;	
+		}
+		List<NoticeDTO> nlist = dao.getNoticeList();
+		
+		for(NoticeDTO nd : nlist) {
+			
+			if(nd.getTitle().length()>26) {
+				nd.setTitle(nd.getTitle().substring(0, 26)+"...");
+			}
+		}
+		
+		req.setAttribute("nlist", nlist);
 		req.setAttribute("classCount", classCount);
+		req.setAttribute("thisMonthParticipant", thisMonthParticipant);
+		req.setAttribute("allParticipant", allParticipant);
+		req.setAttribute("reviewCount", reviewCount);
+		req.setAttribute("avgScore", avgScore);
+		req.setAttribute("thisMonthSales", thisMonthSales);
+		req.setAttribute("allSales", allSales);
+		req.setAttribute("manPer", manPer);
+		req.setAttribute("womanPer", womanPer);
+		req.setAttribute("map", map);
 
 		return "host.hostmain";
 	}
 	
-	@RequestMapping(value = "/host/classreview.action", method = { RequestMethod.GET })
+	@RequestMapping(value = "/host/hostreview.action", method = { RequestMethod.GET })
 	public String classreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		return "host.classreview";
+		return "host.hostreview";
 	}
 	
 	@RequestMapping(value = "/host/hostlist.action", method = { RequestMethod.GET })

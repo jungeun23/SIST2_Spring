@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 
 <div id="myclass_content">
         <div class="class_manage_main_box class_user">
@@ -17,7 +18,7 @@
           </h1>
           <span id="edit_host_info"><a href="#!">개인정보수정</a></span>
           <span style="color: rgb(119, 119, 119); margin-top: 50px"
-            ><a href="#!">하비러비 홈페이지 &gt;</a></span
+            ><a href="/hobbylovey/index.action">하비러비 홈페이지 &gt;</a></span
           >
         </div>
 
@@ -29,30 +30,16 @@
             >
           </h3>
 
+			<c:forEach items="${nlist}" var="dto">
           <a href=""
             ><div class="hobbylovey_notice">
-              <div class="notice_category">공지</div>
-              <div class="notice_title">공지사항 제목입니다. 환영합니다</div>
-              <div class="notice_regdate">2021-08-23</div>
+              <div class="notice_category">${dto.category }</div>
+              <div class="notice_title">${dto.title }</div>
+              <div class="notice_regdate">${dto.regdate.substring(0,10)}</div>
             </div></a
           >
-          <a href=""
-            ><div class="hobbylovey_notice">
-              <div class="notice_category">이벤트</div>
-              <div class="notice_title">
-                공지사항 제목입니다. 환영합니다ㅇㅇㅇㅇㅇ
-              </div>
-              <div class="notice_regdate">2021-08-23</div>
-            </div></a
-          >
-
-          <a href="">
-            <div class="hobbylovey_notice">
-              <div class="notice_category">분류</div>
-              <div class="notice_title">공지사항 제목입니다. 환영합니다</div>
-              <div class="notice_regdate">2021-08-23</div>
-            </div>
-          </a>
+          </c:forEach>
+         
         </div>
 
         <div
@@ -61,39 +48,39 @@
         >
           <div class="class_statistics">
             <div class="class_statistics_subject">클래스 수</div>
-            <h3 class="class_statistics_count">20</h3>
+            <h3 class="class_statistics_count">${classCount}</h3>
           </div>
           <div class="class_statistics">
-            <div class="class_statistics_subject">신청자 수</div>
-            <h3 class="class_statistics_count">20</h3>
+            <div class="class_statistics_subject">이번달 신청자 수</div>
+            <h3 class="class_statistics_count">${thisMonthParticipant}</h3>
           </div>
           <div class="class_statistics">
             <div class="class_statistics_subject">총 신청자 수</div>
-            <h3 class="class_statistics_count">20</h3>
+            <h3 class="class_statistics_count">${allParticipant}</h3>
           </div>
           <div class="class_statistics">
             <div class="class_statistics_subject">남겨진 후기</div>
-            <h3 class="class_statistics_count">20</h3>
+            <h3 class="class_statistics_count">${reviewCount}</h3>
           </div>
           <div class="class_statistics">
             <div class="class_statistics_subject">평균 평점</div>
-            <h3 class="class_statistics_count">4.5</h3>
+            <h3 class="class_statistics_count">${avgScore}</h3>
           </div>
           <div class="class_statistics">
-            <div class="class_statistics_subject">??</div>
-            <h3 class="class_statistics_count">20</h3>
+            <div class="class_statistics_subject"></div>
+            <h3 class="class_statistics_count"></h3>
           </div>
         </div>
 
         <div class="class_manage_main_box class_income_box" style="padding: 0">
           <div class="income_box">
             <span class="income_subject">이번달 매출액</span>
-            <h3>1,000,000</h3>
+            <h3><fmt:formatNumber value="${thisMonthSales}" groupingUsed="true"/></h3>
           </div>
 
           <div class="income_box">
             <span class="income_subject">전체 매출액</span>
-            <h3>2,000,000</h3>
+            <h3><fmt:formatNumber value="${allSales}" groupingUsed="true"/></h3>
           </div>
         </div>
 
@@ -117,32 +104,29 @@
           type: 'column',
         },
         title: {
-          text: 'Monthly Average Rainfall',
-        },
-        subtitle: {
-          text: 'Source: WorldClimate.com',
+          text: '2021년 월별 매출',
         },
         xAxis: {
           categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
+            '1월',
+            '2월',
+            '3월',
+            '4월',
+            '5월',
+            '6월',
+            '7월',
+            '8월',
+            '9월',
+            '10월',
+            '11월',
+            '12월',
           ],
           crosshair: true,
         },
         yAxis: {
           min: 0,
           title: {
-            text: 'Rainfall (mm)',
+            text: '단위(원)',
           },
         },
         tooltip: {
@@ -150,7 +134,7 @@
             '<span style="font-size:10px">{point.key}</span><table>',
           pointFormat:
             '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y}</b>원</td></tr>',
           footerFormat: '</table>',
           shared: true,
           useHTML: true,
@@ -163,33 +147,12 @@
         },
         series: [
           {
-            name: 'Tokyo',
+            name: '매출',
             data: [
-              49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,
-              194.1, 95.6, 54.4,
+            	${map.Jan}, ${map.Feb}, ${map.Mar}, ${map.Apr}, ${map.May}, ${map.Jun}, ${map.Jul}, ${map.Aug}, ${map.Sep},
+                ${map.Oct}, ${map.Nov}, ${map.Dec}
             ],
-          },
-          {
-            name: 'New York',
-            data: [
-              83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
-              106.6, 92.3,
-            ],
-          },
-          {
-            name: 'London',
-            data: [
-              48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
-              51.2,
-            ],
-          },
-          {
-            name: 'Berlin',
-            data: [
-              42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
-              51.1,
-            ],
-          },
+          }       
         ],
       });
     </script>
@@ -203,7 +166,7 @@
           type: 'pie',
         },
         title: {
-          text: 'Browser market shares in January, 2018',
+          text: '나의 클래스 성별 비율',
         },
         tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
@@ -225,46 +188,18 @@
         },
         series: [
           {
-            name: 'Brands',
+            name: 'gender',
             colorByPoint: true,
             data: [
               {
-                name: 'Chrome',
-                y: 61.41,
+                name: '남성',
+                y: ${manPer},
                 sliced: true,
                 selected: true,
               },
               {
-                name: 'Internet Explorer',
-                y: 11.84,
-              },
-              {
-                name: 'Firefox',
-                y: 10.85,
-              },
-              {
-                name: 'Edge',
-                y: 4.67,
-              },
-              {
-                name: 'Safari',
-                y: 4.18,
-              },
-              {
-                name: 'Sogou Explorer',
-                y: 1.64,
-              },
-              {
-                name: 'Opera',
-                y: 1.6,
-              },
-              {
-                name: 'QQ',
-                y: 1.2,
-              },
-              {
-                name: 'Other',
-                y: 2.61,
+                name: '여성',
+                y: ${womanPer},
               },
             ],
           },

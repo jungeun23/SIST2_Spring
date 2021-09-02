@@ -24,9 +24,7 @@ public class MypageController {
 		
 		//수강신청내역	목록
 		List<SignUpClassDTO> list = dao.getSignUpClassList(seq);
-		
-		
-		
+ 
 		req.setAttribute("list", list);
 		
 		
