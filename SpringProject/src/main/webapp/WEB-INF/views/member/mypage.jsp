@@ -79,9 +79,7 @@
                 <div class="MyPage__NavContentWrapper-sc-8hrgc7-0 bgIsVr">
                   <div class="MyPage__RouteContainer-sc-8hrgc7-1 kjZmPT">
                     <div class="NavigationWrapper-z696u8-0 fBjXys">
-                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="bold" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 fDdvEO"><div>사용가능<span class="TabNavigation__Count-e8ysba-0 gAjsN">0</span></div></button></a>
-                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="300" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 jwuGaR"><div>예약확정<span class="TabNavigation__Count-e8ysba-0 gAjsN">0</span></div></button></a>
-                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="300" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 jwuGaR"><div>신청 내역<span class="TabNavigation__Count-e8ysba-0 gAjsN"></span></div></button></a>
+                      <a href="#!"><button width="100%" height="60px" font-size="14px" font-weight="bold" class="Button-bqxlp0-0 NavigationButton__StyledButton-sc-121z7og-0 fDdvEO"><div>신청내역<span class="TabNavigation__Count-e8ysba-0 gAjsN">0</span></div></button></a>
                     </div>
                     <div class="Fade__Wrapper-sc-1s0ipfq-0 koasSX" style="opacity: 1; display: block;">
 

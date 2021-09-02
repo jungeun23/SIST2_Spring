@@ -1,5 +1,6 @@
 package com.spring.hobbylovey.lecture;
 
+import java.awt.print.Printable;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,27 +21,88 @@ public class LectureController {
 	
 	// 클래스 목록 페이지 
 	@RequestMapping(value = "/class/list.action", method = { RequestMethod.GET })
-	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String category) {
+	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
 
-		List<ClassListDTO> list = dao.getAll(category);
+		dto.setFilter("classSeq asc");
+		
+		List<ClassListDTO> list = dao.getAll(dto);
 		
 		req.setAttribute("list", list);
-		req.setAttribute("category", category);
+		req.setAttribute("category", dto.getCategoryBig());
 		return "class.list";
 	}
 	
-	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.GET })
+	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.POST })
 	@ResponseBody
 	public List<ClassListDTO> list_cgsmall(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
 		
-		return dao.csmallList(dto);
+		if( dto.getFilter() == null || dto.getFilter().equals("") || dto.getFilter().equals("score")) {
+			dto.setFilter("classSeq asc");
+			return dao.getAll(dto);		
+		} else if(!dto.getFilter().equals("") || dto.getFilter() != null) {
+			
+			if(dto.getCategorySmall().equals("전체")) {
+				return dao.getAll(dto);
+			} else {
+				return dao.csmallList(dto);
+			}
+		}
+		return null;
 	}
+
+	
+	
+	
 	
 	// 클래스 상세 페이지
-
 	@RequestMapping(value = "/class/detail.action", method = { RequestMethod.GET })
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
+		//임시 클래스 번호
+		String cSeq = "3";
+		//String cSeq = classSeq;
+		
+		//클래스 정보
+		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
+		
+		//가격 데이터 가공 
+		//정규식 활용하여 천단위 , 찍기
+		//price = price.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
+		
+		//클래스 이미지 리스트
+		List<ClassImageDTO> classImgList = dao.getClassImgList(cSeq);
+		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
+		
+		
+		
+		//해당 클래스 호스트 정보
+		HostDTO hdto = dao.getHost(cSeq);
+		
+		//호스트 전체 클래스 수
+		int hCount = dao.getHostCount(hdto.getHostSeq());
+		
+		//해당 호스트의 전체 후기 수
+		int hrCount = dao.getHostReviewCount(cSeq);
+		
+		//해당 클래스 호스트의 스크랩 수
+		int hsCount = dao.getHostScrapCount(hdto.getHostSeq());
+		
+		
+		//해당 클래스의 후기리스트
+		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
+		
+		
+		
+		req.setAttribute("cddto", cddto);
+		req.setAttribute("classImgList", classImgList);
+		
+		req.setAttribute("hdto", hdto);
+		req.setAttribute("hCount", hCount);
+		req.setAttribute("hrCount", hrCount);
+		req.setAttribute("hsCount", hsCount);
+		
+		req.setAttribute("classSeq", classSeq);
+		req.setAttribute("reviewList", reviewList);
 		
 
 		return "class.detail";
@@ -49,9 +111,9 @@ public class LectureController {
 	
 	// 클래스 옵션 선택 페이지
 	@RequestMapping(value = "/class/option.action", method = { RequestMethod.GET })
-	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
-
+	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 		
+		System.out.println(classSeq);
 
 		return "class.option";
 	}

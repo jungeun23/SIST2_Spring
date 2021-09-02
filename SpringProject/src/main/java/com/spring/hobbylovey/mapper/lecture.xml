@@ -20,13 +20,103 @@
 		select * from tblMemo order by seq desc
 	</select> -->
 	
-	<select id="getAll" parameterType="String" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{category} order by classSeq asc
-	</select>
-	<select id="csmallList" parameterType="lcldto" resultType="lcldto">
-		select * from vwClassList where categoryBig = #{categoryBig} and categorySmall = #{categorySmall} order by classSeq asc
+	<!-- 클래스 리스트 -->
+	<select id="getAll" parameterType="lcldto" resultType="lcldto">
+		select * from vwClassList where categoryBig = #{categoryBig} order by ${filter}
 	</select>
 	
+	<select id="csmallList" parameterType="lcldto" resultType="lcldto">
+		select * from vwClassList where categoryBig = #{categoryBig} and categorySmall = #{categorySmall} order by ${filter} 
+	</select>
+	
+	<select id="listCount" parameterType="lcldto" resultType="Integer">
+		select count(classSeq) from vwClassList where 
+			<choose>
+				<when test="categorySmall != null and categorySmall !=''">
+					categoryBig = #{categoryBig} and categorySmall = #{categorySmall}					
+				</when>
+				<otherwise>
+					categoryBig = #{categoryBig}					
+				</otherwise>
+			</choose>
+	</select>
+	
+	
+	<!-- 클래스 1개 정보 -->
+	<select id="getClassDetail" parameterType="String" resultType="cddto">
+		select 
+		    c.*, (select min(price) from tblClassOption where classSeq = 3) as price
+		from tblClass c
+		    where classSeq = #{cSeq}
+	</select>
+	
+	<!-- 해당 클래스 호스트 정보 -->
+	<select id="getHost" parameterType="String" resultType="hdto">
+		select * from tblHost where hostSeq = (select hostSeq from tblClass where classSeq = #{cSeq})
+	</select>
+	
+	<!-- 특정 호스트의 총 클래스 수 -->
+	<select id="getHostCount" parameterType="String" resultType="Integer">
+		select count(*) from tblClass where hostSeq = #{hostSeq}
+	</select>
+	
+	
+	<!-- 클래스 이미지 리스트 -->
+	<select id="getClassImgList" parameterType="String" resultType="cidto">
+		select * from tblClassImage where classSeq = #{cSeq}
+	</select>
+	
+	<!-- 특정 호스트의 전체 리뷰 수 -->
+	<select id="getHostReviewCount" resultType="Integer" parameterType="String">
+		select 
+		    count(*)
+		from tblClass c
+		    inner join tblClassOption co
+		        on c.classSeq = co.classSeq
+		    inner join tblSignupClass sc
+		        on co.classOptionSeq = sc.classOptionSeq
+		    inner join tblClassReview cr
+		        on sc.signupSeq = cr.signupSeq
+		            where c.hostSeq = (select hostSeq from tblClass where classSeq = #{cSeq})
+		
+	</select>
+	
+	<!-- 특정 호스트의 스크랩 수 -->
+	<select id="getHostScrapCount" resultType="Integer" parameterType="String">
+		select count(*) from tblHostScrap where hostSeq = #{cSeq}
+	</select>
+	
+	<!-- 특정 클래스의 리뷰 리스트 -->
+	<select id="getReviewList" parameterType="String" resultType="rldto">
+		select
+		    u.name, co.classOption, cr.classReviewSeq, cr.content, cr.score, cr.recommend, ri.reviewImage
+		from tblUser u
+		    inner join tblSignupClass sc
+		        on u.userSeq = sc.userSeq
+		    inner join tblClassOption co
+		        on sc.classOptionSeq = co.ClassOptionSeq
+		    inner join tblClassReview cr
+		        on sc.signupSeq = cr.signupSeq
+		    inner join tblReviewImage ri
+		        on cr.classReviewSeq = ri.classReviewSeq
+		            where co.classSeq = #{cSeq}
+		                order by cr.classReviewSeq desc
+	</select>
+	<!-- 
+	<select id="getReviewList" parameterType="String" resultType="rldto">
+		select 
+		    c.classSeq, cr.*
+		from tblClass c
+		    inner join tblClassOption co
+		        on c.classSeq = co.classSeq
+		    inner join tblSignupClass sc
+		        on co.classOptionSeq = sc.classoptionseq
+		    inner join tblClassReview cr
+		        on cr.signupSeq = sc.signupseq
+		            where c.classSeq = #{cSeq}
+	</select> 
+	-->
+
 
 </mapper>
 
