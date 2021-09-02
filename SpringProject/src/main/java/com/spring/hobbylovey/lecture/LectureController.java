@@ -91,8 +91,8 @@ public class LectureController {
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
 		//임시 클래스 번호
-		String cSeq = "3";
-		//String cSeq = classSeq;
+		//String cSeq = "3";
+		String cSeq = classSeq;
 		
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
