@@ -89,7 +89,7 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="index.action"
 						class="nav-link">피드</a></li>
-					<li class="nav-item"><a href="about.action" class="nav-link">클래스등록</a></li>
+					<li class="nav-item"><a href="/hobbylovey/host/hostmain.action" class="nav-link">클래스관리</a></li>
 					<li class="nav-item dropdown"></li>
 					<li class="nav-item"><a href="/hobbylovey/mypage.action" class="nav-link">마이페이지</a></li>
 				</ul>
