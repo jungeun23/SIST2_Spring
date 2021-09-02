@@ -19,23 +19,20 @@
 	<typeAliases>
 	
 		<typeAlias type="com.spring.hobbylovey.mypage.SignUpClassDTO" alias="sucdto" />
-
 		<typeAlias type="com.spring.hobbylovey.admin.AdminDTO" alias="admindto" />
-
 		<typeAlias type="com.spring.hobbylovey.auth.AuthDTO" alias="authdto" />
-
+		<typeAlias type="com.spring.hobbylovey.lecture.ClassListDTO" alias="lcldto"/>
 		<typeAlias type="com.spring.hobbylovey.host.ClassDTO" alias="hostdto"/>
 		<typeAlias type="com.spring.hobbylovey.host.ClassOptionDTO" alias="optiondto"/>
 		<typeAlias type="com.spring.hobbylovey.host.MyClassListDTO" alias="myclasslistdto"/>
+		<typeAlias type="com.spring.hobbylovey.notice.NoticeDTO" alias="noticedto"/>
+		<typeAlias type="com.spring.hobbylovey.host.SalesDTO" alias="salesdto"/>
 	
-		<typeAlias type="com.spring.hobbylovey.lecture.ClassListDTO" alias="lcldto"/>
 		<typeAlias type="com.spring.hobbylovey.lecture.ClassDetailDTO" alias="cddto"/>
         <typeAlias type="com.spring.hobbylovey.lecture.HostDTO" alias="hdto"/>
         <typeAlias type="com.spring.hobbylovey.lecture.ReviewListDTO" alias="rldto"/>
-        <typeAlias type="com.spring.hobbylovey.lecture.ClassImageDTO" alias="cidto"/>	
-        <typeAlias type="com.spring.hobbylovey.lecture.ClassOptionDTO" alias="codto"/>
-
-
+        <typeAlias type="com.spring.hobbylovey.lecture.ClassImageDTO" alias="cidto"/>
+	
 	</typeAliases>
 
    
