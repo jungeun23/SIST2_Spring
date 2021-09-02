@@ -60,6 +60,7 @@ public class LectureController {
 
 		//임시 클래스 번호
 		String cSeq = "3";
+		//String cSeq = classSeq;
 		
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
@@ -90,6 +91,8 @@ public class LectureController {
 		//해당 클래스의 후기리스트
 		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
 		
+		
+		
 		req.setAttribute("cddto", cddto);
 		req.setAttribute("classImgList", classImgList);
 		
@@ -98,8 +101,8 @@ public class LectureController {
 		req.setAttribute("hrCount", hrCount);
 		req.setAttribute("hsCount", hsCount);
 		
-		req.setAttribute("reviewList", reviewList);
 		req.setAttribute("classSeq", classSeq);
+		req.setAttribute("reviewList", reviewList);
 		
 
 		return "class.detail";

@@ -9,7 +9,11 @@ public class ReviewListDTO {
 	private String signupSeq;
 	private String content;
 	private String regdate;
-	private String score;
-	private String recommend;
+	private int score;
+	private int recommend;
+	
+	private String name;
+	private String classOption;
+	private String reviewImage;
 	
 }
