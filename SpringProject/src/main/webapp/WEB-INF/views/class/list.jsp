@@ -108,7 +108,7 @@
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
-								<c:if test="${map.nexPage <= map.totalPage}">
+								<c:if test="${map.nextPage <= map.totalPage}">
 								<li><a href="#">&gt;</a></li>
 								</c:if>
 							</ul>
@@ -507,7 +507,7 @@
         }
         
 	function fnGoPaging(page){
-		location.href="/hobbylovey/class/list.action?nowPage=" + page;
+		location.href="/hobbylovey/class/list.action?categoryBig=" + ${categoryBig} + "&nowPage=" + page;
 	}
         
         

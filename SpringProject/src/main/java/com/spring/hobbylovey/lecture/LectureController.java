@@ -91,7 +91,7 @@ public class LectureController {
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
 		//임시 클래스 번호
-//		String cSeq = "3";
+		//String cSeq = "3";
 		String cSeq = classSeq;
 		
 		//클래스 정보
@@ -103,6 +103,7 @@ public class LectureController {
 		
 		//클래스 이미지 리스트
 		List<ClassImageDTO> classImgList = dao.getClassImgList(cSeq);
+		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
 		
 		
 		
@@ -123,41 +124,6 @@ public class LectureController {
 		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
 		
 		
-		//후기 평점 평균 구하기
-		int cnt = 0;
-		int avg = 0;
-		int i = 0;
-		int sum = 0;
-		int isfive = 0;
-		for (ReviewListDTO dto : reviewList) {
-			
-			i = dto.getScore();
-			sum += i;
-			
-			if (i == 5) isfive++;
-			
-			cnt++;
-		}
-
-		if (sum != 0 && cnt != 0) {
-			avg = sum / cnt;			
-		} else {
-			avg = 0;
-		}
-		
-//		System.out.println("평균 별점: " + avg);
-		
-		//5점을 준 회원이 몇%인지?
-		int result=0;
-		if (isfive != 0) {
-			result = isfive / cnt * 100;			
-		} else {
-			result = 0;
-		}
-//		System.out.println("5점 몇%?: " + result);
-		
-		
-		
 		
 		req.setAttribute("cddto", cddto);
 		req.setAttribute("classImgList", classImgList);
@@ -169,10 +135,6 @@ public class LectureController {
 		
 		req.setAttribute("classSeq", classSeq);
 		req.setAttribute("reviewList", reviewList);
-		
-		req.setAttribute("avg", avg);
-		req.setAttribute("result", result);
-		
 		
 
 		return "class.detail";

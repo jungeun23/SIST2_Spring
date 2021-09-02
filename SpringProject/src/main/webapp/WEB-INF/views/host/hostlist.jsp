@@ -16,10 +16,12 @@
         
         <c:forEach items="${list }" var="dto">
           <div class="myclass_info_box">
+          <a href="/hobbylovey/class/detail.action?classSeq=${dto.classSeq}">
             <div
               class="myclass_info_image"
               style="background-image: url('/hobbylovey/resources/images/classimage/${dto.classImage}')"
             ></div>
+            </a>
             <div class="myclass_info_text">
               <div class="myclassList_classTitle">
                 ${dto.title}

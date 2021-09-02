@@ -84,7 +84,7 @@
 						<div class="product-ProfileImage">
 							<button type="button" onclick="location.href='#!';">
 								<img alt="호스트 프로필 이미지" class="Image__StyledImage-v97gyx-1 VUNpu"
-									src="https://res.cloudinary.com/frientrip/image/upload/ar_1:1,c_fill,dpr_1.0,f_auto,h_56,q_auto,w_56/Host_9393_38445_1626421350">
+									src="../resources/images${hdto.image}">
 							</button>
 						</div>
 					</div>

@@ -189,7 +189,7 @@ public class HostController {
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
 	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload, ClassDTO dto) throws IOException {
 
-		
+		dto.setContent(dto.getContent().replace("<script>", "&lt;script&gt;"));
 		// 다중 파일 업로드
 		List<MultipartFile> fileList = multiFile.getFiles("classThumb");
 		String fileName="";
@@ -227,6 +227,16 @@ public class HostController {
 					}
 				}
 			}
+			
+			try {
+				
+
+				resp.sendRedirect("/hobbylovey/host/hostlist.action");
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 			
 		}
 		String hostSeq= dao.getHostSeq(id);
