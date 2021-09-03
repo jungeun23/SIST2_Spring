@@ -100,7 +100,18 @@ public class HostDAO {
 	 */
 	public List<MyClassListDTO> getMyClassList(String id) {
 
-		return template.selectList("host.getMyClassList", id);
+		System.out.println(id);
+		
+		List<MyClassListDTO> list = template.selectList("host.getMyClassList", id);
+		
+		System.out.println(list.size());
+		
+		for(MyClassListDTO dto : list) {
+			System.out.println(dto.getClassSeq());
+			System.out.println(dto.getHostSeq());
+		}
+		
+		return list;
 	}
 
 	/***
