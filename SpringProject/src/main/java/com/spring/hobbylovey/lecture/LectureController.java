@@ -97,18 +97,22 @@ public class LectureController {
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
 		
+		System.out.println("lat 좌표: " + cddto.getLatitude());
+		System.out.println("lng 좌표: " + cddto.getLongitude());
+		
 		//가격 데이터 가공 
 		//정규식 활용하여 천단위 , 찍기
 		//price = price.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
 		
 		//클래스 이미지 리스트
 		List<ClassImageDTO> classImgList = dao.getClassImgList(cSeq);
-		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
+//		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
 		
 		
 		
 		//해당 클래스 호스트 정보
 		HostDTO hdto = dao.getHost(cSeq);
+		
 		
 		//호스트 전체 클래스 수
 		int hCount = dao.getHostCount(hdto.getHostSeq());
@@ -123,6 +127,32 @@ public class LectureController {
 		//해당 클래스의 후기리스트
 		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
 		
+
+		//후기 평점 평균 구하기
+		int cnt = 0;
+		int avg = 0;
+		int i = 0;
+		int sum = 0;
+		int isfive = 0;
+		for (ReviewListDTO dto : reviewList) {
+			
+			i = dto.getScore();
+			sum += i;
+			
+			if (i == 5) isfive++;
+			
+			cnt++;
+		}
+
+		avg = sum / cnt;
+//		System.out.println("평균 별점: " + avg);
+		
+		//5점을 준 회원이 몇%인지?
+		//결과 = 5점몇명 / 전체몇명 * 100 
+		int result = isfive / cnt * 100;
+//		System.out.println("5점 몇%?: " + result);
+		
+		
 		
 		
 		req.setAttribute("cddto", cddto);
@@ -135,6 +165,9 @@ public class LectureController {
 		
 		req.setAttribute("classSeq", classSeq);
 		req.setAttribute("reviewList", reviewList);
+		
+		req.setAttribute("avg", avg);
+		req.setAttribute("result", result);
 		
 
 		return "class.detail";

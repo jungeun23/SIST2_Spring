@@ -478,7 +478,7 @@
 	var container = document.getElementById('map'); // 지도 태그 선택
 
 	var options = {
-		center : new daum.maps.LatLng(37.551415, 126.981086), // 지도의 중앙 좌표
+		center : new daum.maps.LatLng(${cddto.latitude}, ${cddto.longitude}), // 지도의 중앙 좌표
 		level : 4
 	// 지도의 레벨(확대,축소)
 	};
@@ -489,8 +489,10 @@
 	var positions = [
 
 	{
-		title : '${dto.place_name}',
-		content : '<div>${dto.place_name}</div>',
+		/* title : '${dto.place_name}',
+		content : '<div>${dto.place_name}</div>', */
+		title : '${cddto.location}',
+		content : '<div>${cddto.location}</div>',
 		latlng : new kakao.maps.LatLng(${cddto.latitude}, ${cddto.longitude}) /* 클래스 dto에서 가져와서 lat lng 넣기 */
 	}
 
@@ -498,7 +500,7 @@
 
 	var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
-	for (var i = 0; i < positions.length; i++) {
+	if (positions != null) {
 
 		// 마커 이미지의 이미지 크기 입니다
 		var imageSize = new kakao.maps.Size(24, 35);
@@ -517,7 +519,7 @@
 
 		// 마커에 표시할 인포윈도우를 생성합니다 
 		var infowindow = new kakao.maps.InfoWindow({
-			content : positions[i].content
+			content : positions.content
 		// 인포윈도우에 표시할 내용
 		});
 
