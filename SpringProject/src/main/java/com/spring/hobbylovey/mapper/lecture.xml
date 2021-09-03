@@ -27,11 +27,14 @@
 	
 	<select id="csmallList" parameterType="lcldto" resultType="lcldto">
 		select 
-			vcl.*, 
-			rownum as rnum,
-			FLOOR((ROWNUM - 1) /#{pageSize} + 1) pageNumber 
-		from (select * from vwclasslist where categoryBig = #{categoryBig} and categorySmall = #{categorySmall}  order by ${filter}) vcl
-			 where vcl.pageNumber = #{nowpage}
+    		vcl.* 
+    	from
+			(select 
+   				a.*, 
+   				rownum as rnum,
+   				FLOOR((ROWNUM - 1) /#{pageSize} + 1) as pageNumber 
+			from (select * from vwclasslist where categoryBig = #{categoryBig} and categorySmall = #{categorySmall}  order by ${filter}) a) vcl
+    	where vcl.pageNumber = #{nowpage}
 	</select>
 	
 	<select id="listCount" parameterType="lcldto" resultType="lcldto">

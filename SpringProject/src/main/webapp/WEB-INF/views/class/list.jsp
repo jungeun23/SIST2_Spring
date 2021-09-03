@@ -109,7 +109,7 @@
 									</c:choose>
 								</c:forEach>
 								<c:if test="${map.nextPage <= map.totalPage}">
-								<li><a href="#">&gt;</a></li>
+									<li><a href="#">&gt;</a></li>
 								</c:if>
 							</ul>
 						</div>
@@ -507,7 +507,71 @@
         }
         
 	function fnGoPaging(page){
-		location.href="/hobbylovey/class/list.action?categoryBig=" + ${categoryBig} + "&nowPage=" + page;
+		
+		var categoryBig = '${category}';
+		var categorySmall = $('.productlist-active').text();
+		let filter = "";
+		if($('.active-sort').length > 0){
+			filter = $('.active-sort').val();
+		} else {
+			filter = 'classSeq asc';
+		}
+ 		let nowpage = page;
+		
+		//location.href = "/hobbylovey/class/list.action?categoryBig=" + categoryBig + "&categorySmall=" + categorySmall + "&filter=" + filter + "&nowpage=" + nowpage;
+		
+		
+		$.ajax({
+			type: 'POST',
+			url: '/hobbylovey/class/list_cgsmall.action',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter + '&nowpage=' + nowpage,
+			dataType: 'json',
+			success: function(list){
+				
+				$('#productlist').html('');
+				$('.block-27').html('');
+				
+				$(list).each(function (index, dto) {
+					
+					//console.log(dto.classImage+', ' + dto.price +', ' + dto.title);
+					
+					$('#productlist').append('<div class="col-md-4 d-flex"><div class="product"><div class="img d-flex align-items-center justify-content-center" style="background-image: url(\'../resources/images/classimage/'+ dto.classImage +'\');"><div class="desc"><p class="meta-prod d-flex"><a href="#" class="d-flex align-items-center justify-content-center"><span class="flaticon-heart"></span></a> <a href="/hobbylovey/class/detail.action" class="d-flex align-items-center justify-content-center"><span class="flaticon-visibility"></span></a></p></div></div><div class="text text-center"><h2>'+ dto.title +'</h2><p class="mb-0"><span class="price">'+ dto.price +'원</span></p></div></div></div>');
+			
+				var length = $(list).length;
+				
+				if(categorySmall == '전체') {categorySmall = '스포츠';}
+				
+				$('.product-select').text('인기 '+ categorySmall + ' ' + length);
+				
+				
+			},
+			error: function(a,b,c){
+				console.log(a,b,c);
+			}
+			
+		});
+				
+		$.ajax({
+			type: 'POST',
+			url: '/hobbylovey/class/list_paging.action',
+			data: 'categoryBig='+ categoryBig +'&categorySmall=' + categorySmall + '&filter=' + filter + '&nowpage=' + nowpage,
+			dataType: 'json',
+			success: function(map){
+				
+				$('.block-27').html('');
+				
+				$('.block-27').append('<ul><c:if test = "${'map.pageGroup+' > 1}"><li><a href="javascript: fnGoPaging(<c:out value=\' ${' + map.prePage + '} \'/>) ">&lt;</a></li></c:if><c:forEach var="i" begin=" ${'+ map.startPage +'}  " end=" ${'+map.endPage +' > ' + map.totalPage +' ? ' + map.totalPage +' : ' + map.endPage+ '} " varStatus = "status"><c:choose><c:when test=" ${' +map.nowpage + ' eq i} "><li class="active"><a href="javascript: fnGoPaging(${i});">${i}</a></li></c:when><c:otherwise><li><a href="javascript: fnGoPaging(${i});">${i}</a></li></c:otherwise></c:choose></c:forEach><c:if test=" ${' +map.nextPage +' <= ' +map.totalPage  +' } "><li><a href="javascript: fnGoPaging(<c:out value=\'${'+ map.nextPage +'} ">&gt;</a></li></c:if></ul>');
+				});
+	
+				
+				
+			},
+			error: function(a,b,c){
+				console.log(a,b,c);
+			}
+			
+		});		
+				
 	}
         
         
