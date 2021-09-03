@@ -10290,6 +10290,11 @@ textarea.form-control {
 
 .classbox-text {
   margin-left: 20px;
+  text-align: left;
+}
+
+.classbox-text a > span {
+	padding-bottom: 5px;
 }
 
 

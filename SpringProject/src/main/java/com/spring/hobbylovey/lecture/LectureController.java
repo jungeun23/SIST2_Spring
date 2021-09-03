@@ -12,11 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-/**
- * 클래스 목록, 상세, 옵션 페이지 처리 컨트롤러
- * @author 
- *
- */
+
 @Controller
 public class LectureController {
 	
@@ -26,24 +22,16 @@ public class LectureController {
 	@Autowired
 	private MyDate date;
 	
-	/**
-	 * 카테고리 및 페이지 관련 정보를 담은 dto를 매개변수로 받아 목록 조회 후 jsp를 호출하는 메소드
-	 * @param req
-	 * @param resp
-	 * @param session
-	 * @param dto (categoryBig을 받음)
-	 * @return String 
-	 */
+	// 클래스 목록 페이지 
 	@RequestMapping(value = "/class/list.action", method = { RequestMethod.GET })
 	public String list(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
 		
-		dto.setPageSize(12);
-		dto.setBlockSize(5);
 		ClassListDTO pagecount = dao.listCount(dto);
 		
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
 		if(dto.getNowpage() == 0) dto.setNowpage(1);
+		
 		map.put("nowpage", dto.getNowpage());
 		
 		map.put("totalPage", pagecount.getTotalPage());
@@ -76,19 +64,9 @@ public class LectureController {
 		return "class.list";
 	}
 	
-	/**
-	 * 카테고리 및 페이지 관련 정보를 담은 dto를 매개변수로 받아
-목록 조회 후 json 형태의 데이터로 ajax에게 돌려주는 메소드
-	 * @param req
-	 * @param resp
-	 * @param session
-	 * @param dto (categoryBig, categorySmall, filter, nowpage를 받음)
-	 * @return List<ClassListDTO>
-	 */
 	@RequestMapping(value = "/class/list_cgsmall.action", method = { RequestMethod.POST })
 	@ResponseBody
 	public List<ClassListDTO> list_cgsmall(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassListDTO dto) {
-		
 		
 		if( dto.getFilter() == null || dto.getFilter().equals("") || dto.getFilter().equals("score")) {
 			dto.setFilter("classSeq asc");
@@ -104,48 +82,7 @@ public class LectureController {
 		return null;
 	}
 
-	/**
-	 * 페이지 번호를 매개변수로 받아 페이징 처리를 위한 데이터 저장 후 Hashmap을 ajax에게 돌려주는 메소드
-	 * @param req
-	 * @param resp
-	 * @param session
-	 * @param dto (categoryBig, categorySmall, filter, nowpage를 받음)
-	 * @return HashMap
-	 */
-	@RequestMapping(value = "/class/list_paging.action", method = { RequestMethod.GET })
-	public HashMap list_paging(HttpServletRequest req, HttpServletResponse resp, HttpSession session,  ClassListDTO dto) {
-
-		ClassListDTO pagecount = dao.listCount(dto);
-		
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		
-		if(dto.getNowpage() == 0) {
-			dto.setNowpage(1);
-		}
-		
-		map.put("nowpage", dto.getNowpage());
-		
-		map.put("totalPage", pagecount.getTotalPage());
-		
-		int pageGroup = (int)Math.ceil((double)dto.getNowpage()/dto.getBlockSize());
-		map.put("pageGroup", pageGroup);
-		
-		int startPage = (pageGroup -1) * dto.getBlockSize() + 1;
-		map.put("startPage", startPage);
-		
-		int endPage = startPage + dto.getBlockSize() -1;
-		map.put("endPage", endPage);
-		
-		int prePage = (pageGroup -2) * dto.getBlockSize() + 1;
-		map.put("prePage", prePage);
-		
-		int nextPage = pageGroup * dto.getBlockSize() + 1;
-		map.put("nextPage", nextPage);
-		
-		System.out.println(map);
-
-		return map;
-	}
+	
 	
 	
 	
@@ -160,18 +97,22 @@ public class LectureController {
 		//클래스 정보
 		ClassDetailDTO cddto = dao.getClassDetail(cSeq);
 		
+		System.out.println("lat 좌표: " + cddto.getLatitude());
+		System.out.println("lng 좌표: " + cddto.getLongitude());
+		
 		//가격 데이터 가공 
 		//정규식 활용하여 천단위 , 찍기
 		//price = price.replaceAll("\\B(?=(\\d{3})+(?!\\d))", ",");
 		
 		//클래스 이미지 리스트
 		List<ClassImageDTO> classImgList = dao.getClassImgList(cSeq);
-		//System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
+//		System.out.println("클래스 이미지: " + classImgList.get(0).getClassImage());
 		
 		
 		
 		//해당 클래스 호스트 정보
 		HostDTO hdto = dao.getHost(cSeq);
+		
 		
 		//호스트 전체 클래스 수
 		int hCount = dao.getHostCount(hdto.getHostSeq());
@@ -186,6 +127,35 @@ public class LectureController {
 		//해당 클래스의 후기리스트
 		List<ReviewListDTO> reviewList = dao.getReviewList(cSeq);
 		
+
+		//후기 평점 평균 구하기
+		int cnt = 0;
+		int avg = 0;
+		int i = 0;
+		int sum = 0;
+		int isfive = 0;
+		for (ReviewListDTO dto : reviewList) {
+			
+			i = dto.getScore();
+			sum += i;
+			
+			if (i == 5) isfive++;
+			
+			cnt++;
+		}
+
+		int result = 0;
+		if (cnt != 0) {
+			avg = sum / cnt;
+//		System.out.println("평균 별점: " + avg);
+		
+		//5점을 준 회원이 몇%인지?
+		//결과 = 5점몇명 / 전체몇명 * 100 
+		result = isfive / cnt * 100;
+//		System.out.println("5점 몇%?: " + result);
+		
+		}
+		
 		
 		
 		req.setAttribute("cddto", cddto);
@@ -199,19 +169,15 @@ public class LectureController {
 		req.setAttribute("classSeq", classSeq);
 		req.setAttribute("reviewList", reviewList);
 		
+		req.setAttribute("avg", avg);
+		req.setAttribute("result", result);
+		
 
 		return "class.detail";
 	}
 	
 	
-	/**
-	 * 클래스 옵션 조회를 위해 classSeq를 매개변수로 받아 목록 조회 후 jsp를 호출하는 메소드
-	 * @param req
-	 * @param resp
-	 * @param session
-	 * @param classSeq
-	 * @return String
-	 */
+	// 클래스 옵션 선택 페이지
 	@RequestMapping(value = "/class/option.action", method = { RequestMethod.GET })
 	public String option(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 		
@@ -235,14 +201,6 @@ public class LectureController {
 		return "class.option";
 	}
 	
-	/**
-	 * 사용자가 선택한 옵션 정보를 담은 dto를 매개변수로 받아 db에 추가후 클래스 상세 페이지로 forward 하는 메소드
-	 * @param req
-	 * @param resp
-	 * @param session
-	 * @param dto (classSeq, classOptionSeq를 받음)
-	 * @return
-	 */
 	@RequestMapping(value = "/class/optionok.action", method = { RequestMethod.GET })
 	public String optionok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, ClassOptionDTO dto) {
 
@@ -251,7 +209,7 @@ public class LectureController {
 		String id = (String)session.getAttribute("id");
 		
 		//임시 id
-		//id = "rAyvQp111";
+//		id = "rAyvQp111";
 		
 		dto.setUserSeq(dao.getUserSeq(id));
 		

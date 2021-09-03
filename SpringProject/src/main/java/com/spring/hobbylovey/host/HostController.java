@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.google.gson.JsonObject;
+import com.spring.hobbylovey.lecture.ReviewDTO;
 import com.spring.hobbylovey.notice.NoticeDTO;
 
 @Controller
@@ -157,6 +158,13 @@ public class HostController {
 	@RequestMapping(value = "/host/hostreview.action", method = { RequestMethod.GET })
 	public String classreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
+		String id= (String)session.getAttribute("id");
+		String hostSeq = dao.getHostSeq(id);
+		
+		List<ReviewDTO> rlist = dao.getReviewList(hostSeq);
+		
+		req.setAttribute("rlist", rlist);
+		
 		return "host.hostreview";
 	}
 	
@@ -165,8 +173,13 @@ public class HostController {
 
 		String id = (String)session.getAttribute("id");
 		
+		System.out.println(id);
+		
 		List<MyClassListDTO> list = dao.getMyClassList(id);
 		
+		for(MyClassListDTO ll : list) {
+			System.out.println(ll);
+		}
 		
 		req.setAttribute("list", list);
 		

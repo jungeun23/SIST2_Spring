@@ -138,6 +138,13 @@
 	
 	</select>
 	
+	
+	<select id="getReviewList" parameterType="String" resultType="com.spring.hobbylovey.lecture.ReviewDTO">
+	
+		select * from vwClassReview where hostSeq=#{hostSeq}
+	
+	</select>
+	
 		
 
 

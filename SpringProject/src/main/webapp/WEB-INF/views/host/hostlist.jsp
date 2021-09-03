@@ -14,7 +14,7 @@
           "
         >
         
-        <c:forEach items="${list }" var="dto">
+        <c:forEach items="${list}" var="dto">
           <div class="myclass_info_box">
           <a href="/hobbylovey/class/detail.action?classSeq=${dto.classSeq}">
             <div
