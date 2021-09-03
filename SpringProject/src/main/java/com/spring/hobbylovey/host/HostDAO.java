@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.spring.hobbylovey.lecture.ReviewDTO;
 import com.spring.hobbylovey.notice.NoticeDTO;
 
 @Repository
@@ -101,6 +102,11 @@ public class HostDAO {
 
 		
 		return template.selectList("host.getSalesList",hostSeq);
+	}
+
+	public List<ReviewDTO> getReviewList(String hostSeq) {
+		
+		return template.selectList("host.getReviewList",hostSeq);
 	}
 
 }
