@@ -144,14 +144,17 @@ public class LectureController {
 			cnt++;
 		}
 
-		avg = sum / cnt;
+		int result = 0;
+		if (cnt != 0) {
+			avg = sum / cnt;
 //		System.out.println("평균 별점: " + avg);
 		
 		//5점을 준 회원이 몇%인지?
 		//결과 = 5점몇명 / 전체몇명 * 100 
-		int result = isfive / cnt * 100;
+		result = isfive / cnt * 100;
 //		System.out.println("5점 몇%?: " + result);
 		
+		}
 		
 		
 		
@@ -206,7 +209,7 @@ public class LectureController {
 		String id = (String)session.getAttribute("id");
 		
 		//임시 id
-		id = "rAyvQp111";
+//		id = "rAyvQp111";
 		
 		dto.setUserSeq(dao.getUserSeq(id));
 		
