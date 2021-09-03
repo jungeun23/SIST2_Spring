@@ -2,7 +2,7 @@
 
 -- tblUser
 -- 일반회원
-INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, '송천재', '긴장되는얼룩말', '910624-1139647', '남자', 'rAyvQp111', 'd5hai0@naver.com', 'bbjd9456', '010-3849-2578', default, '경기도 용인시 은평구 청담동', default, default);
+INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, '송천재', '긴장되는얼룩말', '910624-1139647', '남자', 'user1234', 'd5hai0@naver.com', '123456', '010-3849-2578', default, '경기도 용인시 은평구 청담동', default, default);
 INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, '강백화', '멋있는강아지', '920520-1782491', '여자', 'FvbxLv41', 'r12f2r@hanmail.net', 'gdaa2594', '010-7918-4682', default, '서울특별시 도봉구 양재동', default, default);
 INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, '남창손', '긴장되는물소', '900603-2786425', '여자', 'REChAJ881', '2w5xg0@naver.com', 'adds3423', '010-9131-5016', default, '경기도 용인시 양천구 논현동', default, default);
 INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqUser.nextVal, '박로림', '긴장되는하마', '900818-2739182', '남자', 'JZIoxv201', 'lijazy@nate.com', 'jdaa0322', '010-4730-6894', default, '경기도 용인시 마포구 잠원동', default, default);
@@ -110,7 +110,7 @@ INSERT INTO TBLUSER (userSeq, name, nickname, birth, gender, id, email, pw, tel,
 -- 강사
 INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '옥남고', '두려운돼지', '950306-2427896', '남자', 'VWnTYq281', '1i5p7d@yahoo.co.kr', 'cccc2334', '010-1201-4631', default, '서울특별시 서대문구 혜화동', default, default);
 INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '김순철', '그리운강아지', '931119-1396714', '여자', 'lCQIQd601', 'm8ebpc@nate.com', 'dsfd5304', '010-6754-9821', default, '서울특별시 동대문구 신사동', default, default);
-INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '정서고', '긴장되는앵무새', '940210-2183297', '여자', 'UvprDx841', 'd6zlmp@hanmail.net', 'pcfd1156', '010-7895-9099', default, '경기도 용인시 광진구 자양동', default, default);
+INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '정서고', '긴장되는앵무새', '940210-2183297', '여자', 'host1234', 'd6zlmp@hanmail.net', '123456', '010-7895-9099', default, '경기도 용인시 광진구 자양동', default, default);
 INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '권진세', '비참한다람쥐', '980324-1614835', '남자', 'lEETUS901', 'ikvqr5@gmail.com', 'ccad6304', '010-9712-7739', default, '경기도 용인시 강서구 성북동', default, default);
 INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '류송삼', '잘생긴기린', '931009-2974318', '남자', 'ZsbALe151', '2xob73@yahoo.co.kr', 'aajd7804', '010-4973-7807', default, '경기도 용인시 강남구 회현동', default, default);
 INSERT INTO TBLHOST (hostSeq, name, nickname, birth, gender, id, email, pw, tel, point, address, auth, image) values (seqHost.nextVal, '제늬엽', '서운한기린', '900308-1743291', '여자', 'nDGPlg641', '2u5s0k@naver.com', 'ccop9463', '010-7833-9373', default, '서울특별시 성동구 대치동', default, default);
