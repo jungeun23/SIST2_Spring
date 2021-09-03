@@ -2,6 +2,11 @@ package com.spring.hobbylovey.host;
 
 import lombok.Data;
 
+/***
+ * 호스트(자신)의 클래스 객체를 담기위한 클래스
+ * @author 2조
+ *
+ */
 @Data
 public class MyClassListDTO {
 

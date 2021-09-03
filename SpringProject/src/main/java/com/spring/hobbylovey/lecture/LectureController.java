@@ -206,7 +206,7 @@ public class LectureController {
 		String id = (String)session.getAttribute("id");
 		
 		//임시 id
-		id = "rAyvQp111";
+		//id = "rAyvQp111";
 		
 		dto.setUserSeq(dao.getUserSeq(id));
 		

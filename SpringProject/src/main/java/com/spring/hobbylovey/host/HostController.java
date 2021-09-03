@@ -29,12 +29,25 @@ import com.google.gson.JsonObject;
 import com.spring.hobbylovey.lecture.ReviewDTO;
 import com.spring.hobbylovey.notice.NoticeDTO;
 
+/***
+ * 호스트 관리 페이지를 불러오기 위한 컨트롤러
+ * @author 2조
+ *
+ */
 @Controller
 public class HostController {
 	
 	@Autowired
 	private HostDAO dao; 
 
+	
+	/***
+	 * 호스트 관리 페이지를 보여주기 위한 메소드 
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @return 호스트 관리 메인 페이지로 이동하기위한 리턴
+	 */
 	@RequestMapping(value = "/host/hostmain.action", method = { RequestMethod.GET })
 	public String hostmain(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		
@@ -155,6 +168,13 @@ public class HostController {
 		return "host.hostmain";
 	}
 	
+	/***
+	 * 호스트의 클래스에 달린 댓글의 답변을 확인하고 답변을 달 수 있는 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @return 호스트 리뷰 페이지로 이동하기위한 리턴
+	 */
 	@RequestMapping(value = "/host/hostreview.action", method = { RequestMethod.GET })
 	public String classreview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
@@ -168,6 +188,13 @@ public class HostController {
 		return "host.hostreview";
 	}
 	
+	/***
+	 * 호스트 자신의 클래스를 확인할 수 있는 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @return 호스트 클래스 리스트 페이지로 이동하기 위한 리턴
+	 */
 	@RequestMapping(value = "/host/hostlist.action", method = { RequestMethod.GET })
 	public String hostlist(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
@@ -185,7 +212,15 @@ public class HostController {
 		
 		return "host.hostlist";
 	}
-
+	
+	
+/***
+ * 호스트가 클래스를 작성하기 위한 페이지를 보여주는 메소드
+ * @param req
+ * @param resp
+ * @param session
+ * @return 클래스 작성 페이지로 이동하기 위한 리턴
+ */
 	@RequestMapping(value = "/host/classenroll.action", method = { RequestMethod.GET })
 	public String classenroll(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
@@ -194,12 +229,30 @@ public class HostController {
 		return "host.classenroll";
 	}
 
+	
+	/***
+	 * 클래스 작성 시 지역을 Kakao Map API를 통해 선택할 수 있게 보여주는 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @return 카카오 맵 페이지로 이동하기 위한 메소드
+	 */
 	@RequestMapping(value = "/kakaomap.action", method = { RequestMethod.GET })
 	public String kakaomap(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
 		return "kakaomap";
 	}
 
+	/***
+	 * 클래스 등록 시 데이터를 처리하기 위한 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @param multiFile
+	 * @param upload
+	 * @param dto
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/host/classenrollok.action", method = { RequestMethod.POST })
 	public void classenrollok(HttpServletRequest req, HttpServletResponse resp, HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload, ClassDTO dto) throws IOException {
 
@@ -312,6 +365,13 @@ public class HostController {
 //		}
 	}
 	
+	/***
+	 * 클래스의 옵션(일정)을 작성하기 위한 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @param dto
+	 */
 	@RequestMapping(value = "/host/addoption.action", method = { RequestMethod.POST })
 	public void addoption(HttpServletRequest req, HttpServletResponse resp, HttpSession session,ClassOptionDTO dto) {
 		
@@ -346,6 +406,16 @@ public class HostController {
 	}
 
 	
+	/***
+	 * 클래스 작성 시 CKEditor를 사용하여 이미지를 업로드 하기위해 사용되는 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @param multiFile
+	 * @param upload
+	 * @return 널(null)
+	 * @throws Exception
+	 */
 	@RequestMapping(value = "/host/imageUpload.action", method = RequestMethod.POST)
 	public String imageUpload(HttpServletRequest req, HttpServletResponse resp,HttpSession session, MultipartHttpServletRequest multiFile, MultipartFile upload)  throws Exception {
 		
@@ -400,39 +470,5 @@ public class HostController {
 				}
 				return null;
 			}
-
-	@RequestMapping(value = "/host/ckImgSubmit.action")
-	public void ckSubmit(HttpServletRequest request, HttpServletResponse response,HttpSession session,@RequestParam(value = "uid") String uid, @RequestParam(value = "fileName") String fileName) throws ServletException, IOException {
-		String path = "C:\\Users\\cksgh\\Desktop\\백업\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\SpringProject\\resources\\images";
-		String sDirPath = path + uid + "_" + fileName;
-		File imgFile = new File(sDirPath);
-		if (imgFile.isFile()) {
-			byte[] buf = new byte[1024];
-			int readByte = 0;
-			int length = 0;
-			byte[] imgBuf = null;
-			FileInputStream fileInputStream = null;
-			ByteArrayOutputStream outputStream = null;
-			ServletOutputStream out = null;
-			try {
-				fileInputStream = new FileInputStream(imgFile);
-				outputStream = new ByteArrayOutputStream();
-				out = response.getOutputStream();
-				while ((readByte = fileInputStream.read(buf)) != -1) {
-					outputStream.write(buf, 0, readByte);
-				}
-				imgBuf = outputStream.toByteArray();
-				length = imgBuf.length;
-				out.write(imgBuf, 0, length);
-				out.flush();
-			} catch (IOException e) {
-
-			} finally {
-				outputStream.close();
-				fileInputStream.close();
-				out.close();
-			}
-		}
-	}
 
 }

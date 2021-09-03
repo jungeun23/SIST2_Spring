@@ -2,6 +2,11 @@ package com.spring.hobbylovey.host;
 
 import lombok.Data;
 
+/***
+ * 클래스 객체를 저장하기 위한 클래스
+ * @author 2조
+ *
+ */
 @Data
 public class ClassDTO {
 

@@ -11,14 +11,26 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/***
+ * 특정 권한이 있는 사람에게만 페이지를 제공할 수 있도록 처리를 해주는 AOP 클래스
+ * @author 2조
+ *
+ */
 @Aspect
 @Component
 public class HostAOP {
 	
+	/***
+	 *특정 클래스의 특정 메소드를 지정해주는 메소드
+	 */
 	@Pointcut("execution(public String com.spring.hobbylovey.host.HostController.*(..))")
 	public void loginCheck() {}
 	
 	
+	/***
+	 * 특정 클래스의 특정 메소드를 실행 전 실행하는 메소드
+	 * @param joinPoint
+	 */
 	@Before("loginCheck()")
 	public void check(JoinPoint joinPoint) {
 		
