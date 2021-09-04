@@ -11,12 +11,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * 마이페이지 관련 업무를 담당하는 Controller
+ * @author 이미현
+ *
+ */
 @Controller
 public class MypageController {
 	
 	@Autowired
 	private MypageDAO dao;
 	
+	/**
+	 * 마이페이지 호출 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @return /member/mypage.action
+	 */
 	@RequestMapping(value = "/member/mypage.action", method = { RequestMethod.GET })
 	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 

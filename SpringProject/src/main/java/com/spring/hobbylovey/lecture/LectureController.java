@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 클래스 목록, 상세, 옵션 페이지 처리 컨트롤러
- * @author 
+ * @author 김정은, 이미현
  *
  */
 @Controller
@@ -151,12 +151,18 @@ public class LectureController {
 	}
 	
 	
-	
+	/**
+	 * 클래스 상세페이지 조회 메소드
+	 * @param req
+	 * @param resp
+	 * @param session
+	 * @param classSeq
+	 * @return /class/detail.action
+	 */
 	@RequestMapping(value = "/class/detail.action", method = { RequestMethod.GET })
 	public String detail(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String classSeq) {
 
-		//임시 클래스 번호
-		//String cSeq = "3";
+		//클래스 번호
 		String cSeq = classSeq;
 		
 		//클래스 정보

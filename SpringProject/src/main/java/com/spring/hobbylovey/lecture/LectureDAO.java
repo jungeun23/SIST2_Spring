@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * 클래스 강의 DB 쿼리 처리 클래스
- * @author 
+ * @author 김정은, 이미현
  *
  */
 @Repository
@@ -38,42 +38,77 @@ public class LectureDAO {
 	}
 
 
+	/**
+	 * 선택한 클래스의 상세정보를 가져오기 위한 메소드
+	 * @param cSeq
+	 * @return 선택한 클래스의 상세정보
+	 */
 	public ClassDetailDTO getClassDetail(String cSeq) {
 
 		return template.selectOne("lecture.getClassDetail", cSeq);
 	}
 
 
+	/**
+	 * 선택한 클래스의 호스트 정보를 가져오기 위한 메소드
+	 * @param cSeq
+	 * @return 선택한 클래스의 호스트 정보
+	 */
 	public HostDTO getHost(String cSeq) {
 
 		return template.selectOne("lecture.getHost", cSeq);
 	}
 
 
+	/**
+	 * 호스트의 총 클래스 개수를 가져오기 위한 메소드
+	 * @param hostSeq
+	 * @return 호스트의 총 클래스 개수
+	 */
 	public int getHostCount(String hostSeq) {
 
 		return template.selectOne("lecture.getHostCount", hostSeq);
 	}
 
 
+	/**
+	 * 선택한 클래스의 후기목록을 가져오기 위한 메소드
+	 * @param cSeq
+	 * @return 선택한 클래스의 후기목록
+	 */
 	public List<ReviewListDTO> getReviewList(String cSeq) {
 		
 		return template.selectList("lecture.getReviewList", cSeq);
 	}
 
 
+	/**
+	 * 선택한 클래스의 썸네일 이미지 목록을 가져오기 위한 메소드
+	 * @param cSeq
+	 * @return 선택한 클래스의 썸네일 이미지 목록
+	 */
 	public List<ClassImageDTO> getClassImgList(String cSeq) {
 
 		return template.selectList("lecture.getClassImgList", cSeq);
 	}
 
 
+	/**
+	 * 호스트의 전체 리뷰수를 가져오기 위한 메소드
+	 * @param cSeq
+	 * @return 호스트의 전체 리뷰수
+	 */
 	public int getHostReviewCount(String cSeq) {
 
 		return template.selectOne("lecture.getHostReviewCount", cSeq);
 	}
 
 
+	/**
+	 * 호스트의 스크랩 수를 가져오기 위한 메소드
+	 * @param hostSeq
+	 * @return 호스트의 스크랩 수
+	 */
 	public int getHostScrapCount(String hostSeq) {
 
 		return template.selectOne("lecture.getHostScrapCount", hostSeq);
