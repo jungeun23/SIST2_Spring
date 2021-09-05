@@ -2,6 +2,11 @@ package com.spring.hobbylovey.mypage;
 
 import lombok.Data;
 
+/**
+ * 수강신청 클래스 DTO
+ * @author 이미현
+ *
+ */
 @Data
 public class SignUpClassDTO {
 

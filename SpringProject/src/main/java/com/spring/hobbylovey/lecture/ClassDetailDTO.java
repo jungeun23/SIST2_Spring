@@ -2,7 +2,11 @@ package com.spring.hobbylovey.lecture;
 
 import lombok.Data;
 
-
+/**
+ * 클래스 상세정보 DTO
+ * @author 이미현
+ *
+ */
 @Data
 public class ClassDetailDTO {
 	

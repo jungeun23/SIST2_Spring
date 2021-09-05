@@ -6,9 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 회원이 아닌 사용자를 마이페이지에 접근하지 못하도록 하기 위한 클래스
+ * @author 이미현
+ *
+ */
 public class CheckMember {
 	
-public void check(HttpServletRequest req, HttpServletResponse resp) {
+	public void check(HttpServletRequest req, HttpServletResponse resp) {
 		
 		try {
 			HttpSession session = req.getSession();

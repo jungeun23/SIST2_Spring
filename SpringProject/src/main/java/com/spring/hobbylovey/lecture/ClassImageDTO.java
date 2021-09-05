@@ -2,6 +2,11 @@ package com.spring.hobbylovey.lecture;
 
 import lombok.Data;
 
+/**
+ * 클래스 썸네일 이미지 DTO
+ * @author 이미현
+ *
+ */
 @Data
 public class ClassImageDTO {
 
