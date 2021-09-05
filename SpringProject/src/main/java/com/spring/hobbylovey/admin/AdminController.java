@@ -20,7 +20,6 @@ public class AdminController {
 	@RequestMapping(value = "/admin/member.action", method = { RequestMethod.GET })
 	public String admin(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		
-		// 회원 리스트 
 		List<AdminDTO> list = dao.member();
 		
 		req.setAttribute("list", list);

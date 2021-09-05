@@ -186,7 +186,7 @@ public class HostDAO {
 	/***
 	 * 자신의 클래스의 성비를 계산하기위해 남자 신청자의 수를 가져오는 메소드
 	 * @param hostSeq
-	 * @return
+	 * @return 남자 수 리턴
 	 */
 	public int getManCount(String hostSeq) {
 		
@@ -196,7 +196,7 @@ public class HostDAO {
 	/***
 	 * 월별 매출액을 가져오기 위한 메소드
 	 * @param hostSeq
-	 * @return
+	 * @return 매출액 리스트 리턴
 	 */
 	public List<SalesDTO> getSalesList(String hostSeq) {
 
